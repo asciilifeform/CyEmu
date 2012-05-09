@@ -29,14 +29,59 @@ var RING_FINGER = 105;   // Numpad-9
 var LITTLE_FINGER = 107; // Numpad-Plus
 /************************************/
 
-
 // Current chorder state
 var keys = 0;
 var chord = 0;
 
+var CyChordTable = {
+    // Alpha
+    12 : 'a',
+    56 : 'b',
+    10 : 'c',
+    14 : 'd',
+    4  : 'e',
+    30 : 'f',
+    48 : 'g',
+    34 : 'h',
+    6  : 'i',
+    50 : 'j',
+    18 : 'k',
+    38 : 'l',
+    60 : 'm',
+    24 : 'n',
+    8  : 'o',
+    62 : 'p',
+    40 : 'q',
+    22 : 'r',
+    16 : 's',
+    20 : 't',
+    32 : 'u',
+    36 : 'v',
+    54 : 'w',
+    58 : 'x',
+    26 : 'y',
+    42 : 'z',
+    // Misc
+    2  : ' ',
+    28 : '.',
+    52 : ',',
+    44 : '-',
+    46 : '\''
+};
 
+
+// A chord was completed.
 function doChord() {
-    cybox.value += chord +" ";
+    var meta = chord & 1;
+    var symbol = CyChordTable[(chord & 62)];
+
+    if (symbol != undefined) {
+        if (meta) cybox.value += "Cmd-";
+        cybox.value += symbol;
+    } else {
+        cybox.value += chord + " ";
+    }
+
     chord = 0;
 }
 
@@ -76,8 +121,8 @@ function downKey(ev) {
         keys |= k;
         chord |= keys;
     }
-	ev.preventDefault();
-	ev.stopPropagation();
+    ev.preventDefault();
+    ev.stopPropagation();
 }
 
 
@@ -94,7 +139,7 @@ function upKey(ev) {
 
 
 function Init() {
-	cybox = document.getElementById('cybox');
+    cybox = document.getElementById('cybox');
     // Hook keyboard events
     cybox.addEventListener('keydown', downKey, true);
     cybox.addEventListener('keyup', upKey, true);
