@@ -110,7 +110,7 @@ void write_portC(unsigned char byte) {
   /* No read or write */
   nRD_disable;
   nWR_disable;
-  /* Select "B" register of 8255 */
+  /* Select "C" register of 8255 */
   A0_low;
   A1_high;
   /* Write control register contents */
