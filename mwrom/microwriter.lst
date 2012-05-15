@@ -1,0 +1,7437 @@
+				;
+				;	Disassembled by:
+				;		DASMx object code disassembler
+				;		(c) Copyright 1996-2003   Conquest Consultants
+				;		Version 1.40 (Oct 18 2003)
+				;
+				;	File:		../microwriter.rom
+				;
+				;	Size:		8192 bytes
+				;	Checksum:	35B7
+				;	CRC-32:		B9C01F6B
+				;
+				;	Date:		Mon May 14 21:25:46 2012
+				;
+				;	CPU:		RCA 1802 (1802 COSMAC family)
+				;
+				;
+				;
+					org	#0000
+				;
+0000 : 7B		"{"		seq
+0001 : 71		"q"		dis
+				;
+0002 : 00		" "		idl
+0003 : 7B		"{"		seq
+0004 : 7B		"{"		seq
+0005 : F8 0E		"  "		ldi	#0E
+0007 : B3		" "		phi	r3
+0008 : F8 66		" f"		ldi	#66
+000A : A3		" "		plo	r3
+000B : F8 00		"  "		ldi	#00
+000D : B4		" "		phi	r4
+000E : B5		" "		phi	r5
+000F : F8 2A		" *"		ldi	#2A
+0011 : A4		" "		plo	r4
+0012 : F8 48		" H"		ldi	#48
+0014 : A5		" "		plo	r5
+0015 : F8 01		"  "		ldi	#01
+0017 : B7		" "		phi	r7
+0018 : F8 19		"  "		ldi	#19
+001A : A7		" "		plo	r7
+001B : F8 6F		" o"		ldi	#6F
+001D : A2		" "		plo	r2
+001E : F8 77		" w"		ldi	#77
+0020 : A8		" "		plo	r8
+0021 : F8 40		" @"		ldi	#40
+0023 : B2		" "		phi	r2
+0024 : B8		" "		phi	r8
+0025 : B9		" "		phi	r9
+0026 : BA		" "		phi	r10
+0027 : BD		" "		phi	r13
+0028 : D3		" "		sep	r3
+0029				L0029:
+0029 : D3		" "		sep	r3
+				;
+002A : E2		" "		sex	r2
+002B : 96		" "		ghi	r6
+002C : 73		"s"		stxd
+002D : 86		" "		glo	r6
+002E : 73		"s"		stxd
+002F : 93		" "		ghi	r3
+0030 : B6		" "		phi	r6
+0031 : 83		" "		glo	r3
+0032 : A6		" "		plo	r6
+0033 : 46		"F"		lda	r6
+0034 : B3		" "		phi	r3
+0035 : 46		"F"		lda	r6
+0036				L0036:
+0036 : A3		" "		plo	r3
+0037 : 30 29		"0)"		br	L0029
+				;
+0039 : E2		" "		sex	r2
+003A : 96		" "		ghi	r6
+003B : 73		"s"		stxd
+003C : 86		" "		glo	r6
+003D : 73		"s"		stxd
+003E : 93		" "		ghi	r3
+003F : B6		" "		phi	r6
+0040 : 83		" "		glo	r3
+0041 : A6		" "		plo	r6
+0042 : 9C		" "		ghi	r12
+0043 : B3		" "		phi	r3
+0044 : 8C		" "		glo	r12
+0045 : 30 36		"06"		br	L0036
+0047				L0047:
+0047 : D3		" "		sep	r3
+				;
+0048 : 96		" "		ghi	r6
+0049 : B3		" "		phi	r3
+004A : 86		" "		glo	r6
+004B : A3		" "		plo	r3
+004C : E2		" "		sex	r2
+004D : 12		" "		inc	r2
+004E : 72		"r"		ldxa
+004F : A6		" "		plo	r6
+0050 : F0		" "		ldx
+0051 : B6		" "		phi	r6
+0052 : 30 47		"0G"		br	L0047
+				;
+0054 : 46		"F"		lda	r6
+0055 : BE		" "		phi	r14
+0056 : 46		"F"		lda	r6
+0057 : AE		" "		plo	r14
+0058				L0058:
+0058 : F0		" "		ldx
+0059 : F0		" "		ldx
+005A				L005A:
+005A : 2E		"."		dec	r14
+005B : 9E		" "		ghi	r14
+005C : 3A 58		":X"		bnz	L0058
+005E : 8E		" "		glo	r14
+005F : 3A 5A		":Z"		bnz	L005A
+0061				L0061:
+0061 : D5		" "		sep	r5
+				;
+0062				L0062:
+0062 : 46		"F"		lda	r6
+0063 : 32 61		"2a"		bz	L0061
+0065 : 52		"R"		str	r2
+0066 : 63		"c"		out	3
+0067 : 22		"""		dec	r2
+0068 : D4		" "		sep	r4
+				;
+0069 : 00		" "		idl
+006A : 54		"T"		str	r4
+006B : 00		" "		idl
+006C : 02		" "		ldn	r2
+006D : 30 62		"0b"		br	L0062
+				;
+006F : F8 80		"  "		ldi	#80
+0071 : C8		" "		lskp							;INFO: skip to address L0074
+				;
+0072 : F8 00		"  "		ldi	#00
+0074				L0074:
+0074 : 52		"R"		str	r2
+0075 : F8 01		"  "		ldi	#01
+0077 : AA		" "		plo	r10
+0078 : 0A		" "		ldn	r10
+0079 : 1A		" "		inc	r10
+007A : 5A		"Z"		str	r10
+007B : 2A		"*"		dec	r10
+007C : 08		" "		ldn	r8
+007D : F4		" "		add
+007E : 5A		"Z"		str	r10
+007F : D5		" "		sep	r5
+				;
+0080 : 0A		" "		ldn	r10
+0081 : FA 02		"  "		ani	#02
+0083 : F6		" "		shr
+0084 : 52		"R"		str	r2
+0085 : 0A		" "		ldn	r10
+0086 : FA 78		" x"		ani	#78
+0088 : F6		" "		shr
+0089 : F6		" "		shr
+008A : F1		" "		or
+008B : FC A4		"  "		adi	#A4
+008D : AC		" "		plo	r12
+008E : F8 1C		"  "		ldi	#1C
+0090 : 7C 00		"| "		adci	#00
+0092 : BC		" "		phi	r12
+0093 : D5		" "		sep	r5
+				;
+0094 : F8 42		" B"		ldi	#42
+0096 : C8		" "		lskp							;INFO: skip to address L0099
+				;
+0097 : F8 21		" !"		ldi	#21
+0099				L0099:
+0099 : C8		" "		lskp							;INFO: skip to address L009C
+				;
+009A : F8 63		" c"		ldi	#63
+009C				L009C:
+009C : C8		" "		lskp							;INFO: skip to address L009F
+				;
+009D : F8 84		"  "		ldi	#84
+009F				L009F:
+009F : 52		"R"		str	r2
+00A0 : F8 04		"  "		ldi	#04
+00A2				L00A2:
+00A2 : AA		" "		plo	r10
+00A3 : 0A		" "		ldn	r10
+00A4 : F1		" "		or
+00A5 : 5A		"Z"		str	r10
+00A6 : D5		" "		sep	r5
+				;
+00A7 : F8 21		" !"		ldi	#21
+00A9 : C8		" "		lskp							;INFO: skip to address L00AC
+				;
+00AA : F8 42		" B"		ldi	#42
+00AC				L00AC:
+00AC : C8		" "		lskp							;INFO: skip to address L00AF
+				;
+00AD : F8 63		" c"		ldi	#63
+00AF				L00AF:
+00AF : C8		" "		lskp							;INFO: skip to address L00B2
+				;
+00B0 : F8 84		"  "		ldi	#84
+00B2				L00B2:
+00B2 : 52		"R"		str	r2
+00B3 : D7		" "		sep	r7
+				;
+00B4 : 35 E7		"5 "		b2	L00E7
+00B6 : F8 03		"  "		ldi	#03
+00B8 : 30 A2		"0 "		br	L00A2
+				;
+00BA : F8 30		" 0"		ldi	#30
+00BC : AA		" "		plo	r10
+00BD : F8 1D		"  "		ldi	#1D
+00BF : BC		" "		phi	r12
+00C0 : F8 C4		"  "		ldi	#C4
+00C2 : AC		" "		plo	r12
+00C3				L00C3:
+00C3 : 4C		"L"		lda	r12
+00C4 : 5A		"Z"		str	r10
+00C5 : 8A		" "		glo	r10
+00C6 : 1A		" "		inc	r10
+00C7 : FB 4F		" O"		xri	#4F
+00C9 : 3A C3		": "		bnz	L00C3
+00CB : F8 10		"  "		ldi	#10
+00CD : AA		" "		plo	r10
+00CE				L00CE:
+00CE : F8 00		"  "		ldi	#00
+00D0 : 5A		"Z"		str	r10
+00D1 : 8A		" "		glo	r10
+00D2 : 1A		" "		inc	r10
+00D3 : FB 20		"  "		xri	#20
+00D5 : 3A CE		": "		bnz	L00CE
+00D7				L00D7:
+00D7 : D5		" "		sep	r5
+				;
+00D8				L00D8:
+00D8 : 46		"F"		lda	r6
+00D9 : 32 D7		"2 "		bz	L00D7
+00DB : 52		"R"		str	r2
+00DC : 4A		"J"		lda	r10
+00DD : F2		" "		and
+00DE : CE		" "		lsz							;INFO: skip to address L00E1
+00DF : F8 01		"  "		ldi	#01
+00E1				L00E1:
+00E1 : FC 30		" 0"		adi	#30
+00E3 : 58		"X"		str	r8
+00E4 : D4		" "		sep	r4
+				;
+00E5 : 0B		" "		ldn	r11
+00E6 : F2		" "		and
+00E7				L00E7:
+00E7 : 30 D8		"0 "		br	L00D8
+00E9 : D7		" "		sep	r7
+				;
+00EA : 4C		"L"		lda	r12
+00EB : 08		" "		ldn	r8
+00EC : 30 F1		"0 "		br	L00F1
+00EE : D7		" "		sep	r7
+				;
+00EF : 4F		"O"		lda	r15
+00F0 : 08		" "		ldn	r8
+00F1				L00F1:
+00F1 : D4		" "		sep	r4
+				;
+00F2 : 00		" "		idl
+00F3 : 62		"b"		out	2
+00F4 : 49		"I"		lda	r9
+00F5 : 2E		"."		dec	r14
+00F6 : 4F		"O"		lda	r15
+00F7 : 2E		"."		dec	r14
+00F8 : 20		" "		dec	r0
+00F9 : 53		"S"		str	r3
+00FA : 54		"T"		str	r4
+00FB : 41		"A"		lda	r1
+00FC : 54		"T"		str	r4
+00FD : 55		"U"		str	r5
+00FE : 53		"S"		str	r3
+00FF : 3D 00		"= "		bn2	L0100
+0101 : F8 03		"  "		ldi	#03
+0103 : AA		" "		plo	r10
+0104 : D4		" "		sep	r4
+				;
+0105 : 00		" "		idl
+0106 : D8		" "		sep	r8
+				;
+0107 : 08		" "		ldn	r8
+0108 : 08		" "		ldn	r8
+0109 : 20		" "		dec	r0
+010A : 40		"@"		lda	r0
+010B : 00		" "		idl
+010C : C0 09 7D		"  }"		lbr	L097D
+				;
+010F				L010F:
+010F : 60		"`"		irx
+0110 : 60		"`"		irx
+0111 : 30 17		"0 "		br	L0117
+				;
+0113				L0113:
+0113 : 60		"`"		irx
+0114 : 72		"r"		ldxa
+0115 : FE		" "		shl
+0116 : F0		" "		ldx
+0117				L0117:
+0117 : E2		" "		sex	r2
+0118 : D3		" "		sep	r3
+				;
+0119 : E8		" "		sex	r8
+011A : 73		"s"		stxd
+011B : 76		"v"		shrc
+011C : 73		"s"		stxd
+011D : 43		"C"		lda	r3
+011E : A7		" "		plo	r7
+011F : F8 03		"  "		ldi	#03
+0121 : C8		" "		lskp							;INFO: skip to address L0124
+				;
+0122 : F8 04		"  "		ldi	#04
+0124				L0124:
+0124 : C8		" "		lskp							;INFO: skip to address L0127
+				;
+0125 : F8 05		"  "		ldi	#05
+0127				L0127:
+0127 : C8		" "		lskp							;INFO: skip to address L012A
+				;
+0128 : F8 06		"  "		ldi	#06
+012A				L012A:
+012A : C8		" "		lskp							;INFO: skip to address L012D
+				;
+012B : F8 07		"  "		ldi	#07
+012D				L012D:
+012D : AD		" "		plo	r13
+012E : 43		"C"		lda	r3
+012F : 58		"X"		str	r8
+0130 : 0D		" "		ldn	r13
+0131 : F1		" "		or
+0132				L0132:
+0132 : 5D		"]"		str	r13
+0133 : 30 13		"0 "		br	L0113
+				;
+0135 : F8 03		"  "		ldi	#03
+0137 : C8		" "		lskp							;INFO: skip to address L013A
+				;
+0138 : F8 04		"  "		ldi	#04
+013A				L013A:
+013A : C8		" "		lskp							;INFO: skip to address L013D
+				;
+013B : F8 05		"  "		ldi	#05
+013D				L013D:
+013D : C8		" "		lskp							;INFO: skip to address L0140
+				;
+013E : F8 06		"  "		ldi	#06
+0140				L0140:
+0140 : C8		" "		lskp							;INFO: skip to address L0143
+				;
+0141 : F8 07		"  "		ldi	#07
+0143				L0143:
+0143 : AD		" "		plo	r13
+0144 : 43		"C"		lda	r3
+0145 : FB FF		"  "		xri	#FF
+0147 : 58		"X"		str	r8
+0148 : 0D		" "		ldn	r13
+0149 : F2		" "		and
+014A : 30 32		"02"		br	L0132
+				;
+014C : F8 03		"  "		ldi	#03
+014E : C8		" "		lskp							;INFO: skip to address L0151
+				;
+014F : F8 04		"  "		ldi	#04
+0151				L0151:
+0151 : C8		" "		lskp							;INFO: skip to address L0154
+				;
+0152 : F8 05		"  "		ldi	#05
+0154				L0154:
+0154 : C8		" "		lskp							;INFO: skip to address L0157
+				;
+0155 : F8 06		"  "		ldi	#06
+0157				L0157:
+0157 : C8		" "		lskp							;INFO: skip to address L015A
+				;
+0158 : F8 07		"  "		ldi	#07
+015A				L015A:
+015A : AD		" "		plo	r13
+015B : 43		"C"		lda	r3
+015C : 58		"X"		str	r8
+015D : 0D		" "		ldn	r13
+015E : F3		" "		xor
+015F : 30 32		"02"		br	L0132
+				;
+0161 : F8 03		"  "		ldi	#03
+0163 : C8		" "		lskp							;INFO: skip to address L0166
+				;
+0164 : F8 04		"  "		ldi	#04
+0166				L0166:
+0166 : C8		" "		lskp							;INFO: skip to address L0169
+				;
+0167 : F8 05		"  "		ldi	#05
+0169				L0169:
+0169 : C8		" "		lskp							;INFO: skip to address L016C
+				;
+016A : F8 06		"  "		ldi	#06
+016C				L016C:
+016C : C8		" "		lskp							;INFO: skip to address L016F
+				;
+016D : F8 07		"  "		ldi	#07
+016F				L016F:
+016F : AD		" "		plo	r13
+0170 : 43		"C"		lda	r3
+0171 : 58		"X"		str	r8
+0172 : 0D		" "		ldn	r13
+0173 : F2		" "		and
+0174				L0174:
+0174 : 32 7A		"2z"		bz	L017A
+0176				L0176:
+0176 : 13		" "		inc	r3
+0177 : 13		" "		inc	r3
+0178 : 30 13		"0 "		br	L0113
+				;
+017A				L017A:
+017A : 43		"C"		lda	r3
+017B : 58		"X"		str	r8
+017C : 03		" "		ldn	r3
+017D : A3		" "		plo	r3
+017E : 08		" "		ldn	r8
+017F : B3		" "		phi	r3
+0180 : 30 13		"0 "		br	L0113
+				;
+0182 : 43		"C"		lda	r3
+0183 : A9		" "		plo	r9
+0184 : 09		" "		ldn	r9
+0185 : 30 0F		"0 "		br	L010F
+				;
+0187 : 43		"C"		lda	r3
+0188 : A9		" "		plo	r9
+0189 : 60		"`"		irx
+018A : 72		"r"		ldxa
+018B : FE		" "		shl
+018C : F0		" "		ldx
+018D : 59		"Y"		str	r9
+018E : 30 17		"0 "		br	L0117
+				;
+0190 : 43		"C"		lda	r3
+0191 : A9		" "		plo	r9
+0192 : 49		"I"		lda	r9
+0193 : BC		" "		phi	r12
+0194 : 09		" "		ldn	r9
+0195 : AC		" "		plo	r12
+0196 : 30 13		"0 "		br	L0113
+				;
+0198 : 43		"C"		lda	r3
+0199 : A9		" "		plo	r9
+019A : 49		"I"		lda	r9
+019B : BB		" "		phi	r11
+019C : 09		" "		ldn	r9
+019D : AB		" "		plo	r11
+019E : 30 13		"0 "		br	L0113
+				;
+01A0 : 43		"C"		lda	r3
+01A1 : A9		" "		plo	r9
+01A2 : 9B		" "		ghi	r11
+01A3 : 59		"Y"		str	r9
+01A4 : 19		" "		inc	r9
+01A5 : 8B		" "		glo	r11
+01A6 : 59		"Y"		str	r9
+01A7 : 30 13		"0 "		br	L0113
+				;
+01A9 : 43		"C"		lda	r3
+01AA : A9		" "		plo	r9
+01AB : 9C		" "		ghi	r12
+01AC : 59		"Y"		str	r9
+01AD : 19		" "		inc	r9
+01AE : 8C		" "		glo	r12
+01AF : 59		"Y"		str	r9
+01B0 : 30 13		"0 "		br	L0113
+				;
+01B2				L01B2:
+01B2 : F8 40		" @"		ldi	#40
+01B4 : BC		" "		phi	r12
+01B5 : F8 08		"  "		ldi	#08
+01B7 : AC		" "		plo	r12
+01B8 : 02		" "		ldn	r2
+01B9 : 5C		"\"		str	r12
+01BA : 30 13		"0 "		br	L0113
+				;
+01BC : 43		"C"		lda	r3
+01BD : 52		"R"		str	r2
+01BE : 30 B2		"0 "		br	L01B2
+				;
+01C0 : 43		"C"		lda	r3
+01C1 : A9		" "		plo	r9
+01C2 : 09		" "		ldn	r9
+01C3 : FC 01		"  "		adi	#01
+01C5				L01C5:
+01C5 : 59		"Y"		str	r9
+01C6 : 30 13		"0 "		br	L0113
+				;
+01C8 : 43		"C"		lda	r3
+01C9 : A9		" "		plo	r9
+01CA : 09		" "		ldn	r9
+01CB : FF 01		"  "		smi	#01
+01CD : 30 C5		"0 "		br	L01C5
+				;
+01CF : 13		" "		inc	r3
+01D0 : 03		" "		ldn	r3
+01D1 : 23		"#"		dec	r3
+01D2 : 58		"X"		str	r8
+01D3 : 8B		" "		glo	r11
+01D4 : F5		" "		sd
+01D5 : 43		"C"		lda	r3
+01D6 : 13		" "		inc	r3
+01D7				L01D7:
+01D7 : 58		"X"		str	r8
+01D8 : 9B		" "		ghi	r11
+01D9 : 75		"u"		sdb
+01DA : 3B 76		";v"		bnf	L0176
+01DC : 30 7A		"0z"		br	L017A
+				;
+01DE : 1A		" "		inc	r10
+01DF : 0A		" "		ldn	r10
+01E0 : 2A		"*"		dec	r10
+01E1 : 58		"X"		str	r8
+01E2 : 8B		" "		glo	r11
+01E3 : F5		" "		sd
+01E4 : 0A		" "		ldn	r10
+01E5 : 30 D7		"0 "		br	L01D7
+				;
+01E7 : 43		"C"		lda	r3
+01E8 : A9		" "		plo	r9
+01E9 : 09		" "		ldn	r9
+01EA : 52		"R"		str	r2
+01EB : 30 74		"0t"		br	L0174
+				;
+01ED				L01ED:
+01ED : 43		"C"		lda	r3
+01EE : 32 13		"2 "		bz	L0113
+01F0 : 58		"X"		str	r8
+01F1 : 0B		" "		ldn	r11
+01F2 : F3		" "		xor
+01F3 : 32 7A		"2z"		bz	L017A
+01F5 : 13		" "		inc	r3
+01F6 : 13		" "		inc	r3
+01F7 : 30 ED		"0 "		br	L01ED
+				;
+01F9				L01F9:
+01F9 : 43		"C"		lda	r3
+01FA : 32 13		"2 "		bz	L0113
+01FC : A9		" "		plo	r9
+01FD : F8 00		"  "		ldi	#00
+01FF : 59		"Y"		str	r9
+0200 : C0 01 F9		"   "		lbr	L01F9
+				;
+0203 : 08		" "		ldn	r8
+0204 : 52		"R"		str	r2
+0205 : D7		" "		sep	r7
+				;
+0206 : 64		"d"		out	4
+0207 : 08		" "		ldn	r8
+0208 : 02		" "		ldn	r2
+0209 : 6C		"l"		inp	4
+020A : D7		" "		sep	r7
+				;
+020B : 67		"g"		out	7
+020C : 20		" "		dec	r0
+020D : 1A		" "		inc	r10
+020E : 2C		","		dec	r12
+020F : D7		" "		sep	r7
+				;
+0210 : 67		"g"		out	7
+0211 : 40		"@"		lda	r0
+0212 : 02		" "		ldn	r2
+0213 : 15		" "		inc	r5
+0214 : D5		" "		sep	r5
+0215 : D7		" "		sep	r7
+				;
+0216 : 82		" "		glo	r2
+0217 : 37 32		"72"		b4	L0232
+0219 : 44		"D"		lda	r4
+021A : FF 01		"  "		smi	#01
+021C : 32 3F		"2?"		bz	L023F
+021E : F8 07		"  "		ldi	#07
+0220				L0220:
+0220 : BE		" "		phi	r14
+0221 : F8 00		"  "		ldi	#00
+0223 : AE		" "		plo	r14
+0224 : F0		" "		ldx
+0225 : 58		"X"		str	r8
+0226				L0226:
+0226 : 9E		" "		ghi	r14
+0227 : 32 34		"24"		bz	L0234
+0229 : FF 01		"  "		smi	#01
+022B : BE		" "		phi	r14
+022C : 08		" "		ldn	r8
+022D : F6		" "		shr
+022E : 58		"X"		str	r8
+022F : 3B 26		";&"		bnf	L0226
+0231 : 1E		" "		inc	r14
+0232				L0232:
+0232 : 30 26		"0&"		br	L0226
+0234				L0234:
+0234 : D7		" "		sep	r7
+				;
+0235 : 82		" "		glo	r2
+0236 : 3F 58		"?X"		bn4	L0258
+0238 : E8		" "		sex	r8
+0239 : 8E		" "		glo	r14
+023A : F3		" "		xor
+023B : FA 01		"  "		ani	#01
+023D : 32 44		"2D"		bz	L0244
+023F				L023F:
+023F : 02		" "		ldn	r2
+0240 : F9 80		"  "		ori	#80
+0242 : 30 47		"0G"		br	L0247
+				;
+0244				L0244:
+0244 : 02		" "		ldn	r2
+0245 : FA 7F		"  "		ani	#7F
+0247				L0247:
+0247 : 58		"X"		str	r8
+0248 : F8 01		"  "		ldi	#01
+024A : F6		" "		shr
+024B : F8 0A		"  "		ldi	#0A
+024D : AE		" "		plo	r14
+024E				L024E:
+024E : 36 4E		"6N"		b3	L024E
+0250				L0250:
+0250 : E3		" "		sex	r3
+0251 : E3		" "		sex	r3
+0252 : 65		"e"		out	5
+0253 : 02		" "		ldn	r2
+0254				L0254:
+0254 : F8 35		" 5"		ldi	#35
+0256 : AA		" "		plo	r10
+0257 : 0A		" "		ldn	r10
+0258				L0258:
+0258 : FF 01		"  "		smi	#01
+025A : C4		" "		nop
+025B : E3		" "		sex	r3
+025C : C4		" "		nop
+025D : 3A 58		":X"		bnz	L0258
+025F : 2E		"."		dec	r14
+0260 : 8E		" "		glo	r14
+0261 : 32 6C		"2l"		bz	L026C
+0263 : 08		" "		ldn	r8
+0264 : 76		"v"		shrc
+0265 : 58		"X"		str	r8
+0266 : 3B 50		";P"		bnf	L0250
+0268 : 65		"e"		out	5
+0269 : 00		" "		idl
+026A : 30 54		"0T"		br	L0254
+026C				L026C:
+026C : D5		" "		sep	r5
+				;
+026D : 08		" "		ldn	r8
+026E : FF 90		"  "		smi	#90
+0270 : 3B 7D		";}"		bnf	L027D
+0272 : FF 10		"  "		smi	#10
+0274 : 3B 80		"; "		bnf	L0280
+0276 : FF 10		"  "		smi	#10
+0278 : 33 84		"3 "		bdf	L0284
+027A : F8 02		"  "		ldi	#02
+027C : C8		" "		lskp							;INFO: skip to address L027F
+				;
+027D				L027D:
+027D : F8 00		"  "		ldi	#00
+027F				L027F:
+027F : C8		" "		lskp							;INFO: skip to address L0282
+				;
+0280				L0280:
+0280 : F8 01		"  "		ldi	#01
+0282				L0282:
+0282 : 30 87		"0 "		br	L0287
+				;
+0284				L0284:
+0284 : 08		" "		ldn	r8
+0285 : FF AD		"  "		smi	#AD
+0287				L0287:
+0287 : 52		"R"		str	r2
+0288 : F8 E4		"  "		ldi	#E4
+028A : F4		" "		add
+028B : AA		" "		plo	r10
+028C : F8 1D		"  "		ldi	#1D
+028E : 7C 00		"| "		adci	#00
+0290 : BA		" "		phi	r10
+0291 : 0A		" "		ldn	r10
+0292 : 58		"X"		str	r8
+0293 : F8 40		" @"		ldi	#40
+0295 : BA		" "		phi	r10
+0296 : D5		" "		sep	r5
+				;
+0297 : 0A		" "		ldn	r10
+0298 : 58		"X"		str	r8
+0299 : D4		" "		sep	r4
+				;
+029A : 02		" "		ldn	r2
+029B : A6		" "		plo	r6
+029C : 64		"d"		out	4
+029D : D4		" "		sep	r4
+				;
+029E : 02		" "		ldn	r2
+029F : A6		" "		plo	r6
+02A0 : 0A		" "		ldn	r10
+02A1 : D4		" "		sep	r4
+				;
+02A2 : 02		" "		ldn	r2
+02A3 : A6		" "		plo	r6
+02A4 : 01		" "		ldn	r1
+02A5 : D5		" "		sep	r5
+				;
+02A6 : F8 00		"  "		ldi	#00
+02A8 : AE		" "		plo	r14
+02A9 : 46		"F"		lda	r6
+02AA : 52		"R"		str	r2
+02AB : 08		" "		ldn	r8
+02AC				L02AC:
+02AC : F7		" "		sm
+02AD : 3B B2		"; "		bnf	L02B2
+02AF : 1E		" "		inc	r14
+02B0 : 30 AC		"0 "		br	L02AC
+				;
+02B2				L02B2:
+02B2 : F4		" "		add
+02B3 : 58		"X"		str	r8
+02B4 : 28		"("		dec	r8
+02B5 : 8E		" "		glo	r14
+02B6 : FC 30		" 0"		adi	#30
+02B8 : 58		"X"		str	r8
+02B9 : D4		" "		sep	r4
+				;
+02BA : 0B		" "		ldn	r11
+02BB : F2		" "		and
+02BC : 18		" "		inc	r8
+02BD : D5		" "		sep	r5
+02BE : D7		" "		sep	r7
+				;
+02BF : 2B		"+"		dec	r11
+02C0 : 80		" "		glo	r0
+02C1 : D4		" "		sep	r4
+				;
+02C2 : 00		" "		idl
+02C3 : 62		"b"		out	2
+02C4 : 4D		"M"		lda	r13
+02C5 : 55		"U"		str	r5
+02C6 : 4C		"L"		lda	r12
+02C7 : 54		"T"		str	r4
+02C8 : 49		"I"		lda	r9
+02C9 : 50		"P"		str	r0
+02CA : 4C		"L"		lda	r12
+02CB : 45		"E"		lda	r5
+02CC : 00		" "		idl
+02CD : 30 DE		"0 "		br	L02DE
+02CF : D7		" "		sep	r7
+				;
+02D0 : 41		"A"		lda	r1
+02D1 : 80		" "		glo	r0
+02D2 : D4		" "		sep	r4
+				;
+02D3 : 00		" "		idl
+02D4 : 62		"b"		out	2
+02D5 : 20		" "		dec	r0
+02D6 : 20		" "		dec	r0
+02D7 : 53		"S"		str	r3
+02D8 : 49		"I"		lda	r9
+02D9 : 4E		"N"		lda	r14
+02DA : 47		"G"		lda	r7
+02DB : 4C		"L"		lda	r12
+02DC : 45		"E"		lda	r5
+02DD : 00		" "		idl
+02DE				L02DE:
+02DE : D4		" "		sep	r4
+				;
+02DF : 00		" "		idl
+02E0 : 62		"b"		out	2
+02E1 : 20		" "		dec	r0
+02E2 : 57		"W"		str	r7
+02E3 : 49		"I"		lda	r9
+02E4 : 50		"P"		str	r0
+02E5 : 45		"E"		lda	r5
+02E6 : 3F 20		"? "		bn4	L0220
+02E8 : 20		" "		dec	r0
+02E9 : 00		" "		idl
+02EA				L02EA:
+02EA : 6C		"l"		inp	4
+02EB : FB FF		"  "		xri	#FF
+02ED : 32 EA		"2 "		bz	L02EA
+02EF : D5		" "		sep	r5
+				;
+02F0 : F8 30		" 0"		ldi	#30
+02F2 : C8		" "		lskp							;INFO: skip to address L02F5
+				;
+02F3 : F8 40		" @"		ldi	#40
+02F5				L02F5:
+02F5 : 52		"R"		str	r2
+02F6 : D7		" "		sep	r7
+				;
+02F7 : 82		" "		glo	r2
+02F8 : 00		" "		idl
+02F9 : F6		" "		shr
+02FA : F6		" "		shr
+02FB : F6		" "		shr
+02FC : F4		" "		add
+02FD : D7		" "		sep	r7
+				;
+02FE : 87		" "		glo	r7
+02FF : 2B		"+"		dec	r11
+0300 : D7		" "		sep	r7
+				;
+0301 : 67		"g"		out	7
+0302 : 02		" "		ldn	r2
+0303 : 03		" "		ldn	r3
+0304 : 06		" "		ldn	r6
+0305 : D5		" "		sep	r5
+0306				L0306:
+0306 : D4		" "		sep	r4
+				;
+0307 : 00		" "		idl
+0308				L0308:
+0308 : A7		" "		plo	r7
+0309 : D4		" "		sep	r4
+				;
+030A : 09		" "		ldn	r9
+030B : 4B		"K"		lda	r11
+030C : D7		" "		sep	r7
+				;
+030D : 82		" "		glo	r2
+030E : 2B		"+"		dec	r11
+030F : AA		" "		plo	r10
+0310 : D4		" "		sep	r4
+				;
+0311 : 02		" "		ldn	r2
+0312 : 97		" "		ghi	r7
+0313 : F8 00		"  "		ldi	#00
+0315 : A9		" "		plo	r9
+0316 : F8 00		"  "		ldi	#00
+0318 : 59		"Y"		str	r9
+0319				L0319:
+0319 : D4		" "		sep	r4
+				;
+031A : 0C		" "		ldn	r12
+031B : 65		"e"		out	5
+031C : 30 19		"0 "		br	L0319
+031E : D7		" "		sep	r7
+				;
+031F : 82		" "		glo	r2
+0320 : 01		" "		ldn	r1
+0321 : 52		"R"		str	r2
+0322 : FB 80		"  "		xri	#80
+0324 : 32 68		"2h"		bz	L0368
+0326 : F0		" "		ldx
+0327 : FB AE		"  "		xri	#AE
+0329 : 32 56		"2V"		bz	L0356
+032B : F0		" "		ldx
+032C : FB F3		"  "		xri	#F3
+032E : 32 53		"2S"		bz	L0353
+0330 : F0		" "		ldx
+0331 : FA 80		"  "		ani	#80
+0333 : 3A 06		": "		bnz	L0306
+0335 : F0		" "		ldx
+0336 : FB 28		" ("		xri	#28
+0338 : 32 6C		"2l"		bz	L036C
+033A : F0		" "		ldx
+033B : FF 30		" 0"		smi	#30
+033D : 73		"s"		stxd
+033E : 3B 06		"; "		bnf	L0306
+0340 : FF 0A		"  "		smi	#0A
+0342 : 33 06		"3 "		bdf	L0306
+0344 : D7		" "		sep	r7
+				;
+0345 : 82		" "		glo	r2
+0346 : 2B		"+"		dec	r11
+0347 : AA		" "		plo	r10
+0348 : 0A		" "		ldn	r10
+0349 : FE		" "		shl
+034A : 52		"R"		str	r2
+034B : FE		" "		shl
+034C : FE		" "		shl
+034D : F4		" "		add
+034E : 60		"`"		irx
+034F : F4		" "		add
+0350 : 5A		"Z"		str	r10
+0351 : 30 06		"0 "		br	L0306
+				;
+0353				L0353:
+0353 : F8 FF		"  "		ldi	#FF
+0355 : C8		" "		lskp							;INFO: skip to address L0358
+				;
+0356				L0356:
+0356 : F8 01		"  "		ldi	#01
+0358				L0358:
+0358 : 52		"R"		str	r2
+0359 : D7		" "		sep	r7
+				;
+035A : 82		" "		glo	r2
+035B : 2B		"+"		dec	r11
+035C : F4		" "		add
+035D : D7		" "		sep	r7
+				;
+035E : 87		" "		glo	r7
+035F : 2B		"+"		dec	r11
+0360				L0360:
+0360 : FF 30		" 0"		smi	#30
+0362 : 3B 68		";h"		bnf	L0368
+0364 : FF 20		"  "		smi	#20
+0366 : 3B 06		"; "		bnf	L0306
+0368				L0368:
+0368 : D7		" "		sep	r7
+				;
+0369 : 35 E7		"5 "		b2	L03E7
+036B : D5		" "		sep	r5
+036C				L036C:
+036C : D7		" "		sep	r7
+				;
+036D : 82		" "		glo	r2
+036E : 2B		"+"		dec	r11
+036F : AA		" "		plo	r10
+0370 : F8 00		"  "		ldi	#00
+0372 : 5A		"Z"		str	r10
+0373 : 30 06		"0 "		br	L0306
+0375 : D7		" "		sep	r7
+				;
+0376 : 52		"R"		str	r2
+0377 : 02		" "		ldn	r2
+0378 : D5		" "		sep	r5
+0379 : D4		" "		sep	r4
+				;
+037A : 03		" "		ldn	r3
+037B : 7F D5		"  "		smbi	#D5
+037D : C4		" "		nop
+037E : D5		" "		sep	r5
+037F : D7		" "		sep	r7
+				;
+0380 : 25		"%"		dec	r5
+0381 : 08		" "		ldn	r8
+0382 : 0B		" "		ldn	r11
+0383 : 32 A3		"2 "		bz	L03A3
+0385 : FA F0		"  "		ani	#F0
+0387 : FB 80		"  "		xri	#80
+0389 : 32 99		"2 "		bz	L0399
+038B : FB 10		"  "		xri	#10
+038D : 32 96		"2 "		bz	L0396
+038F : FB 30		" 0"		xri	#30
+0391 : 3A 9C		": "		bnz	L039C
+0393 : F8 A0		"  "		ldi	#A0
+0395 : C8		" "		lskp							;INFO: skip to address L0398
+				;
+0396				L0396:
+0396 : F8 20		"  "		ldi	#20
+0398				L0398:
+0398 : C8		" "		lskp							;INFO: skip to address L039B
+				;
+0399				L0399:
+0399 : F8 80		"  "		ldi	#80
+039B				L039B:
+039B : 38		"8"		skp							;INFO: skip to address L039D
+				;
+039C				L039C:
+039C : 0B		" "		ldn	r11
+039D				L039D:
+039D : D7		" "		sep	r7
+				;
+039E : 87		" "		glo	r7
+039F : 01		" "		ldn	r1
+03A0 : D4		" "		sep	r4
+				;
+03A1 : 09		" "		ldn	r9
+03A2 : AB		" "		plo	r11
+03A3				L03A3:
+03A3 : D7		" "		sep	r7
+				;
+03A4 : 3B 08		"; "		bnf	L0308
+03A6 : 0B		" "		ldn	r11
+03A7 : 32 B1		"2 "		bz	L03B1
+03A9 : D7		" "		sep	r7
+				;
+03AA : 6A		"j"		inp	2
+03AB : 02		" "		ldn	r2
+03AC : 03		" "		ldn	r3
+03AD : AF		" "		plo	r15
+03AE : D5		" "		sep	r5
+				;
+03AF : 16		" "		inc	r6
+03B0 : 16		" "		inc	r6
+03B1				L03B1:
+03B1 : D5		" "		sep	r5
+03B2 : D7		" "		sep	r7
+				;
+03B3 : 82		" "		glo	r2
+03B4 : 39 FF		"9 "		bnq	L03FF
+03B6 : 01		" "		ldn	r1
+03B7 : 73		"s"		stxd
+03B8 : 52		"R"		str	r2
+03B9 : D7		" "		sep	r7
+				;
+03BA : 82		" "		glo	r2
+03BB : 22		"""		dec	r2
+03BC : F5		" "		sd
+03BD : 32 CB		"2 "		bz	L03CB
+03BF : 3B CB		"; "		bnf	L03CB
+03C1 : 58		"X"		str	r8
+03C2 : D4		" "		sep	r4
+				;
+03C3 : 04		" "		ldn	r4
+03C4 : 37 60		"7`"		b4	L0360
+03C6 : F0		" "		ldx
+03C7 : D7		" "		sep	r7
+				;
+03C8 : 87		" "		glo	r7
+03C9 : 22		"""		dec	r2
+03CA : 38		"8"		skp							;INFO: skip to address L03CC
+				;
+03CB				L03CB:
+03CB : 60		"`"		irx
+03CC				L03CC:
+03CC : C0 0A 83		"   "		lbr	L0A83
+03CF				L03CF:
+03CF : D4		" "		sep	r4
+				;
+03D0 : 05		" "		ldn	r5
+03D1 : B8		" "		phi	r8
+03D2 : D7		" "		sep	r7
+				;
+03D3 : CF		" "		lsdf							;INFO: skip to address L03D6
+03D4 : 40		"@"		lda	r0
+03D5 : 90		" "		ghi	r0
+03D6				L03D6:
+03D6 : 03		" "		ldn	r3
+03D7 : EC		" "		sex	r12
+03D8 : 2B		"+"		dec	r11
+03D9 : 4B		"K"		lda	r11
+03DA : FF 80		"  "		smi	#80
+03DC : 3B CF		"; "		bnf	L03CF
+03DE : FA F0		"  "		ani	#F0
+03E0 : 32 EC		"2 "		bz	L03EC
+03E2 : FB 10		"  "		xri	#10
+03E4 : 32 EC		"2 "		bz	L03EC
+03E6 : 2B		"+"		dec	r11
+03E7				L03E7:
+03E7 : 4B		"K"		lda	r11
+03E8 : FB B0		"  "		xri	#B0
+03EA : 3A CF		": "		bnz	L03CF
+03EC				L03EC:
+03EC : D5		" "		sep	r5
+				;
+03ED				L03ED:
+03ED : F8 40		" @"		ldi	#40
+03EF : BB		" "		phi	r11
+03F0 : F8 90		"  "		ldi	#90
+03F2 : AB		" "		plo	r11
+03F3 : D4		" "		sep	r4
+				;
+03F4 : 03		" "		ldn	r3
+03F5 : 79		"y"		mark
+03F6 : D5		" "		sep	r5
+03F7 : D7		" "		sep	r7
+				;
+03F8 : 82		" "		glo	r2
+03F9 : 34 58		"4X"		b1	L0358
+03FB : D4		" "		sep	r4
+				;
+03FC : 02		" "		ldn	r2
+03FD : 03		" "		ldn	r3
+03FE : F8 22		" ""		ldi	#22
+0400 : AA		" "		plo	r10
+0401 : 0A		" "		ldn	r10
+0402 : FC 01		"  "		adi	#01
+0404				L0404:
+0404 : 5A		"Z"		str	r10
+0405 : 52		"R"		str	r2
+0406 : D7		" "		sep	r7
+				;
+0407 : 82		" "		glo	r2
+0408 : 39 F3		"9 "		bnq	L04F3
+040A : 3A 10		": "		bnz	L0410
+040C : 5A		"Z"		str	r10
+040D : D4		" "		sep	r4
+				;
+040E : 04		" "		ldn	r4
+040F : 2E		"."		dec	r14
+0410				L0410:
+0410 : D5		" "		sep	r5
+				;
+0411 : 28		"("		dec	r8
+0412 : D7		" "		sep	r7
+				;
+0413 : 82		" "		glo	r2
+0414 : 29		")"		dec	r9
+0415 : 18		" "		inc	r8
+0416 : C8		" "		lskp							;INFO: skip to address L0419
+				;
+0417 : F8 20		"  "		ldi	#20
+0419				L0419:
+0419 : 22		"""		dec	r2
+041A : 52		"R"		str	r2
+041B : 60		"`"		irx
+041C : 08		" "		ldn	r8
+041D : 52		"R"		str	r2
+041E				L041E:
+041E : F0		" "		ldx
+041F : 32 36		"26"		bz	L0436
+0421 : FF 01		"  "		smi	#01
+0423 : 73		"s"		stxd
+0424 : F0		" "		ldx
+0425 : 22		"""		dec	r2
+0426 : 58		"X"		str	r8
+0427 : D4		" "		sep	r4
+				;
+0428 : 02		" "		ldn	r2
+0429 : 03		" "		ldn	r3
+042A : 60		"`"		irx
+042B : 60		"`"		irx
+042C : 30 1E		"0 "		br	L041E
+042E : D7		" "		sep	r7
+				;
+042F : 82		" "		glo	r2
+0430 : 49		"I"		lda	r9
+0431 : 3A 39		":9"		bnz	L0439
+0433 : D7		" "		sep	r7
+				;
+0434 : 28		"("		dec	r8
+0435 : 10		" "		inc	r0
+0436				L0436:
+0436 : D5		" "		sep	r5
+				;
+0437 : 08		" "		ldn	r8
+0438 : C8		" "		lskp							;INFO: skip to address L043B
+				;
+0439				L0439:
+0439 : FF 01		"  "		smi	#01
+043B				L043B:
+043B : 32 36		"26"		bz	L0436
+043D				L043D:
+043D : 73		"s"		stxd
+043E : D7		" "		sep	r7
+				;
+043F : 82		" "		glo	r2
+0440 : 34 58		"4X"		b1	L0458
+0442 : D4		" "		sep	r4
+				;
+0443 : 02		" "		ldn	r2
+0444 : 03		" "		ldn	r3
+0445 : 60		"`"		irx
+0446 : F0		" "		ldx
+0447 : FF 01		"  "		smi	#01
+0449 : 32 36		"26"		bz	L0436
+044B : 30 3D		"0="		br	L043D
+				;
+044D : F8 0E		"  "		ldi	#0E
+044F : AA		" "		plo	r10
+0450 : 2B		"+"		dec	r11
+0451 : 2B		"+"		dec	r11
+0452 : 4B		"K"		lda	r11
+0453 : FB B4		"  "		xri	#B4
+0455 : 3A 5D		":]"		bnz	L045D
+0457 : D7		" "		sep	r7
+0458				L0458:
+0458 : C8		" "		lskp							;INFO: skip to address L045B
+				;
+0459 : 21		"!"		dec	r1
+045A : 0B		" "		ldn	r11
+045B				L045B:
+045B : 2B		"+"		dec	r11
+045C : C8		" "		lskp							;INFO: skip to address L045F
+				;
+045D				L045D:
+045D : F8 01		"  "		ldi	#01
+045F				L045F:
+045F : 52		"R"		str	r2
+0460 : 0B		" "		ldn	r11
+0461 : FF 80		"  "		smi	#80
+0463 : 3B 69		";i"		bnf	L0469
+0465 : FB 34		" 4"		xri	#34
+0467 : 3A 71		":q"		bnz	L0471
+0469				L0469:
+0469 : 0A		" "		ldn	r10
+046A : F7		" "		sm
+046B : 5A		"Z"		str	r10
+046C : F0		" "		ldx
+046D : 58		"X"		str	r8
+046E : D4		" "		sep	r4
+				;
+046F : 04		" "		ldn	r4
+0470 : 11		" "		inc	r1
+0471				L0471:
+0471 : D5		" "		sep	r5
+0472 : D4		" "		sep	r4
+				;
+0473 : 02		" "		ldn	r2
+0474 : 03		" "		ldn	r3
+0475 : D7		" "		sep	r7
+				;
+0476 : 6A		"j"		inp	2
+0477 : 40		"@"		lda	r0
+0478 : 04		" "		ldn	r4
+0479 : 7D D4		"} "		sdbi	#D4
+047B : 03		" "		ldn	r3
+047C : F7		" "		sm
+047D : D4		" "		sep	r4
+				;
+047E : 03		" "		ldn	r3
+047F : F7		" "		sm
+0480 : D7		" "		sep	r7
+				;
+0481 : 82		" "		glo	r2
+0482 : 0F		" "		ldn	r15
+0483 : FA 0F		"  "		ani	#0F
+0485 : 52		"R"		str	r2
+0486 : D7		" "		sep	r7
+				;
+0487 : 87		" "		glo	r7
+0488 : 21		"!"		dec	r1
+0489 : 0B		" "		ldn	r11
+048A : FA F0		"  "		ani	#F0
+048C : F4		" "		add
+048D : 5B		"["		str	r11
+048E : F8 10		"  "		ldi	#10
+0490 : F4		" "		add
+0491 : AA		" "		plo	r10
+0492 : F0		" "		ldx
+0493 : FE		" "		shl
+0494 : FE		" "		shl
+0495 : F4		" "		add
+0496 : 52		"R"		str	r2
+0497 : 0A		" "		ldn	r10
+0498 : F4		" "		add
+0499 : D7		" "		sep	r7
+				;
+049A : 87		" "		glo	r7
+049B : 0E		" "		ldn	r14
+049C : 58		"X"		str	r8
+049D : D4		" "		sep	r4
+				;
+049E : 04		" "		ldn	r4
+049F : 17		" "		inc	r7
+04A0 : D7		" "		sep	r7
+				;
+04A1 : E7		" "		sex	r7
+04A2 : 33 04		"3 "		bdf	L0404
+04A4 : A9		" "		plo	r9
+04A5 : D4		" "		sep	r4
+				;
+04A6 : 0A		" "		ldn	r10
+04A7 : A8		" "		plo	r8
+04A8 : 2B		"+"		dec	r11
+04A9 : D5		" "		sep	r5
+				;
+04AA : F8 03		"  "		ldi	#03
+04AC : 73		"s"		stxd
+04AD : 08		" "		ldn	r8
+04AE : 73		"s"		stxd
+04AF				L04AF:
+04AF : 60		"`"		irx
+04B0 : 60		"`"		irx
+04B1 : F0		" "		ldx
+04B2 : 32 FB		"2 "		bz	L04FB
+04B4 : FF 01		"  "		smi	#01
+04B6 : 73		"s"		stxd
+04B7 : F0		" "		ldx
+04B8 : AA		" "		plo	r10
+04B9 : FC 01		"  "		adi	#01
+04BB : 73		"s"		stxd
+04BC : 0A		" "		ldn	r10
+04BD : 58		"X"		str	r8
+04BE : D4		" "		sep	r4
+				;
+04BF : 02		" "		ldn	r2
+04C0 : 03		" "		ldn	r3
+04C1 : 30 AF		"0 "		br	L04AF
+				;
+04C3 : 08		" "		ldn	r8
+04C4 : 73		"s"		stxd
+04C5				L04C5:
+04C5 : 60		"`"		irx
+04C6 : 8B		" "		glo	r11
+04C7 : F3		" "		xor
+04C8 : 32 FB		"2 "		bz	L04FB
+04CA : 22		"""		dec	r2
+04CB : 1B		" "		inc	r11
+04CC : 0B		" "		ldn	r11
+04CD : 58		"X"		str	r8
+04CE : FF 80		"  "		smi	#80
+04D0 : 33 C5		"3 "		bdf	L04C5
+04D2 : D4		" "		sep	r4
+				;
+04D3 : 02		" "		ldn	r2
+04D4 : 03		" "		ldn	r3
+04D5 : D7		" "		sep	r7
+04D6 : C0 0E 30		"  0"		lbr	L0E30
+				;
+04D9 : C5		" "		lsnq							;INFO: skip to address L04DC
+04DA : F8 90		"  "		ldi	#90
+04DC				L04DC:
+04DC : 5B		"["		str	r11
+04DD : D7		" "		sep	r7
+				;
+04DE : 82		" "		glo	r2
+04DF : 31 58		"1X"		bq	L0458
+04E1 : D4		" "		sep	r4
+				;
+04E2 : 04		" "		ldn	r4
+04E3 : 72		"r"		ldxa
+04E4 : D5		" "		sep	r5
+04E5 : D7		" "		sep	r7
+				;
+04E6 : 82		" "		glo	r2
+04E7 : 2A		"*"		dec	r10
+04E8 : 58		"X"		str	r8
+04E9 : D4		" "		sep	r4
+				;
+04EA : 02		" "		ldn	r2
+04EB : 03		" "		ldn	r3
+04EC : 0B		" "		ldn	r11
+04ED : FB B0		"  "		xri	#B0
+04EF : 32 F8		"2 "		bz	L04F8
+04F1 : D7		" "		sep	r7
+				;
+04F2 : 82		" "		glo	r2
+04F3				L04F3:
+04F3 : 30 58		"0X"		br	L0458
+04F5 : D4		" "		sep	r4
+				;
+04F6 : 02		" "		ldn	r2
+04F7 : 03		" "		ldn	r3
+04F8				L04F8:
+04F8 : D7		" "		sep	r7
+04F9 : C8		" "		lskp							;INFO: skip to address L04FC
+				;
+04FA : 22		"""		dec	r2
+04FB				L04FB:
+04FB : D5		" "		sep	r5
+04FC				L04FC:
+04FC : D7		" "		sep	r7
+				;
+04FD : 25		"%"		dec	r5
+04FE : 80		" "		glo	r0
+04FF : D7		" "		sep	r7
+				;
+0500 : 3E 04		"> "		bn3	L0504
+0502 : D4		" "		sep	r4
+				;
+0503 : 08		" "		ldn	r8
+0504				L0504:
+0504 : 70		"p"		ret
+				;
+0505 : F8 00		"  "		ldi	#00
+0507 : 73		"s"		stxd
+0508 : C0 07 62		"  b"		lbr	L0762
+050B : D7		" "		sep	r7
+				;
+050C : 55		"U"		str	r5
+050D : 40		"@"		lda	r0
+050E : C0 00 F1		"   "		lbr	L00F1
+0511 : D7		" "		sep	r7
+				;
+0512 : 3B 40		";@"		bnf	L0540
+0514 : D7		" "		sep	r7
+				;
+0515 : 3E 20		"> "		bn3	L0520
+0517 : F8 04		"  "		ldi	#04
+0519 : AA		" "		plo	r10
+051A : 4A		"J"		lda	r10
+051B : 73		"s"		stxd
+051C : 0A		" "		ldn	r10
+051D : 73		"s"		stxd
+051E : D7		" "		sep	r7
+051F : 38		"8"		skp							;INFO: skip to address L0521
+				;
+0520				L0520:
+0520 : 08		" "		ldn	r8
+0521				L0521:
+0521 : D7		" "		sep	r7
+				;
+0522 : 25		"%"		dec	r5
+0523 : 20		" "		dec	r0
+0524 : E3		" "		sex	r3
+0525 : 66		"f"		out	6
+0526 : 01		" "		ldn	r1
+0527 : D4		" "		sep	r4
+				;
+0528 : 06		" "		ldn	r6
+0529 : A3		" "		plo	r3
+052A : D7		" "		sep	r7
+				;
+052B : 22		"""		dec	r2
+052C : 08		" "		ldn	r8
+052D				L052D:
+052D : D7		" "		sep	r7
+				;
+052E : 3E 10		"> "		bn3	L0510
+0530				L0530:
+0530 : 6C		"l"		inp	4
+0531 : FA 01		"  "		ani	#01
+0533 : 32 5A		"2Z"		bz	L055A
+0535 : D7		" "		sep	r7
+				;
+0536 : 6A		"j"		inp	2
+0537 : 10		" "		inc	r0
+0538 : 05		" "		ldn	r5
+0539 : 5D		"]"		str	r13
+053A : 2B		"+"		dec	r11
+053B : 4B		"K"		lda	r11
+053C : FA F0		"  "		ani	#F0
+053E : FB 80		"  "		xri	#80
+0540				L0540:
+0540 : 32 46		"2F"		bz	L0546
+0542 : FB 10		"  "		xri	#10
+0544 : 3A 5D		":]"		bnz	L055D
+0546				L0546:
+0546 : F8 00		"  "		ldi	#00
+0548 : A9		" "		plo	r9
+0549 : F8 00		"  "		ldi	#00
+054B : 59		"Y"		str	r9
+054C				L054C:
+054C : D4		" "		sep	r4
+				;
+054D : 0C		" "		ldn	r12
+054E : 65		"e"		out	5
+054F : 30 4C		"0L"		br	L054C
+0551 : D7		" "		sep	r7
+				;
+0552 : 82		" "		glo	r2
+0553 : 01		" "		ldn	r1
+0554 : FF 80		"  "		smi	#80
+0556 : 33 2D		"3-"		bdf	L052D
+0558				L0558:
+0558 : 30 A0		"0 "		br	L05A0
+055A				L055A:
+055A : D7		" "		sep	r7
+				;
+055B : 28		"("		dec	r8
+055C : 10		" "		inc	r0
+055D				L055D:
+055D : 0B		" "		ldn	r11
+055E : FB BB		"  "		xri	#BB
+0560 : 32 66		"2f"		bz	L0566
+0562 : FB 07		"  "		xri	#07
+0564 : 3A 93		": "		bnz	L0593
+0566				L0566:
+0566 : 9B		" "		ghi	r11
+0567 : BC		" "		phi	r12
+0568 : 8B		" "		glo	r11
+0569 : AC		" "		plo	r12
+056A : 1C		" "		inc	r12
+056B : F8 00		"  "		ldi	#00
+056D : AE		" "		plo	r14
+056E				L056E:
+056E : 4C		"L"		lda	r12
+056F : 1E		" "		inc	r14
+0570 : 32 76		"2v"		bz	L0576
+0572 : FB 80		"  "		xri	#80
+0574 : 3A 6E		":n"		bnz	L056E
+0576				L0576:
+0576 : 8E		" "		glo	r14
+0577 : 52		"R"		str	r2
+0578 : D7		" "		sep	r7
+				;
+0579 : 82		" "		glo	r2
+057A : 32 F7		"2 "		bz	L05F7
+057C : 3B 93		"; "		bnf	L0593
+057E : 32 93		"2 "		bz	L0593
+0580 : 58		"X"		str	r8
+0581 : 0B		" "		ldn	r11
+0582 : FB BC		"  "		xri	#BC
+0584 : 32 89		"2 "		bz	L0589
+0586 : 08		" "		ldn	r8
+0587 : F6		" "		shr
+0588 : 38		"8"		skp							;INFO: skip to address L058A
+				;
+0589				L0589:
+0589 : 08		" "		ldn	r8
+058A				L058A:
+058A : 52		"R"		str	r2
+058B : D7		" "		sep	r7
+				;
+058C : 82		" "		glo	r2
+058D : 0E		" "		ldn	r14
+058E : F5		" "		sd
+058F : 58		"X"		str	r8
+0590 : D4		" "		sep	r4
+				;
+0591 : 04		" "		ldn	r4
+0592 : 17		" "		inc	r7
+0593				L0593:
+0593 : D4		" "		sep	r4
+				;
+0594 : 03		" "		ldn	r3
+0595 : 7F 30		" 0"		smbi	#30
+0597 : A0		" "		plo	r0
+0598 : D4		" "		sep	r4
+				;
+0599 : 0B		" "		ldn	r11
+059A : 38		"8"		skp							;INFO: skip to address L059C
+				;
+059B : 0B		" "		ldn	r11
+059C				L059C:
+059C : FB B0		"  "		xri	#B0
+059E : 3A 30		":0"		bnz	L0530
+05A0				L05A0:
+05A0 : D7		" "		sep	r7
+				;
+05A1 : 82		" "		glo	r2
+05A2 : 30 58		"0X"		br	L0558
+05A4 : D4		" "		sep	r4
+				;
+05A5 : 02		" "		ldn	r2
+05A6 : 03		" "		ldn	r3
+05A7 : D7		" "		sep	r7
+				;
+05A8 : 82		" "		glo	r2
+05A9 : 34 58		"4X"		b1	L0558
+05AB : D4		" "		sep	r4
+				;
+05AC : 02		" "		ldn	r2
+05AD : 03		" "		ldn	r3
+05AE : F8 05		"  "		ldi	#05
+05B0 : AA		" "		plo	r10
+05B1 : 60		"`"		irx
+05B2 : 72		"r"		ldxa
+05B3 : 5A		"Z"		str	r10
+05B4 : 2A		"*"		dec	r10
+05B5 : F0		" "		ldx
+05B6 : 5A		"Z"		str	r10
+05B7				L05B7:
+05B7 : D5		" "		sep	r5
+05B8 : D7		" "		sep	r7
+				;
+05B9 : CF		" "		lsdf							;INFO: skip to address L05BC
+05BA : 40		"@"		lda	r0
+05BB : 90		" "		ghi	r0
+05BC				L05BC:
+05BC : 05		" "		ldn	r5
+05BD : B7		" "		phi	r7
+05BE : D4		" "		sep	r4
+				;
+05BF : 06		" "		ldn	r6
+05C0 : 15		" "		inc	r5
+05C1 : D5		" "		sep	r5
+				;
+05C2 : C4		" "		nop
+05C3 : C4		" "		nop
+05C4 : D7		" "		sep	r7
+				;
+05C5 : CF		" "		lsdf							;INFO: skip to address L05C8
+05C6 : 40		"@"		lda	r0
+05C7 : 90		" "		ghi	r0
+05C8				L05C8:
+05C8 : 05		" "		ldn	r5
+05C9 : B7		" "		phi	r7
+05CA : D7		" "		sep	r7
+				;
+05CB : 6A		"j"		inp	2
+05CC : 40		"@"		lda	r0
+05CD : 05		" "		ldn	r5
+05CE : D7		" "		sep	r7
+				;
+05CF : 0B		" "		ldn	r11
+05D0 : FB B0		"  "		xri	#B0
+05D2 : 32 D7		"2 "		bz	L05D7
+05D4 : D4		" "		sep	r4
+				;
+05D5 : 04		" "		ldn	r4
+05D6 : E5		" "		sex	r5
+05D7				L05D7:
+05D7 : D4		" "		sep	r4
+				;
+05D8 : 04		" "		ldn	r4
+05D9 : E5		" "		sex	r5
+05DA : 8B		" "		glo	r11
+05DB : 73		"s"		stxd
+05DC : D7		" "		sep	r7
+				;
+05DD : 82		" "		glo	r2
+05DE : 04		" "		ldn	r4
+05DF : 73		"s"		stxd
+05E0 : D7		" "		sep	r7
+05E1 : 38		"8"		skp							;INFO: skip to address L05E3
+				;
+05E2 : 08		" "		ldn	r8
+05E3				L05E3:
+05E3 : D4		" "		sep	r4
+				;
+05E4 : 06		" "		ldn	r6
+05E5 : 15		" "		inc	r5
+05E6 : 30 E3		"0 "		br	L05E3
+				;
+05E8 : C4		" "		nop
+05E9 : 60		"`"		irx
+05EA : F0		" "		ldx
+05EB : D7		" "		sep	r7
+				;
+05EC : 87		" "		glo	r7
+05ED : 04		" "		ldn	r4
+05EE : 0B		" "		ldn	r11
+05EF : FB B0		"  "		xri	#B0
+05F1 : CA 06 03		"   "		lbnz	L0603
+05F4 : D7		" "		sep	r7
+				;
+05F5 : F9 0D		"  "		ori	#0D
+05F7				L05F7:
+05F7 : 0E		" "		ldn	r14
+05F8 : 0F		" "		ldn	r15
+05F9 : 21		"!"		dec	r1
+05FA : 22		"""		dec	r2
+05FB : 23		"#"		dec	r3
+05FC : 00		" "		idl
+05FD : D7		" "		sep	r7
+05FE : 38		"8"		skp							;INFO: skip to address L0600
+				;
+05FF : 10		" "		inc	r0
+0600				L0600:
+0600 : C0 06 06		"   "		lbr	L0606
+0603				L0603:
+0603 : D4		" "		sep	r4
+				;
+0604				L0604:
+0604 : 04		" "		ldn	r4
+0605 : 80		" "		glo	r0
+0606				L0606:
+0606 : 1B		" "		inc	r11
+0607 : 60		"`"		irx
+0608				L0608:
+0608 : 8B		" "		glo	r11
+0609 : F3		" "		xor
+060A : C2 05 B7		"   "		lbz	L05B7
+060D : 22		"""		dec	r2
+060E : D4		" "		sep	r4
+				;
+060F : 03		" "		ldn	r3
+0610 : 79		"y"		mark
+0611 : 60		"`"		irx
+0612 : C0 06 08		"   "		lbr	L0608
+				;
+0615 : 0B		" "		ldn	r11
+0616 : FB 20		"  "		xri	#20
+0618 : 3A 22		":""		bnz	L0622
+061A : D7		" "		sep	r7
+				;
+061B : 67		"g"		out	7
+061C : 40		"@"		lda	r0
+061D : 06		" "		ldn	r6
+061E : 22		"""		dec	r2
+061F : C0 07 FF		"   "		lbr	L07FF
+0622				L0622:
+0622 : D4		" "		sep	r4
+				;
+0623 : 04		" "		ldn	r4
+0624 : 4D		"M"		lda	r13
+0625 : 0B		" "		ldn	r11
+0626 : FF 80		"  "		smi	#80
+0628 : 3B 4F		";O"		bnf	L064F
+062A : FA F0		"  "		ani	#F0
+062C : 32 69		"2i"		bz	L0669
+062E : FB 10		"  "		xri	#10
+0630 : 32 69		"2i"		bz	L0669
+0632 : FB 30		" 0"		xri	#30
+0634 : 3A 3D		":="		bnz	L063D
+0636 : 0B		" "		ldn	r11
+0637 : FA 0F		"  "		ani	#0F
+0639 : D7		" "		sep	r7
+				;
+063A : 87		" "		glo	r7
+063B : 0F		" "		ldn	r15
+063C : D5		" "		sep	r5
+063D				L063D:
+063D : D7		" "		sep	r7
+				;
+063E : ED		" "		sex	r13
+063F : B2		" "		phi	r2
+0640 : 06		" "		ldn	r6
+0641 : 50		"P"		str	r0
+0642 : B0		" "		phi	r0
+0643 : 06		" "		ldn	r6
+0644 : 69		"i"		inp	1
+0645 : B3		" "		phi	r3
+0646 : 06		" "		ldn	r6
+0647 : 5A		"Z"		str	r10
+0648 : B6		" "		phi	r6
+0649 : 06		" "		ldn	r6
+064A : 5F		"_"		str	r15
+064B : B5		" "		phi	r5
+064C : 06		" "		ldn	r6
+064D : 64		"d"		out	4
+064E : 00		" "		idl
+064F				L064F:
+064F : D5		" "		sep	r5
+0650 : D7		" "		sep	r7
+				;
+0651 : 82		" "		glo	r2
+0652 : 0F		" "		ldn	r15
+0653 : 32 4F		"2O"		bz	L064F
+0655 : D7		" "		sep	r7
+0656 : C8		" "		lskp							;INFO: skip to address L0659
+				;
+0657 : 0F		" "		ldn	r15
+0658 : 30 4F		"0O"		br	L064F
+065A : D7		" "		sep	r7
+065B : C0 0F 30		"  0"		lbr	L0F30
+				;
+065E : 4F		"O"		lda	r15
+065F : D7		" "		sep	r7
+				;
+0660 : 52		"R"		str	r2
+0661 : 40		"@"		lda	r0
+0662 : 30 4F		"0O"		br	L064F
+0664 : D7		" "		sep	r7
+				;
+0665 : 4F		"O"		lda	r15
+0666 : 10		" "		inc	r0
+0667 : 30 4F		"0O"		br	L064F
+				;
+0669				L0669:
+0669 : 16		" "		inc	r6
+066A : 16		" "		inc	r6
+066B : 16		" "		inc	r6
+066C				L066C:
+066C : D5		" "		sep	r5
+066D				L066D:
+066D : D4		" "		sep	r4
+				;
+066E : 06		" "		ldn	r6
+066F : 86		" "		glo	r6
+0670 : 9B		" "		ghi	r11
+0671 : FB 60		" `"		xri	#60
+0673 : 32 6C		"2l"		bz	L066C
+0675 : 0B		" "		ldn	r11
+0676 : 3A 6D		":m"		bnz	L066D
+0678 : D5		" "		sep	r5
+0679				L0679:
+0679 : D4		" "		sep	r4
+				;
+067A : 03		" "		ldn	r3
+067B : 79		"y"		mark
+067C : 0B		" "		ldn	r11
+067D : FA F0		"  "		ani	#F0
+067F : FB 80		"  "		xri	#80
+0681 : 32 79		"2y"		bz	L0679
+0683 : F8 80		"  "		ldi	#80
+0685 : C8		" "		lskp							;INFO: skip to address L0688
+				;
+0686 : F8 00		"  "		ldi	#00
+0688				L0688:
+0688 : C8		" "		lskp							;INFO: skip to address L068B
+				;
+0689 : F8 B1		"  "		ldi	#B1
+068B				L068B:
+068B : D7		" "		sep	r7
+				;
+068C : 28		"("		dec	r8
+068D : 04		" "		ldn	r4
+068E : 30 AE		"0 "		br	L06AE
+0690				L0690:
+0690 : D4		" "		sep	r4
+				;
+0691 : 05		" "		ldn	r5
+0692 : B8		" "		phi	r8
+0693 : 0B		" "		ldn	r11
+0694 : FA F0		"  "		ani	#F0
+0696 : FB 80		"  "		xri	#80
+0698 : 3A 9F		": "		bnz	L069F
+069A : D4		" "		sep	r4
+				;
+069B : 05		" "		ldn	r5
+069C : B8		" "		phi	r8
+069D : 30 90		"0 "		br	L0690
+				;
+069F				L069F:
+069F : F8 80		"  "		ldi	#80
+06A1 : 30 AB		"0 "		br	L06AB
+06A3 : D4		" "		sep	r4
+				;
+06A4 : 05		" "		ldn	r5
+06A5 : B8		" "		phi	r8
+06A6 : F8 00		"  "		ldi	#00
+06A8 : C8		" "		lskp							;INFO: skip to address L06AB
+				;
+06A9 : F8 B1		"  "		ldi	#B1
+06AB				L06AB:
+06AB : D7		" "		sep	r7
+				;
+06AC : 3E 04		"> "		bn3	L0604
+06AE				L06AE:
+06AE : 73		"s"		stxd
+06AF				L06AF:
+06AF : D7		" "		sep	r7
+				;
+06B0 : 67		"g"		out	7
+06B1 : 20		" "		dec	r0
+06B2 : 06		" "		ldn	r6
+06B3 : B9		" "		phi	r9
+06B4 : D7		" "		sep	r7
+				;
+06B5 : 64		"d"		out	4
+06B6 : 08		" "		ldn	r8
+06B7 : 06		" "		ldn	r6
+06B8 : F7		" "		sm
+06B9 : 6C		"l"		inp	4
+06BA : FB FF		"  "		xri	#FF
+06BC : CA 0F 47		"  G"		lbnz	L0F47
+06BF : D7		" "		sep	r7
+				;
+06C0 : 6A		"j"		inp	2
+06C1 : 04		" "		ldn	r4
+06C2 : 06		" "		ldn	r6
+06C3 : CB D4 03		"   "		lbnf	LD403
+06C6 : 7F 30		" 0"		smbi	#30
+06C8 : F2		" "		and
+06C9 : 30 D4		"0 "		br	L06D4
+06CB : D4		" "		sep	r4
+				;
+06CC : 05		" "		ldn	r5
+06CD : B8		" "		phi	r8
+06CE				L06CE:
+06CE : D7		" "		sep	r7
+				;
+06CF : CF		" "		lsdf							;INFO: skip to address L06D2
+06D0 : 40		"@"		lda	r0
+06D1 : 90		" "		ghi	r0
+06D2				L06D2:
+06D2 : 06		" "		ldn	r6
+06D3 : F2		" "		and
+06D4				L06D4:
+06D4 : 60		"`"		irx
+06D5 : 0B		" "		ldn	r11
+06D6 : FB B0		"  "		xri	#B0
+06D8 : 32 F3		"2 "		bz	L06F3
+06DA : F0		" "		ldx
+06DB : FB B1		"  "		xri	#B1
+06DD : 3A E3		": "		bnz	L06E3
+06DF : 0B		" "		ldn	r11
+06E0 : F3		" "		xor
+06E1 : 32 F3		"2 "		bz	L06F3
+06E3				L06E3:
+06E3 : 0B		" "		ldn	r11
+06E4 : FA F0		"  "		ani	#F0
+06E6 : F3		" "		xor
+06E7 : 22		"""		dec	r2
+06E8 : 3A AF		": "		bnz	L06AF
+06EA : 2B		"+"		dec	r11
+06EB : 4B		"K"		lda	r11
+06EC : FA F0		"  "		ani	#F0
+06EE : FB 80		"  "		xri	#80
+06F0 : 3A AF		": "		bnz	L06AF
+06F2 : 60		"`"		irx
+06F3				L06F3:
+06F3 : D4		" "		sep	r4
+				;
+06F4 : 03		" "		ldn	r3
+06F5 : 79		"y"		mark
+06F6 : D5		" "		sep	r5
+06F7 : D7		" "		sep	r7
+				;
+06F8 : 6A		"j"		inp	2
+06F9 : 04		" "		ldn	r4
+06FA : 07		" "		ldn	r7
+06FB : 0E		" "		ldn	r14
+06FC : 4B		"K"		lda	r11
+06FD : C2 07 0B		"   "		lbz	L070B
+0700 : FB B4		"  "		xri	#B4
+0702 : 3A 05		": "		bnz	L0705
+0704 : 1B		" "		inc	r11
+0705				L0705:
+0705 : D7		" "		sep	r7
+				;
+0706 : CF		" "		lsdf							;INFO: skip to address L0709
+0707 : 60		"`"		irx
+0708 : 00		" "		idl
+0709				L0709:
+0709 : 06		" "		ldn	r6
+070A : D4		" "		sep	r4
+				;
+070B				L070B:
+070B : 2B		"+"		dec	r11
+070C : 60		"`"		irx
+070D : D5		" "		sep	r5
+				;
+070E : 2B		"+"		dec	r11
+070F : 2B		"+"		dec	r11
+0710 : 4B		"K"		lda	r11
+0711 : FB B4		"  "		xri	#B4
+0713 : CA 06 CE		"   "		lbnz	L06CE
+0716 : 2B		"+"		dec	r11
+0717 : C0 06 CE		"   "		lbr	L06CE
+				;
+071A : F8 5F		" _"		ldi	#5F
+071C : BA		" "		phi	r10
+071D : BC		" "		phi	r12
+071E : F8 FF		"  "		ldi	#FF
+0720 : AA		" "		plo	r10
+0721 : AC		" "		plo	r12
+0722 : 0C		" "		ldn	r12
+0723 : 3A 58		":X"		bnz	L0758
+0725 : 0B		" "		ldn	r11
+0726 : 32 53		"2S"		bz	L0753
+0728 : 52		"R"		str	r2
+0729 : 1B		" "		inc	r11
+072A : 0B		" "		ldn	r11
+072B : 3A 30		":0"		bnz	L0730
+072D : F8 20		"  "		ldi	#20
+072F : 5B		"["		str	r11
+0730				L0730:
+0730 : 2B		"+"		dec	r11
+0731 : F8 00		"  "		ldi	#00
+0733 : 5B		"["		str	r11
+0734 : D7		" "		sep	r7
+				;
+0735 : 25		"%"		dec	r5
+0736 : 01		" "		ldn	r1
+0737				L0737:
+0737 : 2A		"*"		dec	r10
+0738 : 0A		" "		ldn	r10
+0739 : 32 37		"27"		bz	L0737
+073B				L073B:
+073B : 0A		" "		ldn	r10
+073C : 32 46		"2F"		bz	L0746
+073E				L073E:
+073E : 5C		"\"		str	r12
+073F : F8 00		"  "		ldi	#00
+0741 : 5A		"Z"		str	r10
+0742 : 2A		"*"		dec	r10
+0743 : 2C		","		dec	r12
+0744 : 30 3B		"0;"		br	L073B
+				;
+0746				L0746:
+0746 : 2A		"*"		dec	r10
+0747 : 4A		"J"		lda	r10
+0748 : FB B4		"  "		xri	#B4
+074A : 32 3E		"2>"		bz	L073E
+074C : F0		" "		ldx
+074D : 5C		"\"		str	r12
+074E : 2C		","		dec	r12
+074F : 2C		","		dec	r12
+0750 : D7		" "		sep	r7
+				;
+0751 : A9		" "		plo	r9
+0752 : 2D		"-"		dec	r13
+0753				L0753:
+0753 : F8 40		" @"		ldi	#40
+0755 : BA		" "		phi	r10
+0756 : 30 9C		"0 "		br	L079C
+				;
+0758				L0758:
+0758 : 73		"s"		stxd
+0759 : F8 00		"  "		ldi	#00
+075B : 5C		"\"		str	r12
+075C : F8 40		" @"		ldi	#40
+075E : BA		" "		phi	r10
+075F : D4		" "		sep	r4
+				;
+0760 : 06		" "		ldn	r6
+0761 : 6D		"m"		inp	5
+0762				L0762:
+0762 : 9B		" "		ghi	r11
+0763 : BA		" "		phi	r10
+0764 : BC		" "		phi	r12
+0765 : 8B		" "		glo	r11
+0766 : AA		" "		plo	r10
+0767 : AC		" "		plo	r12
+0768				L0768:
+0768 : 4C		"L"		lda	r12
+0769 : 32 68		"2h"		bz	L0768
+076B : 2C		","		dec	r12
+076C : 9C		" "		ghi	r12
+076D : FB 60		" `"		xri	#60
+076F : 32 8C		"2 "		bz	L078C
+0771				L0771:
+0771 : 0C		" "		ldn	r12
+0772 : 32 7F		"2 "		bz	L077F
+0774				L0774:
+0774 : 5A		"Z"		str	r10
+0775 : F8 00		"  "		ldi	#00
+0777 : 5C		"\"		str	r12
+0778 : 1A		" "		inc	r10
+0779 : 1C		" "		inc	r12
+077A : 9C		" "		ghi	r12
+077B : FB 60		" `"		xri	#60
+077D : 3A 71		":q"		bnz	L0771
+077F				L077F:
+077F : 1C		" "		inc	r12
+0780 : 9C		" "		ghi	r12
+0781 : 2C		","		dec	r12
+0782 : FB 60		" `"		xri	#60
+0784 : 32 8C		"2 "		bz	L078C
+0786 : 2A		"*"		dec	r10
+0787 : 4A		"J"		lda	r10
+0788 : FB B4		"  "		xri	#B4
+078A : 32 74		"2t"		bz	L0774
+078C				L078C:
+078C : 60		"`"		irx
+078D : F0		" "		ldx
+078E : 5A		"Z"		str	r10
+078F : F8 40		" @"		ldi	#40
+0791 : BA		" "		phi	r10
+0792 : D7		" "		sep	r7
+				;
+0793 : 6D		"m"		inp	5
+0794 : 20		" "		dec	r0
+0795 : 07		" "		ldn	r7
+0796 : 99		" "		ghi	r9
+0797 : 30 9C		"0 "		br	L079C
+0799 : D7		" "		sep	r7
+				;
+079A : 3B 01		"; "		bnf	L0701
+079C				L079C:
+079C : D7		" "		sep	r7
+				;
+079D : 41		"A"		lda	r1
+079E : 20		" "		dec	r0
+079F : D7		" "		sep	r7
+				;
+07A0 : 67		"g"		out	7
+07A1 : 20		" "		dec	r0
+07A2 : 1A		" "		inc	r10
+07A3 : E6		" "		sex	r6
+07A4 : D5		" "		sep	r5
+07A5 : D7		" "		sep	r7
+				;
+07A6 : 82		" "		glo	r2
+07A7 : 02		" "		ldn	r2
+07A8 : FB AC		"  "		xri	#AC
+07AA : 32 D5		"2 "		bz	L07D5
+07AC : D7		" "		sep	r7
+				;
+07AD : CF		" "		lsdf							;INFO: skip to address L07B0
+07AE : 40		"@"		lda	r0
+07AF : 91		" "		ghi	r1
+07B0				L07B0:
+07B0 : 07		" "		ldn	r7
+07B1 : F8 0B		"  "		ldi	#0B
+07B3 : 3A B8		": "		bnz	L07B8
+07B5 : F8 20		"  "		ldi	#20
+07B7 : 5B		"["		str	r11
+07B8				L07B8:
+07B8 : D4		" "		sep	r4
+				;
+07B9 : 05		" "		ldn	r5
+07BA : B8		" "		phi	r8
+07BB : 4B		"K"		lda	r11
+07BC : FB B4		"  "		xri	#B4
+07BE : C6		" "		lsnz							;INFO: skip to address L07C1
+07BF : 5B		"["		str	r11
+07C0 : C4		" "		nop
+07C1				L07C1:
+07C1 : 2B		"+"		dec	r11
+07C2 : F8 00		"  "		ldi	#00
+07C4 : 5B		"["		str	r11
+07C5 : 30 CD		"0 "		br	L07CD
+				;
+07C7 : 0B		" "		ldn	r11
+07C8 : 3A CD		": "		bnz	L07CD
+07CA : F8 20		"  "		ldi	#20
+07CC : 5B		"["		str	r11
+07CD				L07CD:
+07CD : F8 00		"  "		ldi	#00
+07CF : 73		"s"		stxd
+07D0 : D7		" "		sep	r7
+				;
+07D1 : 2B		"+"		dec	r11
+07D2 : 20		" "		dec	r0
+07D3 : 30 62		"0b"		br	L0762
+07D5				L07D5:
+07D5 : D4		" "		sep	r4
+				;
+07D6 : 06		" "		ldn	r6
+07D7 : A3		" "		plo	r3
+07D8 : 9B		" "		ghi	r11
+07D9 : BC		" "		phi	r12
+07DA : 8B		" "		glo	r11
+07DB : AC		" "		plo	r12
+07DC				L07DC:
+07DC : 9C		" "		ghi	r12
+07DD : FB 60		" `"		xri	#60
+07DF : 32 F8		"2 "		bz	L07F8
+07E1 : 0C		" "		ldn	r12
+07E2 : 32 F8		"2 "		bz	L07F8
+07E4 : FB B4		"  "		xri	#B4
+07E6 : 32 F9		"2 "		bz	L07F9
+07E8 : 0C		" "		ldn	r12
+07E9 : FB B0		"  "		xri	#B0
+07EB : 3A F2		": "		bnz	L07F2
+07ED : D7		" "		sep	r7
+				;
+07EE : 6D		"m"		inp	5
+07EF : 80		" "		glo	r0
+07F0 : 07		" "		ldn	r7
+07F1 : CD		" "		lsq							;INFO: skip to address L07F4
+07F2				L07F2:
+07F2 : F8 00		"  "		ldi	#00
+07F4				L07F4:
+07F4 : 5C		"\"		str	r12
+07F5 : 1C		" "		inc	r12
+07F6 : 30 DC		"0 "		br	L07DC
+07F8				L07F8:
+07F8 : D5		" "		sep	r5
+				;
+07F9				L07F9:
+07F9 : F8 00		"  "		ldi	#00
+07FB : 5C		"\"		str	r12
+07FC : 1C		" "		inc	r12
+07FD : 30 F2		"0 "		br	L07F2
+				;
+07FF				L07FF:
+07FF : F8 00		"  "		ldi	#00
+0801 : C8		" "		lskp							;INFO: skip to address L0804
+				;
+0802				L0802:
+0802 : F8 FF		"  "		ldi	#FF
+0804				L0804:
+0804 : 73		"s"		stxd
+0805 : 2B		"+"		dec	r11
+0806 : 2B		"+"		dec	r11
+0807 : 2B		"+"		dec	r11
+0808 : 2B		"+"		dec	r11
+0809 : 2B		"+"		dec	r11
+080A : D4		" "		sep	r4
+				;
+080B : 08		" "		ldn	r8
+080C : 52		"R"		str	r2
+080D : 08		" "		ldn	r8
+080E : FC 10		"  "		adi	#10
+0810 : AA		" "		plo	r10
+0811 : FF 10		"  "		smi	#10
+0813 : 3B 1A		"; "		bnf	L081A
+0815 : FF 10		"  "		smi	#10
+0817 : CB 08 25		"  %"		lbnf	L0825
+081A				L081A:
+081A : 1B		" "		inc	r11
+081B				L081B:
+081B : 1B		" "		inc	r11
+081C : 1B		" "		inc	r11
+081D				L081D:
+081D : 60		"`"		irx
+081E : F0		" "		ldx
+081F : CA 0A 14		"   "		lbnz	L0A14
+0822 : C0 06 22		"  ""		lbr	L0622
+				;
+0825				L0825:
+0825 : 4B		"K"		lda	r11
+0826 : FB 2B		" +"		xri	#2B
+0828 : C2 08 33		"  3"		lbz	L0833
+082B : FB 06		"  "		xri	#06
+082D : CA 08 1B		"   "		lbnz	L081B
+0830 : F8 00		"  "		ldi	#00
+0832 : C8		" "		lskp							;INFO: skip to address L0835
+				;
+0833				L0833:
+0833 : F8 FF		"  "		ldi	#FF
+0835				L0835:
+0835 : 73		"s"		stxd
+0836 : D4		" "		sep	r4
+				;
+0837 : 08		" "		ldn	r8
+0838 : 52		"R"		str	r2
+0839 : 60		"`"		irx
+083A : F0		" "		ldx
+083B : 3A 40		":@"		bnz	L0840
+083D : 08		" "		ldn	r8
+083E : F5		" "		sd
+083F : 58		"X"		str	r8
+0840				L0840:
+0840 : 60		"`"		irx
+0841 : F0		" "		ldx
+0842 : 22		"""		dec	r2
+0843 : CA 08 4A		"  J"		lbnz	L084A
+0846 : 08		" "		ldn	r8
+0847 : FD 00		"  "		sdi	#00
+0849 : 38		"8"		skp							;INFO: skip to address L084B
+				;
+084A				L084A:
+084A : 08		" "		ldn	r8
+084B				L084B:
+084B : 52		"R"		str	r2
+084C : 0A		" "		ldn	r10
+084D : F4		" "		add
+084E : 5A		"Z"		str	r10
+084F : C0 08 1D		"   "		lbr	L081D
+				;
+0852 : 4B		"K"		lda	r11
+0853 : FF 30		" 0"		smi	#30
+0855 : FE		" "		shl
+0856 : 52		"R"		str	r2
+0857 : FE		" "		shl
+0858 : FE		" "		shl
+0859 : F4		" "		add
+085A : 52		"R"		str	r2
+085B : 4B		"K"		lda	r11
+085C : FF 30		" 0"		smi	#30
+085E : F4		" "		add
+085F : 58		"X"		str	r8
+0860 : D5		" "		sep	r5
+0861 : D7		" "		sep	r7
+				;
+0862 : 28		"("		dec	r8
+0863 : 04		" "		ldn	r4
+0864 : 30 69		"0i"		br	L0869
+0866 : D7		" "		sep	r7
+				;
+0867 : 3E 04		"> "		bn3	L0804
+0869				L0869:
+0869 : F8 00		"  "		ldi	#00
+086B : AA		" "		plo	r10
+086C : 5A		"Z"		str	r10
+086D : D7		" "		sep	r7
+				;
+086E : 3B 80		"; "		bnf	L0880
+0870 : D7		" "		sep	r7
+				;
+0871 : 3E 18		"> "		bn3	L0818
+0873				L0873:
+0873 : F8 00		"  "		ldi	#00
+0875 : AF		" "		plo	r15
+0876 : D7		" "		sep	r7
+				;
+0877 : 6A		"j"		inp	2
+0878 : 04		" "		ldn	r4
+0879 : 08		" "		ldn	r8
+087A : 8B		" "		glo	r11
+087B				L087B:
+087B : D4		" "		sep	r4
+				;
+087C : 03		" "		ldn	r3
+087D : 7F 30		" 0"		smbi	#30
+087F : C6		" "		lsnz							;INFO: skip to address L0882
+0880				L0880:
+0880 : D4		" "		sep	r4
+				;
+0881 : 08		" "		ldn	r8
+0882				L0882:
+0882 : F7		" "		sm
+0883 : 1F		" "		inc	r15
+0884 : 8F		" "		glo	r15
+0885 : FF 0E		"  "		smi	#0E
+0887 : 33 9F		"3 "		bdf	L089F
+0889 : 30 7B		"0{"		br	L087B
+088B				L088B:
+088B : D7		" "		sep	r7
+				;
+088C : CF		" "		lsdf							;INFO: skip to address L088F
+088D : 40		"@"		lda	r0
+088E : 90		" "		ghi	r0
+088F				L088F:
+088F : 08		" "		ldn	r8
+0890 : C6		" "		lsnz							;INFO: skip to address L0893
+0891 : D4		" "		sep	r4
+				;
+0892 : 05		" "		ldn	r5
+0893				L0893:
+0893 : B8		" "		phi	r8
+0894 : D4		" "		sep	r4
+				;
+0895 : 08		" "		ldn	r8
+0896 : F7		" "		sm
+0897 : 1F		" "		inc	r15
+0898 : 8F		" "		glo	r15
+0899 : FF 0E		"  "		smi	#0E
+089B : 33 9F		"3 "		bdf	L089F
+089D : 30 8B		"0 "		br	L088B
+089F				L089F:
+089F : D4		" "		sep	r4
+				;
+08A0 : 0B		" "		ldn	r11
+08A1 : 38		"8"		skp							;INFO: skip to address L08A3
+08A2 : D7		" "		sep	r7
+				;
+08A3				L08A3:
+08A3 : 6A		"j"		inp	2
+08A4 : 08		" "		ldn	r8
+08A5 : 08		" "		ldn	r8
+08A6 : AF		" "		plo	r15
+08A7 : F8 05		"  "		ldi	#05
+08A9 : BE		" "		phi	r14
+08AA : F8 00		"  "		ldi	#00
+08AC : AE		" "		plo	r14
+08AD : 30 B5		"0 "		br	L08B5
+				;
+08AF : F8 0A		"  "		ldi	#0A
+08B1 : BE		" "		phi	r14
+08B2 : F8 00		"  "		ldi	#00
+08B4 : AE		" "		plo	r14
+08B5				L08B5:
+08B5 : F8 00		"  "		ldi	#00
+08B7 : AA		" "		plo	r10
+08B8 : 6C		"l"		inp	4
+08B9 : FB FF		"  "		xri	#FF
+08BB : 32 D5		"2 "		bz	L08D5
+08BD				L08BD:
+08BD : 52		"R"		str	r2
+08BE : 0A		" "		ldn	r10
+08BF : F1		" "		or
+08C0 : 5A		"Z"		str	r10
+08C1				L08C1:
+08C1 : D7		" "		sep	r7
+				;
+08C2 : 6A		"j"		inp	2
+08C3 : 10		" "		inc	r0
+08C4 : 08		" "		ldn	r8
+08C5 : CC		" "		lsie							;INFO: skip to address L08C8
+08C6				L08C6:
+08C6 : 6C		"l"		inp	4
+08C7 : FB FF		"  "		xri	#FF
+08C9 : 3A C6		": "		bnz	L08C6
+08CB : D5		" "		sep	r5
+				;
+08CC : 2E		"."		dec	r14
+08CD : 8E		" "		glo	r14
+08CE : 3A B5		": "		bnz	L08B5
+08D0 : 9E		" "		ghi	r14
+08D1 : 3A B5		": "		bnz	L08B5
+08D3 : 30 73		"0s"		br	L0873
+				;
+08D5				L08D5:
+08D5 : 0A		" "		ldn	r10
+08D6 : 3A DB		": "		bnz	L08DB
+08D8 : 0A		" "		ldn	r10
+08D9 : 30 C1		"0 "		br	L08C1
+08DB				L08DB:
+08DB : D4		" "		sep	r4
+				;
+08DC : 00		" "		idl
+08DD : 54		"T"		str	r4
+08DE : 00		" "		idl
+08DF : 93		" "		ghi	r3
+08E0 : 6C		"l"		inp	4
+08E1 : FB FF		"  "		xri	#FF
+08E3 : 3A BD		": "		bnz	L08BD
+08E5 : 0A		" "		ldn	r10
+08E6 : FB 01		"  "		xri	#01
+08E8 : 32 F2		"2 "		bz	L08F2
+08EA : D7		" "		sep	r7
+				;
+08EB : 55		"U"		str	r5
+08EC : 08		" "		ldn	r8
+08ED				L08ED:
+08ED : F8 00		"  "		ldi	#00
+08EF : 5A		"Z"		str	r10
+08F0 : 30 9F		"0 "		br	L089F
+08F2				L08F2:
+08F2 : D7		" "		sep	r7
+				;
+08F3 : 28		"("		dec	r8
+08F4 : 10		" "		inc	r0
+08F5 : 30 ED		"0 "		br	L08ED
+				;
+08F7 : 0B		" "		ldn	r11
+08F8 : FB 20		"  "		xri	#20
+08FA : C2 09 13		"   "		lbz	L0913
+08FD : FA F0		"  "		ani	#F0
+08FF : FB B0		"  "		xri	#B0
+0901 : C2 09 13		"   "		lbz	L0913
+0904 : FB 10		"  "		xri	#10
+0906 : C2 09 13		"   "		lbz	L0913
+0909 : FB 30		" 0"		xri	#30
+090B : C2 09 13		"   "		lbz	L0913
+090E : 0B		" "		ldn	r11
+090F : FB B4		"  "		xri	#B4
+0911 : 3A 19		": "		bnz	L0919
+0913				L0913:
+0913 : F8 08		"  "		ldi	#08
+0915 : B6		" "		phi	r6
+0916 : F8 9F		"  "		ldi	#9F
+0918 : A6		" "		plo	r6
+0919				L0919:
+0919 : D7		" "		sep	r7
+				;
+091A : 67		"g"		out	7
+091B : 80		" "		glo	r0
+091C : 09		" "		ldn	r9
+091D : 2A		"*"		dec	r10
+091E : 0B		" "		ldn	r11
+091F : FB B4		"  "		xri	#B4
+0921 : CA 09 27		"  '"		lbnz	L0927
+0924 : 1B		" "		inc	r11
+0925 : 5B		"["		str	r11
+0926 : 2B		"+"		dec	r11
+0927				L0927:
+0927 : F8 00		"  "		ldi	#00
+0929 : 5B		"["		str	r11
+092A : D5		" "		sep	r5
+092B				L092B:
+092B : D4		" "		sep	r4
+				;
+092C : 03		" "		ldn	r3
+092D : 7F 30		" 0"		smbi	#30
+092F : 46		"F"		lda	r6
+0930 : 0B		" "		ldn	r11
+0931 : FF 80		"  "		smi	#80
+0933 : CB 09 2B		"  +"		lbnf	L092B
+0936 : FA F0		"  "		ani	#F0
+0938 : C2 09 47		"  G"		lbz	L0947
+093B : FB 10		"  "		xri	#10
+093D : C2 09 47		"  G"		lbz	L0947
+0940 : 0B		" "		ldn	r11
+0941 : FB B0		"  "		xri	#B0
+0943 : CA 09 2B		"  +"		lbnz	L092B
+0946 : D5		" "		sep	r5
+0947				L0947:
+0947 : D4		" "		sep	r4
+				;
+0948 : 03		" "		ldn	r3
+0949 : 79		"y"		mark
+094A : D5		" "		sep	r5
+094B : D7		" "		sep	r7
+				;
+094C : 82		" "		glo	r2
+094D : 2B		"+"		dec	r11
+094E : FF 30		" 0"		smi	#30
+0950 : FE		" "		shl
+0951 : 52		"R"		str	r2
+0952 : FE		" "		shl
+0953 : FE		" "		shl
+0954 : F4		" "		add
+0955 : AC		" "		plo	r12
+0956 : F8 00		"  "		ldi	#00
+0958 : 7C 00		"| "		adci	#00
+095A : BC		" "		phi	r12
+095B : 8C		" "		glo	r12
+095C : FC 64		" d"		adi	#64
+095E : AC		" "		plo	r12
+095F : 9C		" "		ghi	r12
+0960 : 7C 1B		"| "		adci	#1B
+0962 : BC		" "		phi	r12
+0963 : F8 0A		"  "		ldi	#0A
+0965 : 58		"X"		str	r8
+0966 : D4		" "		sep	r4
+				;
+0967 : 09		" "		ldn	r9
+0968 : 71		"q"		dis
+0969 : D4		" "		sep	r4
+				;
+096A : 00		" "		idl
+096B : 62		"b"		out	2
+096C : 20		" "		dec	r0
+096D : 3D 20		"= "		bn2	L0920
+096F : 00		" "		idl
+0970 : D5		" "		sep	r5
+				;
+0971 : 08		" "		ldn	r8
+0972 : AE		" "		plo	r14
+0973				L0973:
+0973 : 4C		"L"		lda	r12
+0974 : 58		"X"		str	r8
+0975 : D4		" "		sep	r4
+				;
+0976 : 0B		" "		ldn	r11
+0977 : F2		" "		and
+0978 : 2E		"."		dec	r14
+0979 : 8E		" "		glo	r14
+097A : 3A 73		":s"		bnz	L0973
+097C : D5		" "		sep	r5
+				;
+097D				L097D:
+097D : 6C		"l"		inp	4
+097E : FB FF		"  "		xri	#FF
+0980 : 32 7D		"2}"		bz	L097D
+0982				L0982:
+0982 : 6C		"l"		inp	4
+0983 : FB FF		"  "		xri	#FF
+0985 : 3A 82		": "		bnz	L0982
+0987 : D4		" "		sep	r4
+				;
+0988 : 00		" "		idl
+0989 : 54		"T"		str	r4
+098A : 00		" "		idl
+098B : 93		" "		ghi	r3
+098C : 6C		"l"		inp	4
+098D : FB FF		"  "		xri	#FF
+098F : 3A 82		": "		bnz	L0982
+0991 : D5		" "		sep	r5
+				;
+0992 : 1E		" "		inc	r14
+0993 : 1E		" "		inc	r14
+0994 : 1E		" "		inc	r14
+0995 : 1E		" "		inc	r14
+0996 : 1E		" "		inc	r14
+0997 : 1E		" "		inc	r14
+0998 : 1E		" "		inc	r14
+0999 : 1E		" "		inc	r14
+099A : 1E		" "		inc	r14
+099B : 1E		" "		inc	r14
+099C : 1E		" "		inc	r14
+099D : 1E		" "		inc	r14
+099E : 8E		" "		glo	r14
+099F : FC B0		"  "		adi	#B0
+09A1 : C8		" "		lskp							;INFO: skip to address L09A4
+				;
+09A2 : F8 80		"  "		ldi	#80
+09A4				L09A4:
+09A4 : C8		" "		lskp							;INFO: skip to address L09A7
+				;
+09A5 : F8 A0		"  "		ldi	#A0
+09A7				L09A7:
+09A7 : 58		"X"		str	r8
+09A8 : D4		" "		sep	r4
+				;
+09A9 : 00		" "		idl
+09AA : 72		"r"		ldxa
+09AB : 4B		"K"		lda	r11
+09AC : FB B4		"  "		xri	#B4
+09AE : 3A B3		": "		bnz	L09B3
+09B0 : F8 20		"  "		ldi	#20
+09B2 : 5B		"["		str	r11
+09B3				L09B3:
+09B3 : 2B		"+"		dec	r11
+09B4 : D7		" "		sep	r7
+				;
+09B5 : 82		" "		glo	r2
+09B6 : 01		" "		ldn	r1
+09B7				L09B7:
+09B7 : C2 0A 94		"   "		lbz	L0A94
+09BA : 5B		"["		str	r11
+09BB : FF 80		"  "		smi	#80
+09BD : 3B EE		"; "		bnf	L09EE
+09BF : FF 3D		" ="		smi	#3D
+09C1 : C3 0A 83		"   "		lbdf	L0A83
+09C4 : D7		" "		sep	r7
+				;
+09C5 : ED		" "		sex	r13
+09C6 : 80		" "		glo	r0
+09C7 : 0A		" "		ldn	r10
+09C8 : B3		" "		phi	r3
+09C9 : A0		" "		plo	r0
+09CA : 0A		" "		ldn	r10
+09CB : BC		" "		phi	r12
+09CC : B0		" "		phi	r0
+09CD : 0A		" "		ldn	r10
+09CE : CB B2 0A		"   "		lbnf	LB20A
+09D1 : ED		" "		sex	r13
+09D2 : B3		" "		phi	r3
+09D3 : 0A		" "		ldn	r10
+09D4 : EA		" "		sex	r10
+09D5 : B4		" "		phi	r4
+09D6 : 0A		" "		ldn	r10
+09D7 : FB B5		"  "		xri	#B5
+09D9 : 0B		" "		ldn	r11
+09DA : 2C		","		dec	r12
+09DB : B6		" "		phi	r6
+09DC : 0B		" "		ldn	r11
+09DD : 32 B7		"2 "		bz	L09B7
+09DF : 0A		" "		ldn	r10
+09E0 : 95		" "		ghi	r5
+09E1 : BA		" "		phi	r10
+09E2 : 03		" "		ldn	r3
+09E3 : B2		" "		phi	r2
+09E4 : B8		" "		phi	r8
+09E5 : 0A		" "		ldn	r10
+09E6 : A8		" "		plo	r8
+09E7 : B9		" "		phi	r9
+09E8 : 0A		" "		ldn	r10
+09E9 : AB		" "		plo	r11
+09EA : 00		" "		idl
+09EB : C0 0A 83		"   "		lbr	L0A83
+				;
+09EE				L09EE:
+09EE : 0B		" "		ldn	r11
+09EF : 58		"X"		str	r8
+09F0 : D4		" "		sep	r4
+				;
+09F1 : 02		" "		ldn	r2
+09F2 : 03		" "		ldn	r3
+09F3 : D7		" "		sep	r7
+				;
+09F4 : 82		" "		glo	r2
+09F5 : 36 C2		"6 "		b3	L09C2
+09F7 : 0A		" "		ldn	r10
+09F8 : 09		" "		ldn	r9
+09F9 : D7		" "		sep	r7
+				;
+09FA : 6A		"j"		inp	2
+09FB : 20		" "		dec	r0
+09FC : 0A		" "		ldn	r10
+09FD : 09		" "		ldn	r9
+09FE : D7		" "		sep	r7
+				;
+09FF : 67		"g"		out	7
+0A00 : 20		" "		dec	r0
+0A01 : 0A		" "		ldn	r10
+0A02				L0A02:
+0A02 : 09		" "		ldn	r9
+0A03 : F8 40		" @"		ldi	#40
+0A05 : 58		"X"		str	r8
+0A06 : D4		" "		sep	r4
+				;
+0A07 : 04		" "		ldn	r4
+0A08 : AA		" "		plo	r10
+0A09 : D7		" "		sep	r7
+0A0A : C0 0E D7		"   "		lbr	L0ED7
+				;
+0A0D : 67		"g"		out	7
+0A0E : 40		"@"		lda	r0
+0A0F : 0A		" "		ldn	r10
+0A10 : 14		" "		inc	r4
+0A11 : C0 08 02		"   "		lbr	L0802
+0A14				L0A14:
+0A14 : D7		" "		sep	r7
+				;
+0A15 : 64		"d"		out	4
+0A16 : 10		" "		inc	r0
+0A17 : 0A		" "		ldn	r10
+0A18 : 1C		" "		inc	r12
+0A19 : C0 0A 83		"   "		lbr	L0A83
+0A1C : D7		" "		sep	r7
+				;
+0A1D : 82		" "		glo	r2
+0A1E : 32 52		"2R"		bz	L0A52
+0A20 : D7		" "		sep	r7
+				;
+0A21 : 82		" "		glo	r2
+0A22 : 0E		" "		ldn	r14
+0A23 : F7		" "		sm
+0A24 : CB 0A 3B		"  ;"		lbnf	L0A3B
+0A27 : 8B		" "		glo	r11
+0A28 : 73		"s"		stxd
+0A29				L0A29:
+0A29 : D4		" "		sep	r4
+				;
+0A2A : 04		" "		ldn	r4
+0A2B : 4D		"M"		lda	r13
+0A2C : 0B		" "		ldn	r11
+0A2D : FB 20		"  "		xri	#20
+0A2F : CA 0A 29		"  )"		lbnz	L0A29
+0A32 : D4		" "		sep	r4
+				;
+0A33 : 04		" "		ldn	r4
+0A34 : DA		" "		sep	r10
+				;
+0A35 : 60		"`"		irx
+0A36 : F0		" "		ldx
+0A37 : 58		"X"		str	r8
+0A38 : D4		" "		sep	r4
+				;
+0A39 : 04		" "		ldn	r4
+0A3A				L0A3A:
+0A3A : C3 0B FB		"   "		lbdf	L0BFB
+0A3D : 20		" "		dec	r0
+0A3E : CA 0A 83		"   "		lbnz	L0A83
+0A41 : D7		" "		sep	r7
+				;
+0A42 : 67		"g"		out	7
+0A43 : 08		" "		ldn	r8
+0A44 : 0A		" "		ldn	r10
+0A45 : 83		" "		glo	r3
+0A46 : D7		" "		sep	r7
+				;
+0A47 : A0		" "		plo	r0
+0A48 : 0B		" "		ldn	r11
+0A49 : F8 00		"  "		ldi	#00
+0A4B : AE		" "		plo	r14
+0A4C				L0A4C:
+0A4C : 1B		" "		inc	r11
+0A4D : 0B		" "		ldn	r11
+0A4E : C2 0A 6F		"  o"		lbz	L0A6F
+0A51 : FF 80		"  "		smi	#80
+0A53 : CB 0A 69		"  i"		lbnf	L0A69
+0A56 : 0B		" "		ldn	r11
+0A57 : FA F0		"  "		ani	#F0
+0A59 : FB 80		"  "		xri	#80
+0A5B : 32 6F		"2o"		bz	L0A6F
+0A5D : FB 10		"  "		xri	#10
+0A5F : 32 6F		"2o"		bz	L0A6F
+0A61 : 0B		" "		ldn	r11
+0A62 : FB B0		"  "		xri	#B0
+0A64 : 32 6F		"2o"		bz	L0A6F
+0A66 : C0 0A 4C		"  L"		lbr	L0A4C
+				;
+0A69				L0A69:
+0A69 : 1E		" "		inc	r14
+0A6A : FB A0		"  "		xri	#A0
+0A6C : CA 0A 4C		"  L"		lbnz	L0A4C
+0A6F				L0A6F:
+0A6F : D7		" "		sep	r7
+				;
+0A70 : 98		" "		ghi	r8
+0A71 : 0B		" "		ldn	r11
+0A72 : D7		" "		sep	r7
+				;
+0A73 : 82		" "		glo	r2
+0A74 : 0E		" "		ldn	r14
+0A75 : 52		"R"		str	r2
+0A76 : 8E		" "		glo	r14
+0A77 : F4		" "		add
+0A78 : 52		"R"		str	r2
+0A79 : D7		" "		sep	r7
+				;
+0A7A : 82		" "		glo	r2
+0A7B : 32 F5		"2 "		bz	L0AF5
+0A7D : CB 0A 83		"   "		lbnf	L0A83
+0A80 : D4		" "		sep	r4
+				;
+0A81 : 04		" "		ldn	r4
+0A82 : DA		" "		sep	r10
+				;
+0A83				L0A83:
+0A83 : 1B		" "		inc	r11
+0A84 : D7		" "		sep	r7
+				;
+0A85 : CF		" "		lsdf							;INFO: skip to address L0A88
+0A86 : 60		"`"		irx
+0A87 : 00		" "		idl
+0A88				L0A88:
+0A88 : 0A		" "		ldn	r10
+0A89 : 91		" "		ghi	r1
+0A8A : D7		" "		sep	r7
+				;
+0A8B : 28		"("		dec	r8
+0A8C : 02		" "		ldn	r2
+0A8D : D4		" "		sep	r4
+				;
+0A8E : 04		" "		ldn	r4
+0A8F : 4D		"M"		lda	r13
+0A90 : D5		" "		sep	r5
+0A91 : D7		" "		sep	r7
+				;
+0A92 : 3E 02		"> "		bn3	L0A02
+0A94				L0A94:
+0A94 : D5		" "		sep	r5
+0A95 : D7		" "		sep	r7
+				;
+0A96 : 55		"U"		str	r5
+0A97 : 20		" "		dec	r0
+0A98 : D7		" "		sep	r7
+				;
+0A99 : 82		" "		glo	r2
+0A9A : 36 3A		"6:"		b3	L0A3A
+0A9C : 83		" "		glo	r3
+0A9D : D7		" "		sep	r7
+				;
+0A9E : 6A		"j"		inp	2
+0A9F : 20		" "		dec	r0
+0AA0 : 0A		" "		ldn	r10
+0AA1 : A5		" "		plo	r5
+0AA2 : F8 40		" @"		ldi	#40
+0AA4 : C8		" "		lskp							;INFO: skip to address L0AA7
+				;
+0AA5 : F8 43		" C"		ldi	#43
+0AA7				L0AA7:
+0AA7 : C8		" "		lskp							;INFO: skip to address L0AAA
+				;
+0AA8 : F8 46		" F"		ldi	#46
+0AAA				L0AAA:
+0AAA : C8		" "		lskp							;INFO: skip to address L0AAD
+				;
+0AAB : F8 4D		" M"		ldi	#4D
+0AAD				L0AAD:
+0AAD : 58		"X"		str	r8
+0AAE : D4		" "		sep	r4
+				;
+0AAF : 04		" "		ldn	r4
+0AB0 : AA		" "		plo	r10
+0AB1 : 30 83		"0 "		br	L0A83
+0AB3 : D7		" "		sep	r7
+				;
+0AB4 : 82		" "		glo	r2
+0AB5 : 30 58		"0X"		br	L0A58
+0AB7 : D4		" "		sep	r4
+				;
+0AB8 : 04		" "		ldn	r4
+0AB9 : 72		"r"		ldxa
+0ABA : 30 83		"0 "		br	L0A83
+				;
+0ABC : F8 0F		"  "		ldi	#0F
+0ABE : AA		" "		plo	r10
+0ABF : 0A		" "		ldn	r10
+0AC0 : FA 0F		"  "		ani	#0F
+0AC2 : 52		"R"		str	r2
+0AC3 : F8 00		"  "		ldi	#00
+0AC5 : 5A		"Z"		str	r10
+0AC6 : 0B		" "		ldn	r11
+0AC7 : F4		" "		add
+0AC8 : 5B		"["		str	r11
+0AC9 : 30 83		"0 "		br	L0A83
+0ACB : D4		" "		sep	r4
+				;
+0ACC : 00		" "		idl
+0ACD : CB D7 F9		"   "		lbnf	LD7F9
+0AD0 : 0D		" "		ldn	r13
+0AD1 : 0E		" "		ldn	r14
+0AD2 : 0F		" "		ldn	r15
+0AD3 : 21		"!"		dec	r1
+0AD4 : 22		"""		dec	r2
+0AD5 : 23		"#"		dec	r3
+0AD6 : 00		" "		idl
+0AD7 : D7		" "		sep	r7
+0AD8 : 38		"8"		skp							;INFO: skip to address L0ADA
+				;
+0AD9 : 10		" "		inc	r0
+0ADA				L0ADA:
+0ADA : D7		" "		sep	r7
+				;
+0ADB : 82		" "		glo	r2
+0ADC : 30 58		"0X"		br	L0A58
+0ADE : D4		" "		sep	r4
+				;
+0ADF : 02		" "		ldn	r2
+0AE0 : 03		" "		ldn	r3
+0AE1 : D7		" "		sep	r7
+				;
+0AE2 : 82		" "		glo	r2
+0AE3 : 34 58		"4X"		b1	L0A58
+0AE5 : D4		" "		sep	r4
+				;
+0AE6 : 02		" "		ldn	r2
+0AE7 : 03		" "		ldn	r3
+0AE8 : 30 83		"0 "		br	L0A83
+				;
+0AEA : F8 FF		"  "		ldi	#FF
+0AEC : C8		" "		lskp							;INFO: skip to address L0AEF
+				;
+0AED : F8 01		"  "		ldi	#01
+0AEF				L0AEF:
+0AEF : 52		"R"		str	r2
+0AF0 : D7		" "		sep	r7
+				;
+0AF1 : 82		" "		glo	r2
+0AF2 : 0F		" "		ldn	r15
+0AF3 : F4		" "		add
+0AF4 : FA 0F		"  "		ani	#0F
+0AF6 : D7		" "		sep	r7
+				;
+0AF7 : 87		" "		glo	r7
+0AF8 : 0F		" "		ldn	r15
+0AF9 : 30 83		"0 "		br	L0A83
+				;
+0AFB : 1B		" "		inc	r11
+0AFC : F8 21		" !"		ldi	#21
+0AFE : AA		" "		plo	r10
+0AFF : 0A		" "		ldn	r10
+0B00 : FC 01		"  "		adi	#01
+0B02 : FA 0F		"  "		ani	#0F
+0B04 : 52		"R"		str	r2
+0B05 : 5A		"Z"		str	r10
+0B06 : FC 10		"  "		adi	#10
+0B08 : AA		" "		plo	r10
+0B09 : F0		" "		ldx
+0B0A : FE		" "		shl
+0B0B : FE		" "		shl
+0B0C : F4		" "		add
+0B0D : 52		"R"		str	r2
+0B0E : 0A		" "		ldn	r10
+0B0F : F4		" "		add
+0B10 : 52		"R"		str	r2
+0B11 : 58		"X"		str	r8
+0B12 : D7		" "		sep	r7
+				;
+0B13 : 82		" "		glo	r2
+0B14 : 0E		" "		ldn	r14
+0B15 : F5		" "		sd
+0B16 : 33 1E		"3 "		bdf	L0B1E
+0B18 : F8 00		"  "		ldi	#00
+0B1A : 5B		"["		str	r11
+0B1B : C0 0A 83		"   "		lbr	L0A83
+				;
+0B1E				L0B1E:
+0B1E : 5B		"["		str	r11
+0B1F : 52		"R"		str	r2
+0B20 : 08		" "		ldn	r8
+0B21 : D7		" "		sep	r7
+				;
+0B22 : 87		" "		glo	r7
+0B23 : 0E		" "		ldn	r14
+0B24 : F0		" "		ldx
+0B25 : 58		"X"		str	r8
+0B26 : D4		" "		sep	r4
+				;
+0B27 : 04		" "		ldn	r4
+0B28 : 17		" "		inc	r7
+0B29 : C0 0A 83		"   "		lbr	L0A83
+0B2C : D7		" "		sep	r7
+				;
+0B2D : 4F		"O"		lda	r15
+0B2E : 10		" "		inc	r0
+0B2F : C0 0A 83		"   "		lbr	L0A83
+0B32 : D7		" "		sep	r7
+				;
+0B33 : 52		"R"		str	r2
+0B34 : 40		"@"		lda	r0
+0B35 : C0 0A 83		"   "		lbr	L0A83
+				;
+0B38 : F8 20		"  "		ldi	#20
+0B3A : BC		" "		phi	r12
+0B3B : F8 00		"  "		ldi	#00
+0B3D : AC		" "		plo	r12
+0B3E : 0C		" "		ldn	r12
+0B3F : FB AA		"  "		xri	#AA
+0B41 : C2 20 01		"   "		lbz	L2001
+0B44 : 9B		" "		ghi	r11
+0B45 : BC		" "		phi	r12
+0B46 : 8B		" "		glo	r11
+0B47 : AC		" "		plo	r12
+0B48 : F8 0E		"  "		ldi	#0E
+0B4A				L0B4A:
+0B4A : 52		"R"		str	r2
+0B4B : 2C		","		dec	r12
+0B4C : 2C		","		dec	r12
+0B4D : 4C		"L"		lda	r12
+0B4E : FB B4		"  "		xri	#B4
+0B50 : 3A 53		":S"		bnz	L0B53
+0B52 : 2C		","		dec	r12
+0B53				L0B53:
+0B53 : 0C		" "		ldn	r12
+0B54 : FF 20		"  "		smi	#20
+0B56 : C3 0B 5D		"  ]"		lbdf	L0B5D
+0B59 : F0		" "		ldx
+0B5A : FF 01		"  "		smi	#01
+0B5C : 52		"R"		str	r2
+0B5D				L0B5D:
+0B5D : F0		" "		ldx
+0B5E : FF 01		"  "		smi	#01
+0B60 : 32 67		"2g"		bz	L0B67
+0B62 : C3 0B 4A		"  J"		lbdf	L0B4A
+0B65 : 30 A1		"0 "		br	L0BA1
+				;
+0B67				L0B67:
+0B67 : 8B		" "		glo	r11
+0B68 : 52		"R"		str	r2
+0B69 : 8C		" "		glo	r12
+0B6A : F3		" "		xor
+0B6B : 32 A6		"2 "		bz	L0BA6
+0B6D : 0C		" "		ldn	r12
+0B6E : 58		"X"		str	r8
+0B6F : FF 80		"  "		smi	#80
+0B71 : 3B 96		"; "		bnf	L0B96
+0B73 : D4		" "		sep	r4
+				;
+0B74 : 02		" "		ldn	r2
+0B75 : 6D		"m"		inp	5
+0B76 : 0C		" "		ldn	r12
+0B77 : FB B4		"  "		xri	#B4
+0B79 : 3A 7C		":|"		bnz	L0B7C
+0B7B : 1C		" "		inc	r12
+0B7C				L0B7C:
+0B7C : 08		" "		ldn	r8
+0B7D : 30 8F		"0 "		br	L0B8F
+				;
+0B7F				L0B7F:
+0B7F : 0C		" "		ldn	r12
+0B80 : FB 7E		" ~"		xri	#7E
+0B82 : 32 8B		"2 "		bz	L0B8B
+0B84 : FB 01		"  "		xri	#01
+0B86 : 3A 8E		": "		bnz	L0B8E
+0B88 : F8 AB		"  "		ldi	#AB
+0B8A : C8		" "		lskp							;INFO: skip to address L0B8D
+				;
+0B8B				L0B8B:
+0B8B : F8 B5		"  "		ldi	#B5
+0B8D				L0B8D:
+0B8D : 38		"8"		skp							;INFO: skip to address L0B8F
+				;
+0B8E				L0B8E:
+0B8E : 0C		" "		ldn	r12
+0B8F				L0B8F:
+0B8F : 1C		" "		inc	r12
+0B90 : 58		"X"		str	r8
+0B91 : D4		" "		sep	r4
+				;
+0B92 : 0B		" "		ldn	r11
+0B93 : F2		" "		and
+0B94 : 30 67		"0g"		br	L0B67
+				;
+0B96				L0B96:
+0B96 : 0C		" "		ldn	r12
+0B97 : FF 20		"  "		smi	#20
+0B99 : 33 7F		"3 "		bdf	L0B7F
+0B9B : F8 A5		"  "		ldi	#A5
+0B9D : 58		"X"		str	r8
+0B9E : D4		" "		sep	r4
+				;
+0B9F : 0B		" "		ldn	r11
+0BA0 : F2		" "		and
+0BA1				L0BA1:
+0BA1 : 0C		" "		ldn	r12
+0BA2 : FC 60		" `"		adi	#60
+0BA4 : 30 8F		"0 "		br	L0B8F
+0BA6				L0BA6:
+0BA6 : D7		" "		sep	r7
+				;
+0BA7 : 67		"g"		out	7
+0BA8 : 01		" "		ldn	r1
+0BA9 : 0B		" "		ldn	r11
+0BAA : AF		" "		plo	r15
+0BAB : F8 49		" I"		ldi	#49
+0BAD : 30 CB		"0 "		br	L0BCB
+0BAF : D7		" "		sep	r7
+				;
+0BB0 : 6A		"j"		inp	2
+0BB1 : 02		" "		ldn	r2
+0BB2 : 0B		" "		ldn	r11
+0BB3 : B8		" "		phi	r8
+0BB4 : F8 46		" F"		ldi	#46
+0BB6 : 30 CB		"0 "		br	L0BCB
+0BB8 : D7		" "		sep	r7
+				;
+0BB9 : 6A		"j"		inp	2
+0BBA : 01		" "		ldn	r1
+0BBB : 0B		" "		ldn	r11
+0BBC : C1 F8 66		"  f"		lbq	LF866
+0BBF : 30 CB		"0 "		br	L0BCB
+0BC1 : D7		" "		sep	r7
+				;
+0BC2 : 67		"g"		out	7
+0BC3 : 02		" "		ldn	r2
+0BC4 : 0B		" "		ldn	r11
+0BC5 : C9 F8 20		"   "		lbnq	LF820
+0BC8 : C8		" "		lskp							;INFO: skip to address L0BCB
+				;
+0BC9 : F8 4D		" M"		ldi	#4D
+0BCB				L0BCB:
+0BCB : 58		"X"		str	r8
+0BCC : D4		" "		sep	r4
+				;
+0BCD : 0B		" "		ldn	r11
+0BCE : F9 D7		"  "		ori	#D7
+0BD0 : 82		" "		glo	r2
+0BD1 : 03		" "		ldn	r3
+0BD2 : FA 07		"  "		ani	#07
+0BD4 : C2 0C 04		"   "		lbz	L0C04
+0BD7 : FF 01		"  "		smi	#01
+0BD9 : 32 E6		"2 "		bz	L0BE6
+0BDB : FF 01		"  "		smi	#01
+0BDD : 32 E9		"2 "		bz	L0BE9
+0BDF : FF 01		"  "		smi	#01
+0BE1 : 32 EC		"2 "		bz	L0BEC
+0BE3 : F8 41		" A"		ldi	#41
+0BE5 : C8		" "		lskp							;INFO: skip to address L0BE8
+				;
+0BE6				L0BE6:
+0BE6 : F8 4E		" N"		ldi	#4E
+0BE8				L0BE8:
+0BE8 : C8		" "		lskp							;INFO: skip to address L0BEB
+				;
+0BE9				L0BE9:
+0BE9 : F8 55		" U"		ldi	#55
+0BEB				L0BEB:
+0BEB : C8		" "		lskp							;INFO: skip to address L0BEE
+				;
+0BEC				L0BEC:
+0BEC : F8 50		" P"		ldi	#50
+0BEE				L0BEE:
+0BEE : C8		" "		lskp							;INFO: skip to address L0BF1
+				;
+0BEF				L0BEF:
+0BEF : F8 20		"  "		ldi	#20
+0BF1				L0BF1:
+0BF1 : 58		"X"		str	r8
+0BF2 : E8		" "		sex	r8
+0BF3 : 63		"c"		out	3
+0BF4 : 28		"("		dec	r8
+0BF5 : F8 00		"  "		ldi	#00
+0BF7 : 58		"X"		str	r8
+0BF8 : D5		" "		sep	r5
+0BF9 : D4		" "		sep	r4
+				;
+0BFA : 0B		" "		ldn	r11
+0BFB				L0BFB:
+0BFB : F2		" "		and
+0BFC : 0C		" "		ldn	r12
+0BFD : FB B4		"  "		xri	#B4
+0BFF : 3A 02		": "		bnz	L0C02
+0C01 : 1C		" "		inc	r12
+0C02				L0C02:
+0C02 : 1C		" "		inc	r12
+0C03 : D5		" "		sep	r5
+0C04				L0C04:
+0C04 : D7		" "		sep	r7
+				;
+0C05 : 82		" "		glo	r2
+0C06 : 04		" "		ldn	r4
+0C07 : FA 07		"  "		ani	#07
+0C09 : C2 0B EF		"   "		lbz	L0BEF
+0C0C : FF 01		"  "		smi	#01
+0C0E : C2 0C 20		"   "		lbz	L0C20
+0C11 : FF 01		"  "		smi	#01
+0C13 : C2 0C 23		"  #"		lbz	L0C23
+0C16 : FF 01		"  "		smi	#01
+0C18 : 32 1D		"2 "		bz	L0C1D
+0C1A : F8 61		" a"		ldi	#61
+0C1C : C8		" "		lskp							;INFO: skip to address L0C1F
+				;
+0C1D				L0C1D:
+0C1D : F8 70		" p"		ldi	#70
+0C1F				L0C1F:
+0C1F : C8		" "		lskp							;INFO: skip to address L0C22
+				;
+0C20				L0C20:
+0C20 : F8 6E		" n"		ldi	#6E
+0C22				L0C22:
+0C22 : C8		" "		lskp							;INFO: skip to address L0C25
+				;
+0C23				L0C23:
+0C23 : F8 75		" u"		ldi	#75
+0C25				L0C25:
+0C25 : C0 0B F1		"   "		lbr	L0BF1
+				;
+0C28				L0C28:
+0C28 : 0C		" "		ldn	r12
+0C29 : F6		" "		shr
+0C2A				L0C2A:
+0C2A : FF 01		"  "		smi	#01
+0C2C : C4		" "		nop
+0C2D : E3		" "		sex	r3
+0C2E : C4		" "		nop
+0C2F : 3A 2A		":*"		bnz	L0C2A
+0C31 : 66		"f"		out	6
+0C32 : 00		" "		idl
+0C33 : 2E		"."		dec	r14
+0C34 : 8E		" "		glo	r14
+0C35 : 32 43		"2C"		bz	L0C43
+0C37 : 02		" "		ldn	r2
+0C38 : F6		" "		shr
+0C39 : 35 3C		"5<"		b2	L0C3C
+0C3B : C8		" "		lskp							;INFO: skip to address L0C3E
+				;
+0C3C				L0C3C:
+0C3C : F9 80		"  "		ori	#80
+0C3E				L0C3E:
+0C3E : 52		"R"		str	r2
+0C3F : 0C		" "		ldn	r12
+0C40 : C0 0C 2A		"  *"		lbr	L0C2A
+				;
+0C43				L0C43:
+0C43 : 02		" "		ldn	r2
+0C44 : FA 7F		"  "		ani	#7F
+0C46 : 58		"X"		str	r8
+0C47 : FB 08		"  "		xri	#08
+0C49 : C2 0D A8		"   "		lbz	L0DA8
+0C4C : FB 77		" w"		xri	#77
+0C4E : C2 0D A3		"   "		lbz	L0DA3
+0C51 : FB 75		" u"		xri	#75
+0C53 : C2 0D AD		"   "		lbz	L0DAD
+0C56 : FB 07		"  "		xri	#07
+0C58 : 32 60		"2`"		bz	L0C60
+0C5A : 08		" "		ldn	r8
+0C5B : FF 20		"  "		smi	#20
+0C5D : C3 0C F9		"   "		lbdf	L0CF9
+0C60				L0C60:
+0C60 : F8 00		"  "		ldi	#00
+0C62 : 58		"X"		str	r8
+0C63 : 30 F9		"0 "		br	L0CF9
+				;
+0C65 : 9A		" "		ghi	r10
+0C66 : BC		" "		phi	r12
+0C67 : F8 35		" 5"		ldi	#35
+0C69 : AC		" "		plo	r12
+0C6A : F8 0A		"  "		ldi	#0A
+0C6C : AE		" "		plo	r14
+0C6D : F8 00		"  "		ldi	#00
+0C6F : AA		" "		plo	r10
+0C70 : D7		" "		sep	r7
+				;
+0C71 : 61		"a"		out	1
+0C72 : 08		" "		ldn	r8
+0C73 : 0C		" "		ldn	r12
+0C74 : 83		" "		glo	r3
+0C75 : F8 3A		" :"		ldi	#3A
+0C77 : A9		" "		plo	r9
+0C78 : E3		" "		sex	r3
+0C79 : 66		"f"		out	6
+0C7A : 01		" "		ldn	r1
+0C7B : E2		" "		sex	r2
+0C7C : 09		" "		ldn	r9
+0C7D				L0C7D:
+0C7D : 3D 90		"= "		bn2	L0C90
+0C7F : FF 01		"  "		smi	#01
+0C81 : 3A 7D		":}"		bnz	L0C7D
+0C83 : 6C		"l"		inp	4
+0C84 : FB FF		"  "		xri	#FF
+0C86 : 52		"R"		str	r2
+0C87 : 32 93		"2 "		bz	L0C93
+0C89 : 0A		" "		ldn	r10
+0C8A : F1		" "		or
+0C8B : 5A		"Z"		str	r10
+0C8C				L0C8C:
+0C8C : E3		" "		sex	r3
+0C8D : 66		"f"		out	6
+0C8E : 00		" "		idl
+0C8F : D5		" "		sep	r5
+0C90				L0C90:
+0C90 : C0 0C 28		"  ("		lbr	L0C28
+				;
+0C93				L0C93:
+0C93 : 0A		" "		ldn	r10
+0C94 : 32 8C		"2 "		bz	L0C8C
+0C96 : D4		" "		sep	r4
+				;
+0C97 : 00		" "		idl
+0C98 : 54		"T"		str	r4
+0C99 : 00		" "		idl
+0C9A : 93		" "		ghi	r3
+0C9B : 6C		"l"		inp	4
+0C9C : FB FF		"  "		xri	#FF
+0C9E : 52		"R"		str	r2
+0C9F : 3A 8C		": "		bnz	L0C8C
+0CA1 : 0A		" "		ldn	r10
+0CA2 : FA 03		"  "		ani	#03
+0CA4 : FB 03		"  "		xri	#03
+0CA6 : C2 0D 36		"  6"		lbz	L0D36
+0CA9 : 0A		" "		ldn	r10
+0CAA : FA 01		"  "		ani	#01
+0CAC : CA 0D 47		"  G"		lbnz	L0D47
+0CAF : 0A		" "		ldn	r10
+0CB0 : FA 04		"  "		ani	#04
+0CB2 : CA 0D 41		"  A"		lbnz	L0D41
+0CB5 : D7		" "		sep	r7
+				;
+0CB6 : 64		"d"		out	4
+0CB7 : 07		" "		ldn	r7
+0CB8 : 0C		" "		ldn	r12
+0CB9 : BD		" "		phi	r13
+0CBA : C0 0C CA		"   "		lbr	L0CCA
+0CBD : D7		" "		sep	r7
+				;
+0CBE : 82		" "		glo	r2
+0CBF : 04		" "		ldn	r4
+0CC0 : 52		"R"		str	r2
+0CC1 : D7		" "		sep	r7
+				;
+0CC2 : 82		" "		glo	r2
+0CC3 : 03		" "		ldn	r3
+0CC4 : FA E7		"  "		ani	#E7
+0CC6 : F1		" "		or
+0CC7 : D7		" "		sep	r7
+				;
+0CC8 : 87		" "		glo	r7
+0CC9 : 04		" "		ldn	r4
+0CCA				L0CCA:
+0CCA : D7		" "		sep	r7
+				;
+0CCB : 41		"A"		lda	r1
+0CCC : 10		" "		inc	r0
+0CCD : D4		" "		sep	r4
+				;
+0CCE : 00		" "		idl
+0CCF : 80		" "		glo	r0
+0CD0 : D7		" "		sep	r7
+				;
+0CD1 : 82		" "		glo	r2
+0CD2 : 04		" "		ldn	r4
+0CD3 : FA E0		"  "		ani	#E0
+0CD5 : 52		"R"		str	r2
+0CD6 : FF A0		"  "		smi	#A0
+0CD8 : 3B DD		"; "		bnf	L0CDD
+0CDA : F8 00		"  "		ldi	#00
+0CDC : 52		"R"		str	r2
+0CDD				L0CDD:
+0CDD : F0		" "		ldx
+0CDE : 32 F7		"2 "		bz	L0CF7
+0CE0 : FF 40		" @"		smi	#40
+0CE2 : 3B F0		"; "		bnf	L0CF0
+0CE4 : C2 0D 2A		"  *"		lbz	L0D2A
+0CE7 : FF 40		" @"		smi	#40
+0CE9 : C2 0D 02		"   "		lbz	L0D02
+0CEC : F0		" "		ldx
+0CED : FF 20		"  "		smi	#20
+0CEF : 52		"R"		str	r2
+0CF0				L0CF0:
+0CF0 : 8C		" "		glo	r12
+0CF1 : F4		" "		add
+0CF2 : AC		" "		plo	r12
+0CF3 : 9C		" "		ghi	r12
+0CF4 : 7C 00		"| "		adci	#00
+0CF6 : BC		" "		phi	r12
+0CF7				L0CF7:
+0CF7 : 0C		" "		ldn	r12
+0CF8				L0CF8:
+0CF8 : 58		"X"		str	r8
+0CF9				L0CF9:
+0CF9 : D4		" "		sep	r4
+				;
+0CFA : 00		" "		idl
+0CFB : 72		"r"		ldxa
+0CFC				L0CFC:
+0CFC : D7		" "		sep	r7
+0CFD : 38		"8"		skp							;INFO: skip to address L0CFF
+				;
+0CFE : E7		" "		sex	r7
+0CFF				L0CFF:
+0CFF : 16		" "		inc	r6
+0D00 : 16		" "		inc	r6
+0D01 : D5		" "		sep	r5
+0D02				L0D02:
+0D02 : D7		" "		sep	r7
+				;
+0D03 : 82		" "		glo	r2
+0D04 : 38		"8"		skp							;INFO: skip to address L0D06
+				;
+0D05 : C2 0C F9		"   "		lbz	L0CF9
+0D08 : 0C		" "		ldn	r12
+0D09 : FF 40		" @"		smi	#40
+0D0B : CB 0D 14		"   "		lbnf	L0D14
+0D0E : 0C		" "		ldn	r12
+0D0F : FF 60		" `"		smi	#60
+0D11 : C0 0C F8		"   "		lbr	L0CF8
+				;
+0D14				L0D14:
+0D14 : 0C		" "		ldn	r12
+0D15 : FF 2C		" ,"		smi	#2C
+0D17 : C3 0D 25		"  %"		lbdf	L0D25
+0D1A : 0C		" "		ldn	r12
+0D1B : FB 20		"  "		xri	#20
+0D1D : 32 22		"2""		bz	L0D22
+0D1F : F8 1B		"  "		ldi	#1B
+0D21 : C8		" "		lskp							;INFO: skip to address L0D24
+				;
+0D22				L0D22:
+0D22 : F8 1F		"  "		ldi	#1F
+0D24				L0D24:
+0D24 : C8		" "		lskp							;INFO: skip to address L0D27
+				;
+0D25				L0D25:
+0D25 : FC 1C		"  "		adi	#1C
+0D27				L0D27:
+0D27 : C0 0C F8		"   "		lbr	L0CF8
+				;
+0D2A				L0D2A:
+0D2A : 0C		" "		ldn	r12
+0D2B : FF 40		" @"		smi	#40
+0D2D : CB 0C F7		"   "		lbnf	L0CF7
+0D30				L0D30:
+0D30 : 0C		" "		ldn	r12
+0D31 : FF 20		"  "		smi	#20
+0D33 : C0 0C F8		"   "		lbr	L0CF8
+				;
+0D36				L0D36:
+0D36 : F8 00		"  "		ldi	#00
+0D38 : D7		" "		sep	r7
+				;
+0D39 : 87		" "		glo	r7
+0D3A : 01		" "		ldn	r1
+0D3B : D7		" "		sep	r7
+				;
+0D3C : 35 E7		"5 "		b2	L0DE7
+0D3E : C0 0C FC		"   "		lbr	L0CFC
+0D41				L0D41:
+0D41 : D7		" "		sep	r7
+				;
+0D42 : 1F		" "		inc	r15
+0D43 : 10		" "		inc	r0
+0D44 : C0 0C CA		"   "		lbr	L0CCA
+0D47				L0D47:
+0D47 : D7		" "		sep	r7
+				;
+0D48 : 82		" "		glo	r2
+0D49 : 02		" "		ldn	r2
+0D4A : FB AC		"  "		xri	#AC
+0D4C : CA 0D 54		"  T"		lbnz	L0D54
+0D4F : D7		" "		sep	r7
+				;
+0D50 : 2B		"+"		dec	r11
+0D51 : 10		" "		inc	r0
+0D52 : 30 57		"0W"		br	L0D57
+0D54				L0D54:
+0D54 : D7		" "		sep	r7
+				;
+0D55 : 41		"A"		lda	r1
+0D56 : 10		" "		inc	r0
+0D57				L0D57:
+0D57 : D4		" "		sep	r4
+				;
+0D58 : 00		" "		idl
+0D59 : 80		" "		glo	r0
+0D5A : 0C		" "		ldn	r12
+0D5B : 58		"X"		str	r8
+0D5C : D4		" "		sep	r4
+				;
+0D5D : 00		" "		idl
+0D5E : 6F		"o"		inp	7
+0D5F : 8C		" "		glo	r12
+0D60 : 73		"s"		stxd
+0D61 : 9C		" "		ghi	r12
+0D62 : 52		"R"		str	r2
+0D63 : F8 FF		"  "		ldi	#FF
+0D65 : BC		" "		phi	r12
+0D66 : F8 FF		"  "		ldi	#FF
+0D68 : AC		" "		plo	r12
+0D69 : 0C		" "		ldn	r12
+0D6A : FB FF		"  "		xri	#FF
+0D6C : CA 0D 97		"   "		lbnz	L0D97
+0D6F : 72		"r"		ldxa
+0D70 : BC		" "		phi	r12
+0D71 : F0		" "		ldx
+0D72 : FC 60		" `"		adi	#60
+0D74 : AC		" "		plo	r12
+0D75 : 9C		" "		ghi	r12
+0D76 : 7C 00		"| "		adci	#00
+0D78 : BC		" "		phi	r12
+0D79 : D7		" "		sep	r7
+				;
+0D7A : 82		" "		glo	r2
+0D7B : 04		" "		ldn	r4
+0D7C : FA E0		"  "		ani	#E0
+0D7E : 52		"R"		str	r2
+0D7F : FF A0		"  "		smi	#A0
+0D81 : 3B 86		"; "		bnf	L0D86
+0D83 : F8 00		"  "		ldi	#00
+0D85 : 52		"R"		str	r2
+0D86				L0D86:
+0D86 : F0		" "		ldx
+0D87 : 8C		" "		glo	r12
+0D88 : F4		" "		add
+0D89 : AC		" "		plo	r12
+0D8A : 9C		" "		ghi	r12
+0D8B : 7C 00		"| "		adci	#00
+0D8D : BC		" "		phi	r12
+0D8E				L0D8E:
+0D8E : 4C		"L"		lda	r12
+0D8F : 52		"R"		str	r2
+0D90 : 0C		" "		ldn	r12
+0D91 : AC		" "		plo	r12
+0D92 : F0		" "		ldx
+0D93 : BC		" "		phi	r12
+0D94 : C0 0C FC		"   "		lbr	L0CFC
+				;
+0D97				L0D97:
+0D97 : 72		"r"		ldxa
+0D98 : BC		" "		phi	r12
+0D99 : F0		" "		ldx
+0D9A : FC 00		"  "		adi	#00
+0D9C : AC		" "		plo	r12
+0D9D : 9C		" "		ghi	r12
+0D9E : 7C 01		"| "		adci	#01
+0DA0 : BC		" "		phi	r12
+0DA1 : 30 8E		"0 "		br	L0D8E
+0DA3				L0DA3:
+0DA3 : D4		" "		sep	r4
+				;
+0DA4 : 07		" "		ldn	r7
+0DA5 : A5		" "		plo	r5
+0DA6 : 30 B0		"0 "		br	L0DB0
+0DA8				L0DA8:
+0DA8 : D4		" "		sep	r4
+				;
+0DA9 : 05		" "		ldn	r5
+0DAA : B8		" "		phi	r8
+0DAB : 30 B0		"0 "		br	L0DB0
+0DAD				L0DAD:
+0DAD : D4		" "		sep	r4
+				;
+0DAE : 09		" "		ldn	r9
+0DAF : A2		" "		plo	r2
+0DB0				L0DB0:
+0DB0 : D4		" "		sep	r4
+				;
+0DB1 : 0B		" "		ldn	r11
+0DB2 : 38		"8"		skp							;INFO: skip to address L0DB4
+0DB3 : C0 0C F9		"   "		lbr	L0CF9
+0DB6 : D7		" "		sep	r7
+				;
+0DB7 : 67		"g"		out	7
+0DB8 : 02		" "		ldn	r2
+0DB9 : 00		" "		idl
+0DBA : BA		" "		phi	r10
+0DBB : D5		" "		sep	r5
+0DBC : D7		" "		sep	r7
+				;
+0DBD : 67		"g"		out	7
+0DBE : 02		" "		ldn	r2
+0DBF : 00		" "		idl
+0DC0 : EE		" "		sex	r14
+0DC1 : D5		" "		sep	r5
+0DC2 : D7		" "		sep	r7
+				;
+0DC3 : 67		"g"		out	7
+0DC4 : 02		" "		ldn	r2
+0DC5 : 05		" "		ldn	r5
+0DC6 : 0B		" "		ldn	r11
+0DC7 : D5		" "		sep	r5
+0DC8 : D7		" "		sep	r7
+				;
+0DC9 : 67		"g"		out	7
+0DCA : 02		" "		ldn	r2
+0DCB : 00		" "		idl
+0DCC : E9		" "		sex	r9
+0DCD : D5		" "		sep	r5
+0DCE : D4		" "		sep	r4
+				;
+0DCF : 10		" "		inc	r0
+0DD0 : 90		" "		ghi	r0
+0DD1 : F8 3C		" <"		ldi	#3C
+0DD3 : D7		" "		sep	r7
+				;
+0DD4 : 87		" "		glo	r7
+0DD5 : 2B		"+"		dec	r11
+0DD6 : C0 03 06		"   "		lbr	L0306
+				;
+0DD9 : F8 04		"  "		ldi	#04
+0DDB : AA		" "		plo	r10
+0DDC : 4A		"J"		lda	r10
+0DDD : 73		"s"		stxd
+0DDE : 0A		" "		ldn	r10
+0DDF : 73		"s"		stxd
+0DE0 : D7		" "		sep	r7
+				;
+0DE1 : 25		"%"		dec	r5
+0DE2 : 20		" "		dec	r0
+0DE3 : D7		" "		sep	r7
+0DE4 : 38		"8"		skp							;INFO: skip to address L0DE6
+				;
+0DE5 : 08		" "		ldn	r8
+0DE6				L0DE6:
+0DE6 : D4		" "		sep	r4
+				;
+0DE7				L0DE7:
+0DE7 : 11		" "		inc	r1
+0DE8 : D8		" "		sep	r8
+				;
+0DE9 : F8 05		"  "		ldi	#05
+0DEB : AA		" "		plo	r10
+0DEC : 60		"`"		irx
+0DED : 72		"r"		ldxa
+0DEE : 5A		"Z"		str	r10
+0DEF : 2A		"*"		dec	r10
+0DF0 : F0		" "		ldx
+0DF1 : 5A		"Z"		str	r10
+0DF2 : D5		" "		sep	r5
+0DF3 : D4		" "		sep	r4
+				;
+0DF4 : 0D		" "		ldn	r13
+0DF5 : F8 30		" 0"		ldi	#30
+0DF7 : D1		" "		sep	r1
+				;
+0DF8 : E3		" "		sex	r3
+0DF9 : 62		"b"		out	2
+0DFA : 01		" "		ldn	r1
+0DFB : D4		" "		sep	r4
+				;
+0DFC : 00		" "		idl
+0DFD : 54		"T"		str	r4
+0DFE : 01		" "		ldn	r1
+0DFF : 00		" "		idl
+0E00 : D4		" "		sep	r4
+				;
+0E01				L0E01:
+0E01 : 00		" "		idl
+0E02 : 62		"b"		out	2
+0E03 : 20		" "		dec	r0
+0E04 : 20		" "		dec	r0
+0E05 : 56		"V"		str	r6
+0E06 : 45		"E"		lda	r5
+0E07 : 52		"R"		str	r2
+0E08 : 49		"I"		lda	r9
+0E09 : 46		"F"		lda	r6
+0E0A : 59		"Y"		str	r9
+0E0B : 20		" "		dec	r0
+0E0C : 54		"T"		str	r4
+0E0D : 41		"A"		lda	r1
+0E0E : 50		"P"		str	r0
+0E0F : 45		"E"		lda	r5
+0E10 : 00		" "		idl
+0E11 : D4		" "		sep	r4
+				;
+0E12 : 12		" "		inc	r2
+0E13 : 0C		" "		ldn	r12
+0E14 : C4		" "		nop
+0E15 : C4		" "		nop
+0E16 : C0 10 AE		"   "		lbr	L10AE
+0E19				L0E19:
+0E19 : D7		" "		sep	r7
+				;
+0E1A : 6D		"m"		inp	5
+0E1B : 80		" "		glo	r0
+0E1C : 0D		" "		ldn	r13
+0E1D : F2		" "		and
+0E1E : D7		" "		sep	r7
+				;
+0E1F : 6D		"m"		inp	5
+0E20 : 10		" "		inc	r0
+0E21 : 0D		" "		ldn	r13
+0E22 : F2		" "		and
+0E23 : F8 40		" @"		ldi	#40
+0E25 : BB		" "		phi	r11
+0E26 : F8 90		"  "		ldi	#90
+0E28 : AB		" "		plo	r11
+0E29 : 9B		" "		ghi	r11
+0E2A : BC		" "		phi	r12
+0E2B : 8B		" "		glo	r11
+0E2C : AC		" "		plo	r12
+0E2D				L0E2D:
+0E2D : F8 00		"  "		ldi	#00
+0E2F : 5C		"\"		str	r12
+0E30				L0E30:
+0E30 : 1C		" "		inc	r12
+0E31 : 9C		" "		ghi	r12
+0E32 : FB 60		" `"		xri	#60
+0E34 : 3A 2D		":-"		bnz	L0E2D
+0E36 : D4		" "		sep	r4
+				;
+0E37 : 00		" "		idl
+0E38 : 62		"b"		out	2
+0E39 : 4D		"M"		lda	r13
+0E3A : 45		"E"		lda	r5
+0E3B : 4D		"M"		lda	r13
+0E3C : 4F		"O"		lda	r15
+0E3D : 52		"R"		str	r2
+0E3E : 59		"Y"		str	r9
+0E3F : 20		" "		dec	r0
+0E40 : 43		"C"		lda	r3
+0E41 : 4C		"L"		lda	r12
+0E42 : 45		"E"		lda	r5
+0E43 : 41		"A"		lda	r1
+0E44 : 52		"R"		str	r2
+0E45 : 45		"E"		lda	r5
+0E46 : 44		"D"		lda	r4
+0E47 : 21		"!"		dec	r1
+0E48 : 20		" "		dec	r0
+0E49 : 00		" "		idl
+0E4A : D7		" "		sep	r7
+				;
+0E4B : 41		"A"		lda	r1
+0E4C : 40		"@"		lda	r0
+0E4D : C0 09 7D		"  }"		lbr	L097D
+				;
+0E50 : F8 00		"  "		ldi	#00
+0E52 : AA		" "		plo	r10
+0E53 : F8 00		"  "		ldi	#00
+0E55 : 5A		"Z"		str	r10
+0E56				L0E56:
+0E56 : D7		" "		sep	r7
+				;
+0E57 : A0		" "		plo	r0
+0E58 : 0B		" "		ldn	r11
+0E59 : F8 AA		"  "		ldi	#AA
+0E5B : C8		" "		lskp							;INFO: skip to address L0E5E
+				;
+0E5C				L0E5C:
+0E5C : F8 00		"  "		ldi	#00
+0E5E				L0E5E:
+0E5E : D7		" "		sep	r7
+				;
+0E5F : 87		" "		glo	r7
+0E60 : 28		"("		dec	r8
+0E61 : E3		" "		sex	r3
+0E62				L0E62:
+0E62 : 67		"g"		out	7
+0E63 : 00		" "		idl
+0E64 : 30 62		"0b"		br	L0E62
+0E66 : D7		" "		sep	r7
+				;
+0E67 : 82		" "		glo	r2
+0E68 : 28		"("		dec	r8
+0E69 : C2 0E 77		"  w"		lbz	L0E77
+0E6C : FB AA		"  "		xri	#AA
+0E6E : CA 0E 5C		"  \"		lbnz	L0E5C
+0E71 : D7		" "		sep	r7
+				;
+0E72 : 98		" "		ghi	r8
+0E73 : 0B		" "		ldn	r11
+0E74 : C0 0E B2		"   "		lbr	L0EB2
+				;
+0E77				L0E77:
+0E77 : F8 00		"  "		ldi	#00
+0E79 : AA		" "		plo	r10
+0E7A : F8 00		"  "		ldi	#00
+0E7C : 5A		"Z"		str	r10
+0E7D : D7		" "		sep	r7
+				;
+0E7E : F9 06		"  "		ori	#06
+0E80 : 07		" "		ldn	r7
+0E81 : 24		"$"		dec	r4
+0E82 : 25		"%"		dec	r5
+0E83 : 00		" "		idl
+0E84 : D7		" "		sep	r7
+				;
+0E85 : 35 F7		"5 "		b2	L0EF7
+0E87 : D7		" "		sep	r7
+0E88 : 38		"8"		skp							;INFO: skip to address L0E8A
+				;
+0E89 : FF D7		"  "		smi	#D7
+0E8B : 3B DC		"; "		bnf	L0EDC
+0E8D : D7		" "		sep	r7
+				;
+0E8E : 25		"%"		dec	r5
+0E8F : 22		"""		dec	r2
+0E90 : E3		" "		sex	r3
+0E91 : 62		"b"		out	2
+0E92 : 01		" "		ldn	r1
+0E93 : D4		" "		sep	r4
+				;
+0E94 : 00		" "		idl
+0E95 : 54		"T"		str	r4
+0E96 : 01		" "		ldn	r1
+0E97 : 00		" "		idl
+0E98 : F8 40		" @"		ldi	#40
+0E9A : BB		" "		phi	r11
+0E9B : F8 81		"  "		ldi	#81
+0E9D : AB		" "		plo	r11
+0E9E : F8 1D		"  "		ldi	#1D
+0EA0 : BC		" "		phi	r12
+0EA1 : F8 F6		"  "		ldi	#F6
+0EA3 : AC		" "		plo	r12
+0EA4				L0EA4:
+0EA4 : 4C		"L"		lda	r12
+0EA5 : 32 AB		"2 "		bz	L0EAB
+0EA7 : 5B		"["		str	r11
+0EA8 : 1B		" "		inc	r11
+0EA9 : 30 A4		"0 "		br	L0EA4
+				;
+0EAB				L0EAB:
+0EAB : 1B		" "		inc	r11
+0EAC : F8 40		" @"		ldi	#40
+0EAE : BB		" "		phi	r11
+0EAF : F8 90		"  "		ldi	#90
+0EB1 : AB		" "		plo	r11
+0EB2				L0EB2:
+0EB2 : F8 FF		"  "		ldi	#FF
+0EB4 : D7		" "		sep	r7
+				;
+0EB5 : 87		" "		glo	r7
+0EB6 : 28		"("		dec	r8
+0EB7 : F8 0F		"  "		ldi	#0F
+0EB9 : B1		" "		phi	r1
+0EBA : F8 3A		" :"		ldi	#3A
+0EBC : A1		" "		plo	r1
+0EBD				L0EBD:
+0EBD : 7A		"z"		req
+0EBE : F8 40		" @"		ldi	#40
+0EC0 : BC		" "		phi	r12
+0EC1 : F8 90		"  "		ldi	#90
+0EC3 : AC		" "		plo	r12
+0EC4 : F8 B0		"  "		ldi	#B0
+0EC6 : 5C		"\"		str	r12
+0EC7 : F8 5F		" _"		ldi	#5F
+0EC9 : BC		" "		phi	r12
+0ECA : F8 00		"  "		ldi	#00
+0ECC : AC		" "		plo	r12
+0ECD : 0C		" "		ldn	r12
+0ECE : C2 0E D7		"   "		lbz	L0ED7
+0ED1 : D7		" "		sep	r7
+				;
+0ED2 : 28		"("		dec	r8
+0ED3 : 01		" "		ldn	r1
+0ED4 : C0 0E DA		"   "		lbr	L0EDA
+0ED7				L0ED7:
+0ED7 : D7		" "		sep	r7
+				;
+0ED8 : 3E 01		"> "		bn3	L0E01
+0EDA				L0EDA:
+0EDA : D4		" "		sep	r4
+				;
+0EDB : 0B		" "		ldn	r11
+0EDC				L0EDC:
+0EDC : 38		"8"		skp							;INFO: skip to address L0EDE
+				;
+0EDD				L0EDD:
+0EDD : C1 0E ED		"   "		lbq	L0EED
+0EE0 : 3C E5		"< "		bn1	L0EE5
+0EE2 : F8 04		"  "		ldi	#04
+0EE4 : C8		" "		lskp							;INFO: skip to address L0EE7
+				;
+0EE5				L0EE5:
+0EE5 : F8 05		"  "		ldi	#05
+0EE7				L0EE7:
+0EE7 : 52		"R"		str	r2
+0EE8 : 62		"b"		out	2
+0EE9 : 22		"""		dec	r2
+0EEA : 7B		"{"		seq
+0EEB : 30 EF		"0 "		br	L0EEF
+				;
+0EED				L0EED:
+0EED : C4		" "		nop
+0EEE : C4		" "		nop
+0EEF				L0EEF:
+0EEF : F8 C0		"  "		ldi	#C0
+0EF1 : B0		" "		phi	r0
+0EF2 : F8 00		"  "		ldi	#00
+0EF4 : A0		" "		plo	r0
+0EF5 : 22		"""		dec	r2
+0EF6 : F8 23		" #"		ldi	#23
+0EF8 : 52		"R"		str	r2
+0EF9 : 70		"p"		ret
+				;
+0EFA : 00		" "		idl
+0EFB : D7		" "		sep	r7
+				;
+0EFC : 90		" "		ghi	r0
+0EFD : 24		"$"		dec	r4
+0EFE : 1C		" "		inc	r12
+0EFF : D7		" "		sep	r7
+				;
+0F00 : A9		" "		plo	r9
+0F01 : 24		"$"		dec	r4
+0F02 : 9C		" "		ghi	r12
+0F03 : CA 0F 0A		"   "		lbnz	L0F0A
+0F06 : 8C		" "		glo	r12
+0F07 : C2 0E 56		"  V"		lbz	L0E56
+0F0A				L0F0A:
+0F0A : D4		" "		sep	r4
+				;
+0F0B : 0C		" "		ldn	r12
+0F0C : 65		"e"		out	5
+0F0D : 30 29		"0)"		br	L0F29
+0F0F : D7		" "		sep	r7
+				;
+0F10 : F9 24		" $"		ori	#24
+0F12 : 25		"%"		dec	r5
+0F13 : 00		" "		idl
+0F14 : D7		" "		sep	r7
+				;
+0F15 : 82		" "		glo	r2
+0F16 : 01		" "		ldn	r1
+0F17 : 52		"R"		str	r2
+0F18 : FA 80		"  "		ani	#80
+0F1A : CA 0F 2C		"  ,"		lbnz	L0F2C
+0F1D : D4		" "		sep	r4
+				;
+0F1E : 09		" "		ldn	r9
+0F1F : AB		" "		plo	r11
+0F20				L0F20:
+0F20 : F8 00		"  "		ldi	#00
+0F22 : AA		" "		plo	r10
+0F23 : F8 00		"  "		ldi	#00
+0F25 : 5A		"Z"		str	r10
+0F26 : C0 0E BD		"   "		lbr	L0EBD
+0F29				L0F29:
+0F29 : C0 0E DD		"   "		lbr	L0EDD
+				;
+0F2C				L0F2C:
+0F2C : F8 00		"  "		ldi	#00
+0F2E : AE		" "		plo	r14
+0F2F : F8 00		"  "		ldi	#00
+0F31 : B4		" "		phi	r4
+0F32 : F8 39		" 9"		ldi	#39
+0F34 : A4		" "		plo	r4
+0F35 : D4		" "		sep	r4
+0F36				L0F36:
+0F36 : C0 0F 20		"   "		lbr	L0F20
+0F39				L0F39:
+0F39 : 71		"q"		dis
+				;
+0F3A : 22		"""		dec	r2
+0F3B : F8 0E		"  "		ldi	#0E
+0F3D : B3		" "		phi	r3
+0F3E : F8 FB		"  "		ldi	#FB
+0F40 : A3		" "		plo	r3
+0F41 : F8 23		" #"		ldi	#23
+0F43 : 52		"R"		str	r2
+0F44 : C0 0F 39		"  9"		lbr	L0F39
+0F47				L0F47:
+0F47 : D4		" "		sep	r4
+				;
+0F48 : 09		" "		ldn	r9
+0F49 : 7D F8		"} "		sdbi	#F8
+0F4B : 40		"@"		lda	r0
+0F4C : B2		" "		phi	r2
+0F4D : F8 6D		" m"		ldi	#6D
+0F4F : A2		" "		plo	r2
+0F50 : F8 0F		"  "		ldi	#0F
+0F52 : B6		" "		phi	r6
+0F53 : F8 20		"  "		ldi	#20
+0F55 : A6		" "		plo	r6
+0F56 : D5		" "		sep	r5
+0F57 : D4		" "		sep	r4
+				;
+0F58 : 00		" "		idl
+0F59 : 62		"b"		out	2
+0F5A : 4C		"L"		lda	r12
+0F5B : 45		"E"		lda	r5
+0F5C : 56		"V"		str	r6
+0F5D : 45		"E"		lda	r5
+0F5E : 4C		"L"		lda	r12
+0F5F : 20		" "		dec	r0
+0F60 : 31 30		"10"		bq	L0F30
+0F62 : 2E		"."		dec	r14
+0F63 : 30 20		"0 "		br	L0F20
+				;
+0F65 : 31 36		"16"		bq	L0F36
+0F67 : 2F		"/"		dec	r15
+0F68 : 36 20		"6 "		b3	L0F20
+0F6A : 00		" "		idl
+0F6B : C0 09 7D		"  }"		lbr	L097D
+0F6E : D7		" "		sep	r7
+				;
+0F6F : 22		"""		dec	r2
+0F70 : 08		" "		ldn	r8
+0F71 : F8 1C		"  "		ldi	#1C
+0F73 : BB		" "		phi	r11
+0F74 : F8 A4		"  "		ldi	#A4
+0F76 : AB		" "		plo	r11
+0F77 : D4		" "		sep	r4
+				;
+0F78 : 0F		" "		ldn	r15
+0F79 : 98		" "		ghi	r8
+0F7A				L0F7A:
+0F7A : 8B		" "		glo	r11
+0F7B : FB 04		"  "		xri	#04
+0F7D : 32 A5		"2 "		bz	L0FA5
+0F7F : 8B		" "		glo	r11
+0F80 : FB C4		"  "		xri	#C4
+0F82 : 32 93		"2 "		bz	L0F93
+0F84 : 8B		" "		glo	r11
+0F85 : FB E4		"  "		xri	#E4
+0F87 : 32 93		"2 "		bz	L0F93
+0F89				L0F89:
+0F89 : 4B		"K"		lda	r11
+0F8A : C6		" "		lsnz							;INFO: skip to address L0F8D
+0F8B : F8 20		"  "		ldi	#20
+0F8D				L0F8D:
+0F8D : 58		"X"		str	r8
+0F8E : D4		" "		sep	r4
+				;
+0F8F : 02		" "		ldn	r2
+0F90 : 03		" "		ldn	r3
+0F91 : 30 7A		"0z"		br	L0F7A
+0F93				L0F93:
+0F93 : D4		" "		sep	r4
+				;
+0F94 : 0F		" "		ldn	r15
+0F95 : 98		" "		ghi	r8
+0F96 : 30 89		"0 "		br	L0F89
+				;
+0F98 : F8 0D		"  "		ldi	#0D
+0F9A : 58		"X"		str	r8
+0F9B : D4		" "		sep	r4
+				;
+0F9C : 02		" "		ldn	r2
+0F9D : 03		" "		ldn	r3
+0F9E : F8 0A		"  "		ldi	#0A
+0FA0 : 58		"X"		str	r8
+0FA1 : D4		" "		sep	r4
+				;
+0FA2 : 02		" "		ldn	r2
+0FA3 : 03		" "		ldn	r3
+0FA4 : D5		" "		sep	r5
+0FA5				L0FA5:
+0FA5 : D4		" "		sep	r4
+				;
+0FA6 : 0F		" "		ldn	r15
+0FA7 : 98		" "		ghi	r8
+0FA8 : C0 03 ED		"   "		lbr	L03ED
+				;
+0FAB : FF FF		"  "		smi	#FF
+0FAD : FF FF		"  "		smi	#FF
+0FAF : FF FF		"  "		smi	#FF
+0FB1 : FF FF		"  "		smi	#FF
+0FB3 : FF FF		"  "		smi	#FF
+0FB5 : FF FF		"  "		smi	#FF
+0FB7 : FF FF		"  "		smi	#FF
+0FB9 : FF FF		"  "		smi	#FF
+0FBB : FF FF		"  "		smi	#FF
+0FBD : FF FF		"  "		smi	#FF
+0FBF : FF FF		"  "		smi	#FF
+0FC1 : FF FF		"  "		smi	#FF
+0FC3 : FF FF		"  "		smi	#FF
+0FC5 : FF FF		"  "		smi	#FF
+0FC7 : FF FF		"  "		smi	#FF
+0FC9 : FF FF		"  "		smi	#FF
+0FCB : FF FF		"  "		smi	#FF
+0FCD : FF FF		"  "		smi	#FF
+0FCF : FF FF		"  "		smi	#FF
+0FD1 : FF FF		"  "		smi	#FF
+0FD3 : FF FF		"  "		smi	#FF
+0FD5 : FF FF		"  "		smi	#FF
+0FD7 : FF FF		"  "		smi	#FF
+0FD9 : FF FF		"  "		smi	#FF
+0FDB : FF FF		"  "		smi	#FF
+0FDD : FF FF		"  "		smi	#FF
+0FDF : FF FF		"  "		smi	#FF
+0FE1 : FF FF		"  "		smi	#FF
+0FE3 : FF FF		"  "		smi	#FF
+0FE5 : FF FF		"  "		smi	#FF
+0FE7 : FF FF		"  "		smi	#FF
+0FE9 : FF FF		"  "		smi	#FF
+0FEB : FF FF		"  "		smi	#FF
+0FED : FF FF		"  "		smi	#FF
+0FEF : FF FF		"  "		smi	#FF
+0FF1 : FF FF		"  "		smi	#FF
+0FF3 : FF FF		"  "		smi	#FF
+0FF5 : FF FF		"  "		smi	#FF
+0FF7 : FF FF		"  "		smi	#FF
+0FF9 : FF FF		"  "		smi	#FF
+0FFB : FF FF		"  "		smi	#FF
+0FFD : FF FF		"  "		smi	#FF
+0FFF : FF 08		"  "		smi	#08
+1001 : 04		" "		ldn	r4
+1002 : 02		" "		ldn	r2
+1003 : 01		" "		ldn	r1
+1004 : 0C		" "		ldn	r12
+1005 : 0B		" "		ldn	r11
+1006 : 0A		" "		ldn	r10
+1007 : 09		" "		ldn	r9
+1008 : 07		" "		ldn	r7
+1009 : 06		" "		ldn	r6
+100A : 05		" "		ldn	r5
+100B : 03		" "		ldn	r3
+100C : 20		" "		dec	r0
+100D : 40		"@"		lda	r0
+100E : 00		" "		idl
+100F : 40		"@"		lda	r0
+1010 : 20		" "		dec	r0
+1011 : 00		" "		idl
+1012 : 20		" "		dec	r0
+1013 : 40		"@"		lda	r0
+1014 : 80		" "		glo	r0
+1015 : 40		"@"		lda	r0
+1016 : 20		" "		dec	r0
+1017 : 00		" "		idl
+1018				L1018:
+1018 : D3		" "		sep	r3
+				;
+1019 : 43		"C"		lda	r3
+101A : A0		" "		plo	r0
+101B : D0		" "		sep	r0
+101C : D0		" "		sep	r0
+101D : D0		" "		sep	r0
+101E : D0		" "		sep	r0
+101F : D0		" "		sep	r0
+1020 : D0		" "		sep	r0
+1021 : D0		" "		sep	r0
+1022 : D0		" "		sep	r0
+1023 : D0		" "		sep	r0
+1024 : D0		" "		sep	r0
+1025 : D0		" "		sep	r0
+1026 : D0		" "		sep	r0
+1027 : D0		" "		sep	r0
+1028 : D0		" "		sep	r0
+1029 : D0		" "		sep	r0
+102A : D0		" "		sep	r0
+102B : D0		" "		sep	r0
+102C : D0		" "		sep	r0
+102D : D0		" "		sep	r0
+102E : D0		" "		sep	r0
+102F : D0		" "		sep	r0
+1030 : D0		" "		sep	r0
+1031 : D0		" "		sep	r0
+1032 : D0		" "		sep	r0
+1033 : D0		" "		sep	r0
+1034 : D0		" "		sep	r0
+1035 : D0		" "		sep	r0
+1036 : D0		" "		sep	r0
+1037 : D0		" "		sep	r0
+1038 : D0		" "		sep	r0
+1039 : D0		" "		sep	r0
+103A : D0		" "		sep	r0
+103B : 30 18		"0 "		br	L1018
+				;
+103D : FF FF		"  "		smi	#FF
+103F : FF 3F		" ?"		smi	#3F
+1041 : 40		"@"		lda	r0
+1042				L1042:
+1042 : 37 42		"7B"		b4	L1042
+1044 : 7B		"{"		seq
+1045 : 09		" "		ldn	r9
+1046 : 5D		"]"		str	r13
+1047 : 08		" "		ldn	r8
+1048 : 59		"Y"		str	r9
+1049 : E9		" "		sex	r9
+104A : 80		" "		glo	r0
+104B : 58		"X"		str	r8
+104C : F7		" "		sm
+104D : F7		" "		sm
+104E : ED		" "		sex	r13
+104F : F4		" "		add
+1050 : E3		" "		sex	r3
+1051 : F4		" "		add
+1052 : 13		" "		inc	r3
+1053 : FE		" "		shl
+1054 : F8 00		"  "		ldi	#00
+1056 : B0		" "		phi	r0
+1057 : 7A		"z"		req
+1058 : D3		" "		sep	r3
+1059 : 30 40		"0@"		br	L1040
+				;
+105B : FF FF		"  "		smi	#FF
+105D : FF FF		"  "		smi	#FF
+105F : FF 37		" 7"		smi	#37
+1061 : 60		"`"		irx
+1062				L1062:
+1062 : 3F 62		"?b"		bn4	L1062
+1064 : 7B		"{"		seq
+1065 : 09		" "		ldn	r9
+1066 : 5D		"]"		str	r13
+1067 : 08		" "		ldn	r8
+1068 : 59		"Y"		str	r9
+1069 : E9		" "		sex	r9
+106A : 80		" "		glo	r0
+106B : 58		"X"		str	r8
+106C : F7		" "		sm
+106D : F7		" "		sm
+106E : ED		" "		sex	r13
+106F : F4		" "		add
+1070 : E3		" "		sex	r3
+1071 : F4		" "		add
+1072 : 13		" "		inc	r3
+1073 : FE		" "		shl
+1074 : F8 00		"  "		ldi	#00
+1076 : B0		" "		phi	r0
+1077 : 7A		"z"		req
+1078 : D3		" "		sep	r3
+1079 : 30 60		"0`"		br	L1060
+				;
+107B : FF FF		"  "		smi	#FF
+107D : FF FF		"  "		smi	#FF
+107F : FF 00		"  "		smi	#00
+1081 : 00		" "		idl
+1082 : 00		" "		idl
+1083 : 01		" "		ldn	r1
+1084 : 00		" "		idl
+1085 : 02		" "		ldn	r2
+1086 : 04		" "		ldn	r4
+1087 : 08		" "		ldn	r8
+1088 : 00		" "		idl
+1089 : 10		" "		inc	r0
+108A : 20		" "		dec	r0
+108B : 40		"@"		lda	r0
+108C : 80		" "		glo	r0
+108D : FF FF		"  "		smi	#FF
+108F : FF E3		"  "		smi	#E3
+1091 : 62		"b"		out	2
+1092 : 01		" "		ldn	r1
+1093 : D4		" "		sep	r4
+				;
+1094 : 00		" "		idl
+1095 : 54		"T"		str	r4
+1096 : 01		" "		ldn	r1
+1097 : 00		" "		idl
+1098 : D4		" "		sep	r4
+				;
+1099 : 00		" "		idl
+109A : 62		"b"		out	2
+109B : 20		" "		dec	r0
+109C : 20		" "		dec	r0
+109D : 46		"F"		lda	r6
+109E : 52		"R"		str	r2
+109F : 4F		"O"		lda	r15
+10A0 : 4D		"M"		lda	r13
+10A1 : 20		" "		dec	r0
+10A2 : 54		"T"		str	r4
+10A3 : 41		"A"		lda	r1
+10A4 : 50		"P"		str	r0
+10A5 : 45		"E"		lda	r5
+10A6 : 20		" "		dec	r0
+10A7 : 20		" "		dec	r0
+10A8 : 00		" "		idl
+10A9 : D4		" "		sep	r4
+				;
+10AA : 12		" "		inc	r2
+10AB : 1B		" "		inc	r11
+10AC : C4		" "		nop
+10AD : C4		" "		nop
+10AE				L10AE:
+10AE : 9E		" "		ghi	r14
+10AF : 3A C9		": "		bnz	L10C9
+10B1 : F8 00		"  "		ldi	#00
+10B3 : AC		" "		plo	r12
+10B4 : 8E		" "		glo	r14
+10B5 : C8		" "		lskp							;INFO: skip to address L10B8
+				;
+10B6				L10B6:
+10B6 : 1C		" "		inc	r12
+10B7 : F6		" "		shr
+10B8				L10B8:
+10B8 : 3A B6		": "		bnz	L10B6
+10BA : 8C		" "		glo	r12
+10BB : FE		" "		shl
+10BC : FE		" "		shl
+10BD : FE		" "		shl
+10BE : FE		" "		shl
+10BF : AC		" "		plo	r12
+10C0 : 1F		" "		inc	r15
+10C1 : 8F		" "		glo	r15
+10C2 : C8		" "		lskp							;INFO: skip to address L10C5
+				;
+10C3				L10C3:
+10C3 : 1C		" "		inc	r12
+10C4 : F6		" "		shr
+10C5				L10C5:
+10C5 : 3A C3		": "		bnz	L10C3
+10C7 : 8C		" "		glo	r12
+10C8 : C8		" "		lskp							;INFO: skip to address L10CB
+				;
+10C9				L10C9:
+10C9 : F8 FF		"  "		ldi	#FF
+10CB				L10CB:
+10CB : AC		" "		plo	r12
+10CC : F8 40		" @"		ldi	#40
+10CE : BF		" "		phi	r15
+10CF : F8 3C		" <"		ldi	#3C
+10D1 : AF		" "		plo	r15
+10D2 : 8C		" "		glo	r12
+10D3 : 5F		"_"		str	r15
+10D4 : FF 17		"  "		smi	#17
+10D6 : 3B F2		"; "		bnf	L10F2
+10D8 : E3		" "		sex	r3
+10D9 : 62		"b"		out	2
+10DA : 01		" "		ldn	r1
+10DB : D4		" "		sep	r4
+				;
+10DC : 00		" "		idl
+10DD : 54		"T"		str	r4
+10DE : 01		" "		ldn	r1
+10DF : 00		" "		idl
+10E0 : D4		" "		sep	r4
+				;
+10E1 : 00		" "		idl
+10E2 : 62		"b"		out	2
+10E3 : 50		"P"		str	r0
+10E4 : 4F		"O"		lda	r15
+10E5 : 4F		"O"		lda	r15
+10E6 : 52		"R"		str	r2
+10E7 : 20		" "		dec	r0
+10E8 : 54		"T"		str	r4
+10E9 : 41		"A"		lda	r1
+10EA : 50		"P"		str	r0
+10EB : 45		"E"		lda	r5
+10EC : 00		" "		idl
+10ED : E2		" "		sex	r2
+10EE				L10EE:
+10EE : 6C		"l"		inp	4
+10EF : F6		" "		shr
+10F0 : 33 EE		"3 "		bdf	L10EE
+10F2				L10F2:
+10F2 : E3		" "		sex	r3
+10F3 : 62		"b"		out	2
+10F4 : 01		" "		ldn	r1
+10F5 : D4		" "		sep	r4
+				;
+10F6 : 00		" "		idl
+10F7 : 54		"T"		str	r4
+10F8 : 01		" "		ldn	r1
+10F9 : 00		" "		idl
+10FA : D5		" "		sep	r5
+				;
+10FB : FF FF		"  "		smi	#FF
+10FD : FF FF		"  "		smi	#FF
+10FF : FF FF		"  "		smi	#FF
+1101 : FF FF		"  "		smi	#FF
+1103 : FF FF		"  "		smi	#FF
+1105 : FF FF		"  "		smi	#FF
+1107 : FF FF		"  "		smi	#FF
+1109 : FF FF		"  "		smi	#FF
+110B : FF FF		"  "		smi	#FF
+110D : FF FF		"  "		smi	#FF
+110F : E3		" "		sex	r3
+1110 : F8 10		"  "		ldi	#10
+1112 : B0		" "		phi	r0
+1113 : BC		" "		phi	r12
+1114 : BF		" "		phi	r15
+1115 : F8 80		"  "		ldi	#80
+1117 : B9		" "		phi	r9
+1118 : F8 FF		"  "		ldi	#FF
+111A : A9		" "		plo	r9
+111B : F8 19		"  "		ldi	#19
+111D : A0		" "		plo	r0
+111E : 22		"""		dec	r2
+111F : F8 00		"  "		ldi	#00
+1121				L1121:
+1121 : 52		"R"		str	r2
+1122 : 12		" "		inc	r2
+1123 : 99		" "		ghi	r9
+1124 : FE		" "		shl
+1125 : 33 A6		"3 "		bdf	L11A6
+1127 : 32 A1		"2 "		bz	L11A1
+1129				L1129:
+1129 : 9B		" "		ghi	r11
+112A : FB 60		" `"		xri	#60
+112C : 32 9C		"2 "		bz	L119C
+112E : 0B		" "		ldn	r11
+112F : 32 93		"2 "		bz	L1193
+1131 : FB B0		"  "		xri	#B0
+1133 : 3A 8A		": "		bnz	L118A
+1135 : 89		" "		glo	r9
+1136 : FB B0		"  "		xri	#B0
+1138 : 3A 8D		": "		bnz	L118D
+113A				L113A:
+113A : B9		" "		phi	r9
+113B : F8 80		"  "		ldi	#80
+113D : A9		" "		plo	r9
+113E : 89		" "		glo	r9
+113F : 32 CC		"2 "		bz	L11CC
+1141 : F8 B0		"  "		ldi	#B0
+1143				L1143:
+1143 : 52		"R"		str	r2
+1144 : 22		"""		dec	r2
+1145 : F8 0C		"  "		ldi	#0C
+1147 : AC		" "		plo	r12
+1148 : F8 12		"  "		ldi	#12
+114A				L114A:
+114A : AF		" "		plo	r15
+114B				L114B:
+114B : 0F		" "		ldn	r15
+114C : FE		" "		shl
+114D : 33 58		"3X"		bdf	L1158
+114F : FE		" "		shl
+1150 : 33 54		"3T"		bdf	L1154
+1152 : D0		" "		sep	r0
+				;
+1153 : 37 D3		"7 "		b4	L11D3
+1155 : D3		" "		sep	r3
+1156 : D3		" "		sep	r3
+1157 : D3		" "		sep	r3
+				;
+1158				L1158:
+1158 : 66		"f"		out	6
+1159 : 00		" "		idl
+115A : D0		" "		sep	r0
+				;
+115B : 20		" "		dec	r0
+115C : 4F		"O"		lda	r15
+115D : FE		" "		shl
+115E : 33 69		"3i"		bdf	L1169
+1160 : FE		" "		shl
+1161 : 33 65		"3e"		bdf	L1165
+1163 : D0		" "		sep	r0
+				;
+1164 : 37 D3		"7 "		b4	L11D3
+1166 : D3		" "		sep	r3
+1167 : D3		" "		sep	r3
+1168 : D3		" "		sep	r3
+				;
+1169				L1169:
+1169 : 66		"f"		out	6
+116A : 80		" "		glo	r0
+116B : 0F		" "		ldn	r15
+116C : 3A B3		": "		bnz	L11B3
+116E : 8C		" "		glo	r12
+116F : 32 21		"2!"		bz	L1121
+1171 : 2C		","		dec	r12
+1172 : FB 04		"  "		xri	#04
+1174 : C0 13 10		"   "		lbr	L1310
+				;
+1177 : 02		" "		ldn	r2
+1178 : D3		" "		sep	r3
+				;
+1179				L1179:
+1179 : F6		" "		shr
+117A : E2		" "		sex	r2
+117B : 73		"s"		stxd
+117C : D0		" "		sep	r0
+				;
+117D : 35 0C		"5 "		b2	L110C
+117F : F3		" "		xor
+1180 : E3		" "		sex	r3
+1181 : 3B C7		"; "		bnf	L11C7
+1183 : 52		"R"		str	r2
+1184 : F8 0C		"  "		ldi	#0C
+1186				L1186:
+1186 : 30 4A		"0J"		br	L114A
+				;
+1188 : FF FF		"  "		smi	#FF
+118A				L118A:
+118A : D3		" "		sep	r3
+118B				L118B:
+118B : D3		" "		sep	r3
+118C : D3		" "		sep	r3
+				;
+118D				L118D:
+118D : C4		" "		nop
+118E : C4		" "		nop
+118F : 4B		"K"		lda	r11
+1190 : A9		" "		plo	r9
+1191 : 30 43		"0C"		br	L1143
+				;
+1193				L1193:
+1193 : 89		" "		glo	r9
+1194 : FB B4		"  "		xri	#B4
+1196 : 32 8B		"2 "		bz	L118B
+1198				L1198:
+1198 : F8 00		"  "		ldi	#00
+119A : 30 3A		"0:"		br	L113A
+				;
+119C				L119C:
+119C : C4		" "		nop
+119D : C4		" "		nop
+119E : D3		" "		sep	r3
+119F : 30 98		"0 "		br	L1198
+				;
+11A1				L11A1:
+11A1 : 29		")"		dec	r9
+11A2 : D0		" "		sep	r0
+				;
+11A3 : 35 30		"50"		b2	L1130
+11A5 : 3E 29		">)"		bn3	L1129
+11A7 : D0		" "		sep	r0
+				;
+11A8 : 32 F8		"2 "		bz	L11F8
+11AA : 00		" "		idl
+11AB : 30 43		"0C"		br	L1143
+				;
+11AD				L11AD:
+11AD : C4		" "		nop
+11AE : C4		" "		nop
+11AF				L11AF:
+11AF : D3		" "		sep	r3
+11B0 : D3		" "		sep	r3
+11B1 : 30 BF		"0 "		br	L11BF
+				;
+11B3				L11B3:
+11B3 : 99		" "		ghi	r9
+11B4 : 32 AD		"2 "		bz	L11AD
+11B6 : 6C		"l"		inp	4
+11B7 : FA 01		"  "		ani	#01
+11B9 : 3A AF		": "		bnz	L11AF
+11BB : B9		" "		phi	r9
+11BC : F8 80		"  "		ldi	#80
+11BE : A9		" "		plo	r9
+11BF				L11BF:
+11BF : D0		" "		sep	r0
+				;
+11C0 : 2B		"+"		dec	r11
+11C1 : 30 4B		"0K"		br	L114B
+				;
+11C3 : FF FF		"  "		smi	#FF
+11C5 : FF FF		"  "		smi	#FF
+11C7				L11C7:
+11C7 : F8 0F		"  "		ldi	#0F
+11C9 : 30 86		"0 "		br	L1186
+				;
+11CB : FF C0		"  "		smi	#C0
+11CD : 12		" "		inc	r2
+11CE : B6		" "		phi	r6
+11CF : FF 42		" B"		smi	#42
+11D1 : FB 0F		"  "		xri	#0F
+11D3				L11D3:
+11D3 : 30 79		"0y"		br	L1179
+				;
+11D5 : FF FF		"  "		smi	#FF
+11D7 : FF E3		"  "		smi	#E3
+11D9 : 62		"b"		out	2
+11DA : 01		" "		ldn	r1
+11DB : D4		" "		sep	r4
+				;
+11DC : 00		" "		idl
+11DD : 54		"T"		str	r4
+11DE : 01		" "		ldn	r1
+11DF : 00		" "		idl
+11E0 : D4		" "		sep	r4
+				;
+11E1 : 00		" "		idl
+11E2 : 62		"b"		out	2
+11E3 : 4F		"O"		lda	r15
+11E4 : 4E		"N"		lda	r14
+11E5 : 54		"T"		str	r4
+11E6 : 4F		"O"		lda	r15
+11E7 : 20		" "		dec	r0
+11E8 : 54		"T"		str	r4
+11E9 : 41		"A"		lda	r1
+11EA : 50		"P"		str	r0
+11EB : 45		"E"		lda	r5
+11EC : 00		" "		idl
+11ED : D4		" "		sep	r4
+				;
+11EE : 06		" "		ldn	r6
+11EF : A3		" "		plo	r3
+11F0 : D4		" "		sep	r4
+				;
+11F1 : 11		" "		inc	r1
+11F2 : 0F		" "		ldn	r15
+11F3 : E3		" "		sex	r3
+11F4 : 62		"b"		out	2
+11F5 : 01		" "		ldn	r1
+11F6 : D4		" "		sep	r4
+				;
+11F7 : 00		" "		idl
+11F8				L11F8:
+11F8 : 54		"T"		str	r4
+11F9 : 01		" "		ldn	r1
+11FA : 00		" "		idl
+11FB : D5		" "		sep	r5
+				;
+11FC : FF FF		"  "		smi	#FF
+11FE : FF FF		"  "		smi	#FF
+1200 : FF FF		"  "		smi	#FF
+1202 : FF FF		"  "		smi	#FF
+1204 : FF FF		"  "		smi	#FF
+1206 : FF FF		"  "		smi	#FF
+1208 : FF FF		"  "		smi	#FF
+120A : FF FF		"  "		smi	#FF
+120C : E2		" "		sex	r2
+120D : 8B		" "		glo	r11
+120E : 73		"s"		stxd
+120F : 9B		" "		ghi	r11
+1210 : 73		"s"		stxd
+1211 : F8 40		" @"		ldi	#40
+1213 : BB		" "		phi	r11
+1214 : F8 2B		" +"		ldi	#2B
+1216 : AB		" "		plo	r11
+1217 : F8 00		"  "		ldi	#00
+1219 : 30 20		"0 "		br	L1220
+				;
+121B : 0B		" "		ldn	r11
+121C : 3A B6		": "		bnz	L12B6
+121E : F8 FF		"  "		ldi	#FF
+1220				L1220:
+1220 : 28		"("		dec	r8
+1221 : 58		"X"		str	r8
+1222 : 18		" "		inc	r8
+1223 : 98		" "		ghi	r8
+1224 : B9		" "		phi	r9
+1225 : BD		" "		phi	r13
+1226 : 88		" "		glo	r8
+1227 : FF 02		"  "		smi	#02
+1229 : A9		" "		plo	r9
+122A : FF 02		"  "		smi	#02
+122C : AD		" "		plo	r13
+122D : F8 00		"  "		ldi	#00
+122F : 5D		"]"		str	r13
+1230 : 1D		" "		inc	r13
+1231 : BE		" "		phi	r14
+1232 : AE		" "		plo	r14
+1233 : F8 10		"  "		ldi	#10
+1235 : BC		" "		phi	r12
+1236 : BA		" "		phi	r10
+1237 : F8 40		" @"		ldi	#40
+1239 : AA		" "		plo	r10
+123A				L123A:
+123A : F8 40		" @"		ldi	#40
+123C : BF		" "		phi	r15
+123D : 8A		" "		glo	r10
+123E : FB 20		"  "		xri	#20
+1240 : AA		" "		plo	r10
+1241 : DA		" "		sep	r10
+				;
+1242 : 00		" "		idl
+1243 : DA		" "		sep	r10
+				;
+1244 : 00		" "		idl
+1245				L1245:
+1245 : DA		" "		sep	r10
+				;
+1246 : 04		" "		ldn	r4
+1247 : 3B 3A		";:"		bnf	L123A
+1249 : DA		" "		sep	r10
+				;
+124A : 02		" "		ldn	r2
+124B : 3B 3A		";:"		bnf	L123A
+124D : DA		" "		sep	r10
+				;
+124E : FE		" "		shl
+124F : 33 3A		"3:"		bdf	L123A
+1251 : DA		" "		sep	r10
+				;
+1252 : FC 33		" 3"		adi	#33
+1254 : 3A F8		": "		bnz	L12F8
+1256 : 18		" "		inc	r8
+1257 : AF		" "		plo	r15
+1258				L1258:
+1258 : DA		" "		sep	r10
+				;
+1259 : 00		" "		idl
+125A : 8F		" "		glo	r15
+125B : 2F		"/"		dec	r15
+125C : 3A 58		":X"		bnz	L1258
+125E : 9F		" "		ghi	r15
+125F : 3A 45		":E"		bnz	L1245
+1261				L1261:
+1261 : DA		" "		sep	r10
+				;
+1262 : 04		" "		ldn	r4
+1263 : 3B F8		"; "		bnf	L12F8
+1265 : DA		" "		sep	r10
+				;
+1266 : 02		" "		ldn	r2
+1267 : 3B F8		"; "		bnf	L12F8
+1269 : DA		" "		sep	r10
+				;
+126A : FE		" "		shl
+126B : 33 F8		"3 "		bdf	L12F8
+126D : DA		" "		sep	r10
+				;
+126E : FC 33		" 3"		adi	#33
+1270 : F8 F8		"  "		ldi	#F8
+1272 : 0C		" "		ldn	r12
+1273 : AC		" "		plo	r12
+1274 : 22		"""		dec	r2
+1275 : F8 0F		"  "		ldi	#0F
+1277 : 52		"R"		str	r2
+1278				L1278:
+1278 : DA		" "		sep	r10
+				;
+1279 : 00		" "		idl
+127A : 2C		","		dec	r12
+127B : 8C		" "		glo	r12
+127C : FB 03		"  "		xri	#03
+127E : 3A 84		": "		bnz	L1284
+1280 : 12		" "		inc	r2
+1281 : 02		" "		ldn	r2
+1282 : 5B		"["		str	r11
+1283 : 22		"""		dec	r2
+1284				L1284:
+1284 : DA		" "		sep	r10
+				;
+1285 : FA E2		"  "		ani	#E2
+1287 : 3B 8C		"; "		bnf	L128C
+1289 : 0C		" "		ldn	r12
+128A : F3		" "		xor
+128B : 52		"R"		str	r2
+128C				L128C:
+128C : 12		" "		inc	r2
+128D : 02		" "		ldn	r2
+128E : 76		"v"		shrc
+128F : 73		"s"		stxd
+1290 : 8C		" "		glo	r12
+1291 : 3A E0		": "		bnz	L12E0
+1293 : DA		" "		sep	r10
+				;
+1294 : 00		" "		idl
+1295 : EB		" "		sex	r11
+1296 : 42		"B"		lda	r2
+1297 : 32 A0		"2 "		bz	L12A0
+1299 : FC 80		"  "		adi	#80
+129B : AC		" "		plo	r12
+129C : 0C		" "		ldn	r12
+129D : 32 F0		"2 "		bz	L12F0
+129F : 1F		" "		inc	r15
+12A0				L12A0:
+12A0 : F3		" "		xor
+12A1				L12A1:
+12A1 : 5B		"["		str	r11
+12A2 : 2D		"-"		dec	r13
+12A3 : 3A C0		": "		bnz	L12C0
+12A5 : 0D		" "		ldn	r13
+12A6 : FB B4		"  "		xri	#B4
+12A8 : 32 AC		"2 "		bz	L12AC
+12AA : 0B		" "		ldn	r11
+12AB : 38		"8"		skp							;INFO: skip to address L12AD
+				;
+12AC				L12AC:
+12AC : 4B		"K"		lda	r11
+12AD				L12AD:
+12AD : 5D		"]"		str	r13
+12AE : 1D		" "		inc	r13
+12AF : 28		"("		dec	r8
+12B0 : 48		"H"		lda	r8
+12B1 : 32 D8		"2 "		bz	L12D8
+12B3 : 0B		" "		ldn	r11
+12B4 : 32 61		"2a"		bz	L1261
+12B6				L12B6:
+12B6 : 7B		"{"		seq
+12B7 : 98		" "		ghi	r8
+12B8 : BA		" "		phi	r10
+12B9 : BD		" "		phi	r13
+12BA : B9		" "		phi	r9
+12BB : D5		" "		sep	r5
+				;
+12BC : FF FF		"  "		smi	#FF
+12BE : FF FF		"  "		smi	#FF
+12C0				L12C0:
+12C0 : FB B0		"  "		xri	#B0
+12C2 : 3A AC		": "		bnz	L12AC
+12C4 : 0D		" "		ldn	r13
+12C5 : FB B0		"  "		xri	#B0
+12C7 : 3A AC		": "		bnz	L12AC
+12C9				L12C9:
+12C9 : 5B		"["		str	r11
+12CA : 28		"("		dec	r8
+12CB : 48		"H"		lda	r8
+12CC : 3A D3		": "		bnz	L12D3
+12CE : 12		" "		inc	r2
+12CF : 42		"B"		lda	r2
+12D0 : BB		" "		phi	r11
+12D1 : 02		" "		ldn	r2
+12D2 : AB		" "		plo	r11
+12D3				L12D3:
+12D3 : 16		" "		inc	r6
+12D4 : 16		" "		inc	r6
+12D5 : 30 B6		"0 "		br	L12B6
+				;
+12D7 : FF F8		"  "		smi	#F8
+12D9 : 2B		"+"		dec	r11
+12DA : AB		" "		plo	r11
+12DB : 30 61		"0a"		br	L1261
+				;
+12DD : FF FF		"  "		smi	#FF
+12DF : FF F6		"  "		smi	#F6
+12E1 : E3		" "		sex	r3
+12E2 : 62		"b"		out	2
+12E3 : 8F		" "		glo	r15
+12E4 : 33 EA		"3 "		bdf	L12EA
+12E6 : 63		"c"		out	3
+12E7 : 7C 30		"|0"		adci	#30
+12E9 : 78		"x"		sav
+12EA				L12EA:
+12EA : 63		"c"		out	3
+12EB : 2D		"-"		dec	r13
+12EC : 30 78		"0x"		br	L1278
+				;
+12EE : FF FF		"  "		smi	#FF
+12F0				L12F0:
+12F0 : 1E		" "		inc	r14
+12F1 : 9E		" "		ghi	r14
+12F2 : 3A C9		": "		bnz	L12C9
+12F4 : F8 3F		" ?"		ldi	#3F
+12F6 : 30 A1		"0 "		br	L12A1
+				;
+12F8				L12F8:
+12F8 : E3		" "		sex	r3
+12F9 : 62		"b"		out	2
+12FA : 8F		" "		glo	r15
+12FB : 63		"c"		out	3
+12FC : 4F		"O"		lda	r15
+12FD : 30 61		"0a"		br	L1261
+				;
+12FF : FF FF		"  "		smi	#FF
+1301 : FF FF		"  "		smi	#FF
+1303 : FF FF		"  "		smi	#FF
+1305 : FF FF		"  "		smi	#FF
+1307 : FF FF		"  "		smi	#FF
+1309 : FF FF		"  "		smi	#FF
+130B : FF FF		"  "		smi	#FF
+130D : FF FF		"  "		smi	#FF
+130F : FF 32		" 2"		smi	#32
+1311 : 20		" "		dec	r0
+1312				L1312:
+1312 : D0		" "		sep	r0
+				;
+1313 : 37 12		"7 "		b4	L1312
+1315 : 02		" "		ldn	r2
+1316				L1316:
+1316 : F6		" "		shr
+1317 : E2		" "		sex	r2
+1318 : 73		"s"		stxd
+1319 : C0 11 7E		"  ~"		lbr	L117E
+				;
+131C : FF FF		"  "		smi	#FF
+131E : FF FF		"  "		smi	#FF
+1320 : 8B		" "		glo	r11
+1321 : FE		" "		shl
+1322 : FE		" "		shl
+1323 : FE		" "		shl
+1324 : 3A 30		":0"		bnz	L1330
+1326 : 33 34		"34"		bdf	L1334
+1328 : 62		"b"		out	2
+1329 : 05		" "		ldn	r5
+132A				L132A:
+132A : D3		" "		sep	r3
+				;
+132B				L132B:
+132B : 42		"B"		lda	r2
+132C : FB 0F		"  "		xri	#0F
+132E : 30 16		"0 "		br	L1316
+1330				L1330:
+1330 : D3		" "		sep	r3
+1331 : 30 2A		"0*"		br	L132A
+				;
+1333 : FF 62		" b"		smi	#62
+1335 : 04		" "		ldn	r4
+1336 : 30 2B		"0+"		br	L132B
+				;
+1338 : FF FF		"  "		smi	#FF
+133A : FF FF		"  "		smi	#FF
+133C : FF FF		"  "		smi	#FF
+133E : FF FF		"  "		smi	#FF
+1340 : FF FF		"  "		smi	#FF
+1342 : FF FF		"  "		smi	#FF
+1344 : FF FF		"  "		smi	#FF
+1346 : FF FF		"  "		smi	#FF
+1348 : FF FF		"  "		smi	#FF
+134A : FF FF		"  "		smi	#FF
+134C : FF FF		"  "		smi	#FF
+134E : FF FF		"  "		smi	#FF
+1350 : FF FF		"  "		smi	#FF
+1352 : FF FF		"  "		smi	#FF
+1354 : FF FF		"  "		smi	#FF
+1356 : FF FF		"  "		smi	#FF
+1358 : FF FF		"  "		smi	#FF
+135A : FF FF		"  "		smi	#FF
+135C : FF FF		"  "		smi	#FF
+135E : FF FF		"  "		smi	#FF
+1360 : FF FF		"  "		smi	#FF
+1362 : FF FF		"  "		smi	#FF
+1364 : FF FF		"  "		smi	#FF
+1366 : FF FF		"  "		smi	#FF
+1368 : FF FF		"  "		smi	#FF
+136A : FF FF		"  "		smi	#FF
+136C : FF FF		"  "		smi	#FF
+136E : FF FF		"  "		smi	#FF
+1370 : FF FF		"  "		smi	#FF
+1372 : FF FF		"  "		smi	#FF
+1374 : FF FF		"  "		smi	#FF
+1376 : FF FF		"  "		smi	#FF
+1378 : FF FF		"  "		smi	#FF
+137A : FF FF		"  "		smi	#FF
+137C : FF FF		"  "		smi	#FF
+137E : FF FF		"  "		smi	#FF
+1380 : FF FF		"  "		smi	#FF
+1382 : FF FF		"  "		smi	#FF
+1384 : FF FF		"  "		smi	#FF
+1386 : FF FF		"  "		smi	#FF
+1388 : FF FF		"  "		smi	#FF
+138A : FF FF		"  "		smi	#FF
+138C : FF FF		"  "		smi	#FF
+138E : FF FF		"  "		smi	#FF
+1390 : FF FF		"  "		smi	#FF
+1392 : FF FF		"  "		smi	#FF
+1394 : FF FF		"  "		smi	#FF
+1396 : FF FF		"  "		smi	#FF
+1398 : FF FF		"  "		smi	#FF
+139A : FF FF		"  "		smi	#FF
+139C : FF FF		"  "		smi	#FF
+139E : FF FF		"  "		smi	#FF
+13A0 : FF FF		"  "		smi	#FF
+13A2 : FF FF		"  "		smi	#FF
+13A4 : FF FF		"  "		smi	#FF
+13A6 : FF FF		"  "		smi	#FF
+13A8 : FF FF		"  "		smi	#FF
+13AA : FF FF		"  "		smi	#FF
+13AC : FF FF		"  "		smi	#FF
+13AE : FF FF		"  "		smi	#FF
+13B0 : FF FF		"  "		smi	#FF
+13B2 : FF FF		"  "		smi	#FF
+13B4 : FF FF		"  "		smi	#FF
+13B6 : FF FF		"  "		smi	#FF
+13B8 : FF FF		"  "		smi	#FF
+13BA : FF FF		"  "		smi	#FF
+13BC : FF FF		"  "		smi	#FF
+13BE : FF FF		"  "		smi	#FF
+13C0 : FF FF		"  "		smi	#FF
+13C2 : FF FF		"  "		smi	#FF
+13C4 : FF FF		"  "		smi	#FF
+13C6 : FF FF		"  "		smi	#FF
+13C8 : FF FF		"  "		smi	#FF
+13CA : FF FF		"  "		smi	#FF
+13CC : FF FF		"  "		smi	#FF
+13CE : FF FF		"  "		smi	#FF
+13D0 : FF FF		"  "		smi	#FF
+13D2 : FF FF		"  "		smi	#FF
+13D4 : FF FF		"  "		smi	#FF
+13D6 : FF FF		"  "		smi	#FF
+13D8 : FF FF		"  "		smi	#FF
+13DA : FF FF		"  "		smi	#FF
+13DC : FF FF		"  "		smi	#FF
+13DE : FF FF		"  "		smi	#FF
+13E0 : FF FF		"  "		smi	#FF
+13E2 : FF FF		"  "		smi	#FF
+13E4 : FF FF		"  "		smi	#FF
+13E6 : FF FF		"  "		smi	#FF
+13E8 : FF FF		"  "		smi	#FF
+13EA : FF FF		"  "		smi	#FF
+13EC : FF FF		"  "		smi	#FF
+13EE : FF FF		"  "		smi	#FF
+13F0 : FF FF		"  "		smi	#FF
+13F2 : FF FF		"  "		smi	#FF
+13F4 : FF FF		"  "		smi	#FF
+13F6 : FF FF		"  "		smi	#FF
+13F8 : FF FF		"  "		smi	#FF
+13FA : FF FF		"  "		smi	#FF
+13FC : FF FF		"  "		smi	#FF
+13FE : FF FF		"  "		smi	#FF
+1400 : FF FF		"  "		smi	#FF
+1402 : FF FF		"  "		smi	#FF
+1404 : FF FF		"  "		smi	#FF
+1406 : FF FF		"  "		smi	#FF
+1408 : FF FF		"  "		smi	#FF
+140A : FF FF		"  "		smi	#FF
+140C : FF FF		"  "		smi	#FF
+140E : FF FF		"  "		smi	#FF
+1410 : FF FF		"  "		smi	#FF
+1412 : FF FF		"  "		smi	#FF
+1414 : FF FF		"  "		smi	#FF
+1416 : FF FF		"  "		smi	#FF
+1418 : FF FF		"  "		smi	#FF
+141A : FF FF		"  "		smi	#FF
+141C : FF FF		"  "		smi	#FF
+141E : FF FF		"  "		smi	#FF
+1420 : FF FF		"  "		smi	#FF
+1422 : FF FF		"  "		smi	#FF
+1424 : FF FF		"  "		smi	#FF
+1426 : FF FF		"  "		smi	#FF
+1428 : FF FF		"  "		smi	#FF
+142A : FF FF		"  "		smi	#FF
+142C : FF FF		"  "		smi	#FF
+142E : FF FF		"  "		smi	#FF
+1430 : FF FF		"  "		smi	#FF
+1432 : FF FF		"  "		smi	#FF
+1434 : FF FF		"  "		smi	#FF
+1436 : FF FF		"  "		smi	#FF
+1438 : FF FF		"  "		smi	#FF
+143A : FF FF		"  "		smi	#FF
+143C : FF FF		"  "		smi	#FF
+143E : FF FF		"  "		smi	#FF
+1440 : FF FF		"  "		smi	#FF
+1442 : FF FF		"  "		smi	#FF
+1444 : FF FF		"  "		smi	#FF
+1446 : FF FF		"  "		smi	#FF
+1448 : FF FF		"  "		smi	#FF
+144A : FF FF		"  "		smi	#FF
+144C : FF FF		"  "		smi	#FF
+144E : FF FF		"  "		smi	#FF
+1450 : FF FF		"  "		smi	#FF
+1452 : FF FF		"  "		smi	#FF
+1454 : FF FF		"  "		smi	#FF
+1456 : FF FF		"  "		smi	#FF
+1458 : FF FF		"  "		smi	#FF
+145A : FF FF		"  "		smi	#FF
+145C : FF FF		"  "		smi	#FF
+145E : FF FF		"  "		smi	#FF
+1460 : FF FF		"  "		smi	#FF
+1462 : FF FF		"  "		smi	#FF
+1464 : FF FF		"  "		smi	#FF
+1466 : FF FF		"  "		smi	#FF
+1468 : FF FF		"  "		smi	#FF
+146A : FF FF		"  "		smi	#FF
+146C : FF FF		"  "		smi	#FF
+146E : FF FF		"  "		smi	#FF
+1470 : FF FF		"  "		smi	#FF
+1472 : FF FF		"  "		smi	#FF
+1474 : FF FF		"  "		smi	#FF
+1476 : FF FF		"  "		smi	#FF
+1478 : FF FF		"  "		smi	#FF
+147A : FF FF		"  "		smi	#FF
+147C : FF FF		"  "		smi	#FF
+147E : FF FF		"  "		smi	#FF
+1480 : FF FF		"  "		smi	#FF
+1482 : FF FF		"  "		smi	#FF
+1484 : FF FF		"  "		smi	#FF
+1486 : FF FF		"  "		smi	#FF
+1488 : FF FF		"  "		smi	#FF
+148A : FF FF		"  "		smi	#FF
+148C : FF FF		"  "		smi	#FF
+148E : FF FF		"  "		smi	#FF
+1490 : FF FF		"  "		smi	#FF
+1492 : FF FF		"  "		smi	#FF
+1494 : FF FF		"  "		smi	#FF
+1496 : FF FF		"  "		smi	#FF
+1498 : FF FF		"  "		smi	#FF
+149A : FF FF		"  "		smi	#FF
+149C : FF FF		"  "		smi	#FF
+149E : FF FF		"  "		smi	#FF
+14A0 : FF FF		"  "		smi	#FF
+14A2 : FF FF		"  "		smi	#FF
+14A4 : FF FF		"  "		smi	#FF
+14A6 : FF FF		"  "		smi	#FF
+14A8 : FF FF		"  "		smi	#FF
+14AA : FF FF		"  "		smi	#FF
+14AC : FF FF		"  "		smi	#FF
+14AE : FF FF		"  "		smi	#FF
+14B0 : FF FF		"  "		smi	#FF
+14B2 : FF FF		"  "		smi	#FF
+14B4 : FF FF		"  "		smi	#FF
+14B6 : FF FF		"  "		smi	#FF
+14B8 : FF FF		"  "		smi	#FF
+14BA : FF FF		"  "		smi	#FF
+14BC : FF FF		"  "		smi	#FF
+14BE : FF FF		"  "		smi	#FF
+14C0 : FF FF		"  "		smi	#FF
+14C2 : FF FF		"  "		smi	#FF
+14C4 : FF FF		"  "		smi	#FF
+14C6 : FF FF		"  "		smi	#FF
+14C8 : FF FF		"  "		smi	#FF
+14CA : FF FF		"  "		smi	#FF
+14CC : FF FF		"  "		smi	#FF
+14CE : FF FF		"  "		smi	#FF
+14D0 : FF FF		"  "		smi	#FF
+14D2 : FF FF		"  "		smi	#FF
+14D4 : FF FF		"  "		smi	#FF
+14D6 : FF FF		"  "		smi	#FF
+14D8 : FF FF		"  "		smi	#FF
+14DA : FF FF		"  "		smi	#FF
+14DC : FF FF		"  "		smi	#FF
+14DE : FF FF		"  "		smi	#FF
+14E0 : FF FF		"  "		smi	#FF
+14E2 : FF FF		"  "		smi	#FF
+14E4 : FF FF		"  "		smi	#FF
+14E6 : FF FF		"  "		smi	#FF
+14E8 : FF FF		"  "		smi	#FF
+14EA : FF FF		"  "		smi	#FF
+14EC : FF FF		"  "		smi	#FF
+14EE : FF FF		"  "		smi	#FF
+14F0 : FF FF		"  "		smi	#FF
+14F2 : FF FF		"  "		smi	#FF
+14F4 : FF FF		"  "		smi	#FF
+14F6 : FF FF		"  "		smi	#FF
+14F8 : FF FF		"  "		smi	#FF
+14FA : FF FF		"  "		smi	#FF
+14FC : FF FF		"  "		smi	#FF
+14FE : FF FF		"  "		smi	#FF
+1500 : FF FF		"  "		smi	#FF
+1502 : FF FF		"  "		smi	#FF
+1504 : FF FF		"  "		smi	#FF
+1506 : FF FF		"  "		smi	#FF
+1508 : FF FF		"  "		smi	#FF
+150A : FF FF		"  "		smi	#FF
+150C : FF FF		"  "		smi	#FF
+150E : FF FF		"  "		smi	#FF
+1510 : FF FF		"  "		smi	#FF
+1512 : FF FF		"  "		smi	#FF
+1514 : FF FF		"  "		smi	#FF
+1516 : FF FF		"  "		smi	#FF
+1518 : FF FF		"  "		smi	#FF
+151A : FF FF		"  "		smi	#FF
+151C : FF FF		"  "		smi	#FF
+151E : FF FF		"  "		smi	#FF
+1520 : FF FF		"  "		smi	#FF
+1522 : FF FF		"  "		smi	#FF
+1524 : FF FF		"  "		smi	#FF
+1526 : FF FF		"  "		smi	#FF
+1528 : FF FF		"  "		smi	#FF
+152A : FF FF		"  "		smi	#FF
+152C : FF FF		"  "		smi	#FF
+152E : FF FF		"  "		smi	#FF
+1530 : FF FF		"  "		smi	#FF
+1532 : FF FF		"  "		smi	#FF
+1534 : FF FF		"  "		smi	#FF
+1536 : FF FF		"  "		smi	#FF
+1538 : FF FF		"  "		smi	#FF
+153A : FF FF		"  "		smi	#FF
+153C : FF FF		"  "		smi	#FF
+153E : FF FF		"  "		smi	#FF
+1540 : FF FF		"  "		smi	#FF
+1542 : FF FF		"  "		smi	#FF
+1544 : FF FF		"  "		smi	#FF
+1546 : FF FF		"  "		smi	#FF
+1548 : FF FF		"  "		smi	#FF
+154A : FF FF		"  "		smi	#FF
+154C : FF FF		"  "		smi	#FF
+154E : FF FF		"  "		smi	#FF
+1550 : FF FF		"  "		smi	#FF
+1552 : FF FF		"  "		smi	#FF
+1554 : FF FF		"  "		smi	#FF
+1556 : FF FF		"  "		smi	#FF
+1558 : FF FF		"  "		smi	#FF
+155A : FF FF		"  "		smi	#FF
+155C : FF FF		"  "		smi	#FF
+155E : FF FF		"  "		smi	#FF
+1560 : FF FF		"  "		smi	#FF
+1562 : FF FF		"  "		smi	#FF
+1564 : FF FF		"  "		smi	#FF
+1566 : FF FF		"  "		smi	#FF
+1568 : FF FF		"  "		smi	#FF
+156A : FF FF		"  "		smi	#FF
+156C : FF FF		"  "		smi	#FF
+156E : FF FF		"  "		smi	#FF
+1570 : FF FF		"  "		smi	#FF
+1572 : FF FF		"  "		smi	#FF
+1574 : FF FF		"  "		smi	#FF
+1576 : FF FF		"  "		smi	#FF
+1578 : FF FF		"  "		smi	#FF
+157A : FF FF		"  "		smi	#FF
+157C : FF FF		"  "		smi	#FF
+157E : FF FF		"  "		smi	#FF
+1580 : FF FF		"  "		smi	#FF
+1582 : FF FF		"  "		smi	#FF
+1584 : FF FF		"  "		smi	#FF
+1586 : FF FF		"  "		smi	#FF
+1588 : FF FF		"  "		smi	#FF
+158A : FF FF		"  "		smi	#FF
+158C : FF FF		"  "		smi	#FF
+158E : FF FF		"  "		smi	#FF
+1590 : FF FF		"  "		smi	#FF
+1592 : FF FF		"  "		smi	#FF
+1594 : FF FF		"  "		smi	#FF
+1596 : FF FF		"  "		smi	#FF
+1598 : FF FF		"  "		smi	#FF
+159A : FF FF		"  "		smi	#FF
+159C : FF FF		"  "		smi	#FF
+159E : FF FF		"  "		smi	#FF
+15A0 : FF FF		"  "		smi	#FF
+15A2 : FF FF		"  "		smi	#FF
+15A4 : FF FF		"  "		smi	#FF
+15A6 : FF FF		"  "		smi	#FF
+15A8 : FF FF		"  "		smi	#FF
+15AA : FF FF		"  "		smi	#FF
+15AC : FF FF		"  "		smi	#FF
+15AE : FF FF		"  "		smi	#FF
+15B0 : FF FF		"  "		smi	#FF
+15B2 : FF FF		"  "		smi	#FF
+15B4 : FF FF		"  "		smi	#FF
+15B6 : FF FF		"  "		smi	#FF
+15B8 : FF FF		"  "		smi	#FF
+15BA : FF FF		"  "		smi	#FF
+15BC : FF FF		"  "		smi	#FF
+15BE : FF FF		"  "		smi	#FF
+15C0 : FF FF		"  "		smi	#FF
+15C2 : FF FF		"  "		smi	#FF
+15C4 : FF FF		"  "		smi	#FF
+15C6 : FF FF		"  "		smi	#FF
+15C8 : FF FF		"  "		smi	#FF
+15CA : FF FF		"  "		smi	#FF
+15CC : FF FF		"  "		smi	#FF
+15CE : FF FF		"  "		smi	#FF
+15D0 : FF FF		"  "		smi	#FF
+15D2 : FF FF		"  "		smi	#FF
+15D4 : FF FF		"  "		smi	#FF
+15D6 : FF FF		"  "		smi	#FF
+15D8 : FF FF		"  "		smi	#FF
+15DA : FF FF		"  "		smi	#FF
+15DC : FF FF		"  "		smi	#FF
+15DE : FF FF		"  "		smi	#FF
+15E0 : FF FF		"  "		smi	#FF
+15E2 : FF FF		"  "		smi	#FF
+15E4 : FF FF		"  "		smi	#FF
+15E6 : FF FF		"  "		smi	#FF
+15E8 : FF FF		"  "		smi	#FF
+15EA : FF FF		"  "		smi	#FF
+15EC : FF FF		"  "		smi	#FF
+15EE : FF FF		"  "		smi	#FF
+15F0 : FF FF		"  "		smi	#FF
+15F2 : FF FF		"  "		smi	#FF
+15F4 : FF FF		"  "		smi	#FF
+15F6 : FF FF		"  "		smi	#FF
+15F8 : FF FF		"  "		smi	#FF
+15FA : FF FF		"  "		smi	#FF
+15FC : FF FF		"  "		smi	#FF
+15FE : FF FF		"  "		smi	#FF
+1600 : FF FF		"  "		smi	#FF
+1602 : FF FF		"  "		smi	#FF
+1604 : FF FF		"  "		smi	#FF
+1606 : FF FF		"  "		smi	#FF
+1608 : FF FF		"  "		smi	#FF
+160A : FF FF		"  "		smi	#FF
+160C : FF FF		"  "		smi	#FF
+160E : FF FF		"  "		smi	#FF
+1610 : FF FF		"  "		smi	#FF
+1612 : FF FF		"  "		smi	#FF
+1614 : FF FF		"  "		smi	#FF
+1616 : FF FF		"  "		smi	#FF
+1618 : FF FF		"  "		smi	#FF
+161A : FF FF		"  "		smi	#FF
+161C : FF FF		"  "		smi	#FF
+161E : FF FF		"  "		smi	#FF
+1620 : FF FF		"  "		smi	#FF
+1622 : FF FF		"  "		smi	#FF
+1624 : FF FF		"  "		smi	#FF
+1626 : FF FF		"  "		smi	#FF
+1628 : FF FF		"  "		smi	#FF
+162A : FF FF		"  "		smi	#FF
+162C : FF FF		"  "		smi	#FF
+162E : FF FF		"  "		smi	#FF
+1630 : FF FF		"  "		smi	#FF
+1632 : FF FF		"  "		smi	#FF
+1634 : FF FF		"  "		smi	#FF
+1636 : FF FF		"  "		smi	#FF
+1638 : FF FF		"  "		smi	#FF
+163A : FF FF		"  "		smi	#FF
+163C : FF FF		"  "		smi	#FF
+163E : FF FF		"  "		smi	#FF
+1640 : FF FF		"  "		smi	#FF
+1642 : FF FF		"  "		smi	#FF
+1644 : FF FF		"  "		smi	#FF
+1646 : FF FF		"  "		smi	#FF
+1648 : FF FF		"  "		smi	#FF
+164A : FF FF		"  "		smi	#FF
+164C : FF FF		"  "		smi	#FF
+164E : FF FF		"  "		smi	#FF
+1650 : FF FF		"  "		smi	#FF
+1652 : FF FF		"  "		smi	#FF
+1654 : FF FF		"  "		smi	#FF
+1656 : FF FF		"  "		smi	#FF
+1658 : FF FF		"  "		smi	#FF
+165A : FF FF		"  "		smi	#FF
+165C : FF FF		"  "		smi	#FF
+165E : FF FF		"  "		smi	#FF
+1660 : FF FF		"  "		smi	#FF
+1662 : FF FF		"  "		smi	#FF
+1664 : FF FF		"  "		smi	#FF
+1666 : FF FF		"  "		smi	#FF
+1668 : FF FF		"  "		smi	#FF
+166A : FF FF		"  "		smi	#FF
+166C : FF FF		"  "		smi	#FF
+166E : FF FF		"  "		smi	#FF
+1670 : FF FF		"  "		smi	#FF
+1672 : FF FF		"  "		smi	#FF
+1674 : FF FF		"  "		smi	#FF
+1676 : FF FF		"  "		smi	#FF
+1678 : FF FF		"  "		smi	#FF
+167A : FF FF		"  "		smi	#FF
+167C : FF FF		"  "		smi	#FF
+167E : FF FF		"  "		smi	#FF
+1680 : FF FF		"  "		smi	#FF
+1682 : FF FF		"  "		smi	#FF
+1684 : FF FF		"  "		smi	#FF
+1686 : FF FF		"  "		smi	#FF
+1688 : FF FF		"  "		smi	#FF
+168A : FF FF		"  "		smi	#FF
+168C : FF FF		"  "		smi	#FF
+168E : FF FF		"  "		smi	#FF
+1690 : FF FF		"  "		smi	#FF
+1692 : FF FF		"  "		smi	#FF
+1694 : FF FF		"  "		smi	#FF
+1696 : FF FF		"  "		smi	#FF
+1698 : FF FF		"  "		smi	#FF
+169A : FF FF		"  "		smi	#FF
+169C : FF FF		"  "		smi	#FF
+169E : FF FF		"  "		smi	#FF
+16A0 : FF FF		"  "		smi	#FF
+16A2 : FF FF		"  "		smi	#FF
+16A4 : FF FF		"  "		smi	#FF
+16A6 : FF FF		"  "		smi	#FF
+16A8 : FF FF		"  "		smi	#FF
+16AA : FF FF		"  "		smi	#FF
+16AC : FF FF		"  "		smi	#FF
+16AE : FF FF		"  "		smi	#FF
+16B0 : FF FF		"  "		smi	#FF
+16B2 : FF FF		"  "		smi	#FF
+16B4 : FF FF		"  "		smi	#FF
+16B6 : FF FF		"  "		smi	#FF
+16B8 : FF FF		"  "		smi	#FF
+16BA : FF FF		"  "		smi	#FF
+16BC : FF FF		"  "		smi	#FF
+16BE : FF FF		"  "		smi	#FF
+16C0 : FF FF		"  "		smi	#FF
+16C2 : FF FF		"  "		smi	#FF
+16C4 : FF FF		"  "		smi	#FF
+16C6 : FF FF		"  "		smi	#FF
+16C8 : FF FF		"  "		smi	#FF
+16CA : FF FF		"  "		smi	#FF
+16CC : FF FF		"  "		smi	#FF
+16CE : FF FF		"  "		smi	#FF
+16D0 : FF FF		"  "		smi	#FF
+16D2 : FF FF		"  "		smi	#FF
+16D4 : FF FF		"  "		smi	#FF
+16D6 : FF FF		"  "		smi	#FF
+16D8 : FF FF		"  "		smi	#FF
+16DA : FF FF		"  "		smi	#FF
+16DC : FF FF		"  "		smi	#FF
+16DE : FF FF		"  "		smi	#FF
+16E0 : FF FF		"  "		smi	#FF
+16E2 : FF FF		"  "		smi	#FF
+16E4 : FF FF		"  "		smi	#FF
+16E6 : FF FF		"  "		smi	#FF
+16E8 : FF FF		"  "		smi	#FF
+16EA : FF FF		"  "		smi	#FF
+16EC : FF FF		"  "		smi	#FF
+16EE : FF FF		"  "		smi	#FF
+16F0 : FF FF		"  "		smi	#FF
+16F2 : FF FF		"  "		smi	#FF
+16F4 : FF FF		"  "		smi	#FF
+16F6 : FF FF		"  "		smi	#FF
+16F8 : FF FF		"  "		smi	#FF
+16FA : FF FF		"  "		smi	#FF
+16FC : FF FF		"  "		smi	#FF
+16FE : FF FF		"  "		smi	#FF
+1700 : FF FF		"  "		smi	#FF
+1702 : FF FF		"  "		smi	#FF
+1704 : FF FF		"  "		smi	#FF
+1706 : FF FF		"  "		smi	#FF
+1708 : FF FF		"  "		smi	#FF
+170A : FF FF		"  "		smi	#FF
+170C : FF FF		"  "		smi	#FF
+170E : FF FF		"  "		smi	#FF
+1710 : FF FF		"  "		smi	#FF
+1712 : FF FF		"  "		smi	#FF
+1714 : FF FF		"  "		smi	#FF
+1716 : FF FF		"  "		smi	#FF
+1718 : FF FF		"  "		smi	#FF
+171A : FF FF		"  "		smi	#FF
+171C : FF FF		"  "		smi	#FF
+171E : FF FF		"  "		smi	#FF
+1720 : FF FF		"  "		smi	#FF
+1722 : FF FF		"  "		smi	#FF
+1724 : FF FF		"  "		smi	#FF
+1726 : FF FF		"  "		smi	#FF
+1728 : FF FF		"  "		smi	#FF
+172A : FF FF		"  "		smi	#FF
+172C : FF FF		"  "		smi	#FF
+172E : FF FF		"  "		smi	#FF
+1730 : FF FF		"  "		smi	#FF
+1732 : FF FF		"  "		smi	#FF
+1734 : FF FF		"  "		smi	#FF
+1736 : FF FF		"  "		smi	#FF
+1738 : FF FF		"  "		smi	#FF
+173A : FF FF		"  "		smi	#FF
+173C : FF FF		"  "		smi	#FF
+173E : FF FF		"  "		smi	#FF
+1740 : FF FF		"  "		smi	#FF
+1742 : FF FF		"  "		smi	#FF
+1744 : FF FF		"  "		smi	#FF
+1746 : FF FF		"  "		smi	#FF
+1748 : FF FF		"  "		smi	#FF
+174A : FF FF		"  "		smi	#FF
+174C : FF FF		"  "		smi	#FF
+174E : FF FF		"  "		smi	#FF
+1750 : FF FF		"  "		smi	#FF
+1752 : FF FF		"  "		smi	#FF
+1754 : FF FF		"  "		smi	#FF
+1756 : FF FF		"  "		smi	#FF
+1758 : FF FF		"  "		smi	#FF
+175A : FF FF		"  "		smi	#FF
+175C : FF FF		"  "		smi	#FF
+175E : FF FF		"  "		smi	#FF
+1760 : FF FF		"  "		smi	#FF
+1762 : FF FF		"  "		smi	#FF
+1764 : FF FF		"  "		smi	#FF
+1766 : FF FF		"  "		smi	#FF
+1768 : FF FF		"  "		smi	#FF
+176A : FF FF		"  "		smi	#FF
+176C : FF FF		"  "		smi	#FF
+176E : FF FF		"  "		smi	#FF
+1770 : FF FF		"  "		smi	#FF
+1772 : FF FF		"  "		smi	#FF
+1774 : FF FF		"  "		smi	#FF
+1776 : FF FF		"  "		smi	#FF
+1778 : FF FF		"  "		smi	#FF
+177A : FF FF		"  "		smi	#FF
+177C : FF FF		"  "		smi	#FF
+177E : FF FF		"  "		smi	#FF
+1780 : FF FF		"  "		smi	#FF
+1782 : FF FF		"  "		smi	#FF
+1784 : FF FF		"  "		smi	#FF
+1786 : FF FF		"  "		smi	#FF
+1788 : FF FF		"  "		smi	#FF
+178A : FF FF		"  "		smi	#FF
+178C : FF FF		"  "		smi	#FF
+178E : FF FF		"  "		smi	#FF
+1790 : FF FF		"  "		smi	#FF
+1792 : FF FF		"  "		smi	#FF
+1794 : FF FF		"  "		smi	#FF
+1796 : FF FF		"  "		smi	#FF
+1798 : FF FF		"  "		smi	#FF
+179A : FF FF		"  "		smi	#FF
+179C : FF FF		"  "		smi	#FF
+179E : FF FF		"  "		smi	#FF
+17A0 : FF FF		"  "		smi	#FF
+17A2 : FF FF		"  "		smi	#FF
+17A4 : FF FF		"  "		smi	#FF
+17A6 : FF FF		"  "		smi	#FF
+17A8 : FF FF		"  "		smi	#FF
+17AA : FF FF		"  "		smi	#FF
+17AC : FF FF		"  "		smi	#FF
+17AE : FF FF		"  "		smi	#FF
+17B0 : FF FF		"  "		smi	#FF
+17B2 : FF FF		"  "		smi	#FF
+17B4 : FF FF		"  "		smi	#FF
+17B6 : FF FF		"  "		smi	#FF
+17B8 : FF FF		"  "		smi	#FF
+17BA : FF FF		"  "		smi	#FF
+17BC : FF FF		"  "		smi	#FF
+17BE : FF FF		"  "		smi	#FF
+17C0 : FF FF		"  "		smi	#FF
+17C2 : FF FF		"  "		smi	#FF
+17C4 : FF FF		"  "		smi	#FF
+17C6 : FF FF		"  "		smi	#FF
+17C8 : FF FF		"  "		smi	#FF
+17CA : FF FF		"  "		smi	#FF
+17CC : FF FF		"  "		smi	#FF
+17CE : FF FF		"  "		smi	#FF
+17D0 : FF FF		"  "		smi	#FF
+17D2 : FF FF		"  "		smi	#FF
+17D4 : FF FF		"  "		smi	#FF
+17D6 : FF FF		"  "		smi	#FF
+17D8 : FF FF		"  "		smi	#FF
+17DA : FF FF		"  "		smi	#FF
+17DC : FF FF		"  "		smi	#FF
+17DE : FF FF		"  "		smi	#FF
+17E0 : FF FF		"  "		smi	#FF
+17E2 : FF FF		"  "		smi	#FF
+17E4 : FF FF		"  "		smi	#FF
+17E6 : FF FF		"  "		smi	#FF
+17E8 : FF FF		"  "		smi	#FF
+17EA : FF FF		"  "		smi	#FF
+17EC : FF FF		"  "		smi	#FF
+17EE : FF FF		"  "		smi	#FF
+17F0 : FF FF		"  "		smi	#FF
+17F2 : FF FF		"  "		smi	#FF
+17F4 : FF FF		"  "		smi	#FF
+17F6 : FF FF		"  "		smi	#FF
+17F8 : FF FF		"  "		smi	#FF
+17FA : FF FF		"  "		smi	#FF
+17FC : FF FF		"  "		smi	#FF
+17FE : FF FF		"  "		smi	#FF
+1800 : D4		" "		sep	r4
+				;
+1801 : 00		" "		idl
+1802 : 62		"b"		out	2
+1803 : 43		"C"		lda	r3
+1804 : 4F		"O"		lda	r15
+1805 : 4E		"N"		lda	r14
+1806 : 54		"T"		str	r4
+1807 : 2E		"."		dec	r14
+1808 : 20		" "		dec	r0
+1809 : 52		"R"		str	r2
+180A : 58		"X"		str	r8
+180B : 20		" "		dec	r0
+180C : 49		"I"		lda	r9
+180D : 4E		"N"		lda	r14
+180E : 50		"P"		str	r0
+180F : 55		"U"		str	r5
+1810 : 54		"T"		str	r4
+1811 : 20		" "		dec	r0
+1812 : 20		" "		dec	r0
+1813 : 00		" "		idl
+1814 : 9A		" "		ghi	r10
+1815 : BC		" "		phi	r12
+1816 : F8 35		" 5"		ldi	#35
+1818 : AC		" "		plo	r12
+1819 : F8 00		"  "		ldi	#00
+181B : AA		" "		plo	r10
+181C				L181C:
+181C : E3		" "		sex	r3
+181D : 66		"f"		out	6
+181E : 01		" "		ldn	r1
+181F : E2		" "		sex	r2
+1820				L1820:
+1820 : 6C		"l"		inp	4
+1821 : FB FF		"  "		xri	#FF
+1823 : 3A 69		":i"		bnz	L1869
+1825 : 35 20		"5 "		b2	L1820
+1827 : F8 FF		"  "		ldi	#FF
+1829 : 52		"R"		str	r2
+182A : 0C		" "		ldn	r12
+182B : F6		" "		shr
+182C				L182C:
+182C : FF 01		"  "		smi	#01
+182E : C4		" "		nop
+182F : E3		" "		sex	r3
+1830 : C4		" "		nop
+1831 : 3A 2C		":,"		bnz	L182C
+1833 : 66		"f"		out	6
+1834 : 00		" "		idl
+1835 : 02		" "		ldn	r2
+1836 : 02		" "		ldn	r2
+1837 : 02		" "		ldn	r2
+1838 : F6		" "		shr
+1839 : 35 3C		"5<"		b2	L183C
+183B : C8		" "		lskp							;INFO: skip to address L183E
+				;
+183C				L183C:
+183C : F9 80		"  "		ori	#80
+183E				L183E:
+183E : 52		"R"		str	r2
+183F : 3B 45		";E"		bnf	L1845
+1841 : 0C		" "		ldn	r12
+1842 : C0 18 2C		"  ,"		lbr	L182C
+				;
+1845				L1845:
+1845 : 02		" "		ldn	r2
+1846 : FA 7F		"  "		ani	#7F
+1848 : 58		"X"		str	r8
+1849 : FB 0A		"  "		xri	#0A
+184B : C2 18 5D		"  ]"		lbz	L185D
+184E : FB 07		"  "		xri	#07
+1850 : 32 65		"2e"		bz	L1865
+1852 : FB 0E		"  "		xri	#0E
+1854 : 32 69		"2i"		bz	L1869
+1856 : 08		" "		ldn	r8
+1857 : FF 20		"  "		smi	#20
+1859 : 3B 65		";e"		bnf	L1865
+185B : 08		" "		ldn	r8
+185C : C8		" "		lskp							;INFO: skip to address L185F
+				;
+185D				L185D:
+185D : F8 80		"  "		ldi	#80
+185F				L185F:
+185F : 5B		"["		str	r11
+1860 : 1B		" "		inc	r11
+1861 : 58		"X"		str	r8
+1862 : D4		" "		sep	r4
+				;
+1863 : 0B		" "		ldn	r11
+1864 : F2		" "		and
+1865				L1865:
+1865 : 3D 65		"=e"		bn2	L1865
+1867 : 30 1C		"0 "		br	L181C
+				;
+1869				L1869:
+1869 : E3		" "		sex	r3
+186A : 62		"b"		out	2
+186B : 01		" "		ldn	r1
+186C : D4		" "		sep	r4
+				;
+186D : 00		" "		idl
+186E : 54		"T"		str	r4
+186F : 01		" "		ldn	r1
+1870 : 00		" "		idl
+1871 : D5		" "		sep	r5
+				;
+1872 : FF FF		"  "		smi	#FF
+1874 : FF FF		"  "		smi	#FF
+1876 : FF FF		"  "		smi	#FF
+1878 : FF FF		"  "		smi	#FF
+187A : FF FF		"  "		smi	#FF
+187C : FF FF		"  "		smi	#FF
+187E : FF FF		"  "		smi	#FF
+1880 : FF FF		"  "		smi	#FF
+1882 : FF FF		"  "		smi	#FF
+1884 : FF FF		"  "		smi	#FF
+1886 : FF FF		"  "		smi	#FF
+1888 : FF FF		"  "		smi	#FF
+188A : FF FF		"  "		smi	#FF
+188C : FF FF		"  "		smi	#FF
+188E : FF FF		"  "		smi	#FF
+1890 : FF FF		"  "		smi	#FF
+1892 : FF FF		"  "		smi	#FF
+1894 : FF FF		"  "		smi	#FF
+1896 : FF FF		"  "		smi	#FF
+1898 : FF FF		"  "		smi	#FF
+189A : FF FF		"  "		smi	#FF
+189C : FF FF		"  "		smi	#FF
+189E : FF FF		"  "		smi	#FF
+18A0 : FF FF		"  "		smi	#FF
+18A2 : FF FF		"  "		smi	#FF
+18A4 : FF FF		"  "		smi	#FF
+18A6 : FF FF		"  "		smi	#FF
+18A8 : FF FF		"  "		smi	#FF
+18AA : FF FF		"  "		smi	#FF
+18AC : FF FF		"  "		smi	#FF
+18AE : FF FF		"  "		smi	#FF
+18B0 : FF FF		"  "		smi	#FF
+18B2 : FF FF		"  "		smi	#FF
+18B4 : FF FF		"  "		smi	#FF
+18B6 : FF FF		"  "		smi	#FF
+18B8 : FF FF		"  "		smi	#FF
+18BA : FF FF		"  "		smi	#FF
+18BC : FF FF		"  "		smi	#FF
+18BE : FF FF		"  "		smi	#FF
+18C0 : FF FF		"  "		smi	#FF
+18C2 : FF FF		"  "		smi	#FF
+18C4 : FF FF		"  "		smi	#FF
+18C6 : FF FF		"  "		smi	#FF
+18C8 : FF FF		"  "		smi	#FF
+18CA : FF FF		"  "		smi	#FF
+18CC : FF FF		"  "		smi	#FF
+18CE : FF FF		"  "		smi	#FF
+18D0 : FF FF		"  "		smi	#FF
+18D2 : FF FF		"  "		smi	#FF
+18D4 : FF FF		"  "		smi	#FF
+18D6 : FF FF		"  "		smi	#FF
+18D8 : FF FF		"  "		smi	#FF
+18DA : FF FF		"  "		smi	#FF
+18DC : FF FF		"  "		smi	#FF
+18DE : FF FF		"  "		smi	#FF
+18E0 : FF FF		"  "		smi	#FF
+18E2 : FF FF		"  "		smi	#FF
+18E4 : FF FF		"  "		smi	#FF
+18E6 : FF FF		"  "		smi	#FF
+18E8 : FF FF		"  "		smi	#FF
+18EA : FF FF		"  "		smi	#FF
+18EC : FF FF		"  "		smi	#FF
+18EE : FF FF		"  "		smi	#FF
+18F0 : FF FF		"  "		smi	#FF
+18F2 : FF FF		"  "		smi	#FF
+18F4 : FF FF		"  "		smi	#FF
+18F6 : FF FF		"  "		smi	#FF
+18F8 : FF FF		"  "		smi	#FF
+18FA : FF FF		"  "		smi	#FF
+18FC : FF FF		"  "		smi	#FF
+18FE : FF FF		"  "		smi	#FF
+1900 : FF FF		"  "		smi	#FF
+1902 : FF FF		"  "		smi	#FF
+1904 : FF FF		"  "		smi	#FF
+1906 : FF FF		"  "		smi	#FF
+1908 : FF FF		"  "		smi	#FF
+190A : FF FF		"  "		smi	#FF
+190C : FF FF		"  "		smi	#FF
+190E : FF FF		"  "		smi	#FF
+1910 : FF FF		"  "		smi	#FF
+1912 : FF FF		"  "		smi	#FF
+1914 : FF FF		"  "		smi	#FF
+1916 : FF FF		"  "		smi	#FF
+1918 : FF FF		"  "		smi	#FF
+191A : FF FF		"  "		smi	#FF
+191C : FF FF		"  "		smi	#FF
+191E : FF FF		"  "		smi	#FF
+1920 : FF FF		"  "		smi	#FF
+1922 : FF FF		"  "		smi	#FF
+1924 : FF FF		"  "		smi	#FF
+1926 : FF FF		"  "		smi	#FF
+1928 : FF FF		"  "		smi	#FF
+192A : FF FF		"  "		smi	#FF
+192C : FF FF		"  "		smi	#FF
+192E : FF FF		"  "		smi	#FF
+1930 : FF FF		"  "		smi	#FF
+1932 : FF FF		"  "		smi	#FF
+1934 : FF FF		"  "		smi	#FF
+1936 : FF FF		"  "		smi	#FF
+1938 : FF FF		"  "		smi	#FF
+193A : FF FF		"  "		smi	#FF
+193C : FF FF		"  "		smi	#FF
+193E : FF FF		"  "		smi	#FF
+1940 : FF FF		"  "		smi	#FF
+1942 : FF FF		"  "		smi	#FF
+1944 : FF FF		"  "		smi	#FF
+1946 : FF FF		"  "		smi	#FF
+1948 : FF FF		"  "		smi	#FF
+194A : FF FF		"  "		smi	#FF
+194C : FF FF		"  "		smi	#FF
+194E : FF FF		"  "		smi	#FF
+1950 : FF FF		"  "		smi	#FF
+1952 : FF FF		"  "		smi	#FF
+1954 : FF FF		"  "		smi	#FF
+1956 : FF FF		"  "		smi	#FF
+1958 : FF FF		"  "		smi	#FF
+195A : FF FF		"  "		smi	#FF
+195C : FF FF		"  "		smi	#FF
+195E : FF FF		"  "		smi	#FF
+1960 : FF FF		"  "		smi	#FF
+1962 : FF FF		"  "		smi	#FF
+1964 : FF FF		"  "		smi	#FF
+1966 : FF FF		"  "		smi	#FF
+1968 : FF FF		"  "		smi	#FF
+196A : FF FF		"  "		smi	#FF
+196C : FF FF		"  "		smi	#FF
+196E : FF FF		"  "		smi	#FF
+1970 : FF FF		"  "		smi	#FF
+1972 : FF FF		"  "		smi	#FF
+1974 : FF FF		"  "		smi	#FF
+1976 : FF FF		"  "		smi	#FF
+1978 : FF FF		"  "		smi	#FF
+197A : FF FF		"  "		smi	#FF
+197C : FF FF		"  "		smi	#FF
+197E : FF FF		"  "		smi	#FF
+1980 : FF FF		"  "		smi	#FF
+1982 : FF FF		"  "		smi	#FF
+1984 : FF FF		"  "		smi	#FF
+1986 : FF FF		"  "		smi	#FF
+1988 : FF FF		"  "		smi	#FF
+198A : FF FF		"  "		smi	#FF
+198C : FF FF		"  "		smi	#FF
+198E : FF FF		"  "		smi	#FF
+1990 : FF FF		"  "		smi	#FF
+1992 : FF FF		"  "		smi	#FF
+1994 : FF FF		"  "		smi	#FF
+1996 : FF FF		"  "		smi	#FF
+1998 : FF FF		"  "		smi	#FF
+199A : FF FF		"  "		smi	#FF
+199C : FF FF		"  "		smi	#FF
+199E : FF FF		"  "		smi	#FF
+19A0 : FF FF		"  "		smi	#FF
+19A2 : FF FF		"  "		smi	#FF
+19A4 : FF FF		"  "		smi	#FF
+19A6 : FF FF		"  "		smi	#FF
+19A8 : FF FF		"  "		smi	#FF
+19AA : FF FF		"  "		smi	#FF
+19AC : FF FF		"  "		smi	#FF
+19AE : FF FF		"  "		smi	#FF
+19B0 : FF FF		"  "		smi	#FF
+19B2 : FF FF		"  "		smi	#FF
+19B4 : FF FF		"  "		smi	#FF
+19B6 : FF FF		"  "		smi	#FF
+19B8 : FF FF		"  "		smi	#FF
+19BA : FF FF		"  "		smi	#FF
+19BC : FF FF		"  "		smi	#FF
+19BE : FF FF		"  "		smi	#FF
+19C0 : FF FF		"  "		smi	#FF
+19C2 : FF FF		"  "		smi	#FF
+19C4 : FF FF		"  "		smi	#FF
+19C6 : FF FF		"  "		smi	#FF
+19C8 : FF FF		"  "		smi	#FF
+19CA : FF FF		"  "		smi	#FF
+19CC : FF FF		"  "		smi	#FF
+19CE : FF FF		"  "		smi	#FF
+19D0 : FF FF		"  "		smi	#FF
+19D2 : FF FF		"  "		smi	#FF
+19D4 : FF FF		"  "		smi	#FF
+19D6 : FF FF		"  "		smi	#FF
+19D8 : FF FF		"  "		smi	#FF
+19DA : FF FF		"  "		smi	#FF
+19DC : FF FF		"  "		smi	#FF
+19DE : FF FF		"  "		smi	#FF
+19E0 : FF FF		"  "		smi	#FF
+19E2 : FF FF		"  "		smi	#FF
+19E4 : FF FF		"  "		smi	#FF
+19E6 : FF FF		"  "		smi	#FF
+19E8 : FF FF		"  "		smi	#FF
+19EA : FF FF		"  "		smi	#FF
+19EC : FF FF		"  "		smi	#FF
+19EE : FF FF		"  "		smi	#FF
+19F0 : FF FF		"  "		smi	#FF
+19F2 : FF FF		"  "		smi	#FF
+19F4 : FF FF		"  "		smi	#FF
+19F6 : FF FF		"  "		smi	#FF
+19F8 : FF FF		"  "		smi	#FF
+19FA : FF FF		"  "		smi	#FF
+19FC : FF FF		"  "		smi	#FF
+19FE : FF FF		"  "		smi	#FF
+1A00				L1A00:
+1A00 : D7		" "		sep	r7
+				;
+1A01 : 67		"g"		out	7
+1A02 : 20		" "		dec	r0
+1A03 : 1A		" "		inc	r10
+1A04 : 17		" "		inc	r7
+1A05 : D7		" "		sep	r7
+				;
+1A06 : 3B 20		"; "		bnf	L1A20
+1A08 : D7		" "		sep	r7
+				;
+1A09 : 22		"""		dec	r2
+1A0A : 08		" "		ldn	r8
+1A0B : F8 06		"  "		ldi	#06
+1A0D : D7		" "		sep	r7
+				;
+1A0E : 87		" "		glo	r7
+1A0F : 29		")"		dec	r9
+1A10 : F8 0B		"  "		ldi	#0B
+1A12 : D7		" "		sep	r7
+				;
+1A13 : 87		" "		glo	r7
+1A14 : 2A		"*"		dec	r10
+1A15 : 30 29		"0)"		br	L1A29
+1A17 : D7		" "		sep	r7
+				;
+1A18				L1A18:
+1A18 : 25		"%"		dec	r5
+1A19 : 20		" "		dec	r0
+1A1A : D7		" "		sep	r7
+1A1B : 38		"8"		skp							;INFO: skip to address L1A1D
+				;
+1A1C : 08		" "		ldn	r8
+1A1D				L1A1D:
+1A1D : D7		" "		sep	r7
+				;
+1A1E : 82		" "		glo	r2
+1A1F : 3B D7		"; "		bnf	L1AD7
+1A21 : 87		" "		glo	r7
+1A22 : 29		")"		dec	r9
+1A23 : D7		" "		sep	r7
+				;
+1A24 : 82		" "		glo	r2
+1A25 : 4B		"K"		lda	r11
+1A26 : D7		" "		sep	r7
+				;
+1A27 : 87		" "		glo	r7
+1A28 : 2A		"*"		dec	r10
+1A29				L1A29:
+1A29 : C0 00 F1		"   "		lbr	L00F1
+1A2C : D7		" "		sep	r7
+				;
+1A2D : 3B 18		"; "		bnf	L1A18
+1A2F : 0B		" "		ldn	r11
+1A30 : FF B7		"  "		smi	#B7
+1A32 : 33 E5		"3 "		bdf	L1AE5
+1A34 : F0		" "		ldx
+1A35 : FF 20		"  "		smi	#20
+1A37 : 33 A6		"3 "		bdf	L1AA6
+1A39 : FB ED		"  "		xri	#ED
+1A3B : 32 99		"2 "		bz	L1A99
+1A3D : FB 07		"  "		xri	#07
+1A3F : 32 7D		"2}"		bz	L1A7D
+1A41 : FB 01		"  "		xri	#01
+1A43 : 32 58		"2X"		bz	L1A58
+1A45 : F0		" "		ldx
+1A46 : FB 0F		"  "		xri	#0F
+1A48 : 32 A3		"2 "		bz	L1AA3
+1A4A : FB 09		"  "		xri	#09
+1A4C : 32 A3		"2 "		bz	L1AA3
+1A4E : FB 02		"  "		xri	#02
+1A50 : 32 A3		"2 "		bz	L1AA3
+1A52 : F0		" "		ldx
+1A53 : FC C0		"  "		adi	#C0
+1A55 : 52		"R"		str	r2
+1A56 : 30 AE		"0 "		br	L1AAE
+				;
+1A58				L1A58:
+1A58 : 0B		" "		ldn	r11
+1A59 : FB B0		"  "		xri	#B0
+1A5B : 32 67		"2g"		bz	L1A67
+1A5D : D7		" "		sep	r7
+1A5E : C8		" "		lskp							;INFO: skip to address L1A61
+				;
+1A5F : 0D		" "		ldn	r13
+1A60 : D7		" "		sep	r7
+				;
+1A61				L1A61:
+1A61 : 82		" "		glo	r2
+1A62 : 0D		" "		ldn	r13
+1A63 : FF 80		"  "		smi	#80
+1A65 : 3B 75		";u"		bnf	L1A75
+1A67				L1A67:
+1A67 : F8 0F		"  "		ldi	#0F
+1A69 : 58		"X"		str	r8
+1A6A : D4		" "		sep	r4
+				;
+1A6B : 02		" "		ldn	r2
+1A6C : 03		" "		ldn	r3
+1A6D : D4		" "		sep	r4
+				;
+1A6E : 1A		" "		inc	r10
+1A6F : 93		" "		ghi	r3
+1A70 : F8 0F		"  "		ldi	#0F
+1A72 : D7		" "		sep	r7
+				;
+1A73 : 87		" "		glo	r7
+1A74 : 0D		" "		ldn	r13
+1A75				L1A75:
+1A75 : D7		" "		sep	r7
+				;
+1A76 : 25		"%"		dec	r5
+1A77 : 08		" "		ldn	r8
+1A78 : F8 02		"  "		ldi	#02
+1A7A : 52		"R"		str	r2
+1A7B : 30 A3		"0 "		br	L1AA3
+				;
+1A7D				L1A7D:
+1A7D : 0B		" "		ldn	r11
+1A7E : FB B0		"  "		xri	#B0
+1A80 : 32 93		"2 "		bz	L1A93
+1A82 : D7		" "		sep	r7
+				;
+1A83 : 82		" "		glo	r2
+1A84 : 0D		" "		ldn	r13
+1A85 : FF 0F		"  "		smi	#0F
+1A87 : 33 8E		"3 "		bdf	L1A8E
+1A89 : D7		" "		sep	r7
+1A8A : C0 0D 30		"  0"		lbr	L0D30
+				;
+1A8D : A3		" "		plo	r3
+1A8E				L1A8E:
+1A8E : D7		" "		sep	r7
+				;
+1A8F : 25		"%"		dec	r5
+1A90 : 08		" "		ldn	r8
+1A91 : 30 A3		"0 "		br	L1AA3
+1A93				L1A93:
+1A93 : D4		" "		sep	r4
+				;
+1A94 : 00		" "		idl
+1A95 : 54		"T"		str	r4
+1A96 : 18		" "		inc	r8
+1A97 : 00		" "		idl
+1A98 : D5		" "		sep	r5
+				;
+1A99				L1A99:
+1A99 : 0B		" "		ldn	r11
+1A9A : FB B0		"  "		xri	#B0
+1A9C : 3A A3		": "		bnz	L1AA3
+1A9E : F8 0F		"  "		ldi	#0F
+1AA0 : 52		"R"		str	r2
+1AA1 : 30 A6		"0 "		br	L1AA6
+1AA3				L1AA3:
+1AA3 : D7		" "		sep	r7
+				;
+1AA4 : 25		"%"		dec	r5
+1AA5 : 10		" "		inc	r0
+1AA6				L1AA6:
+1AA6 : F0		" "		ldx
+1AA7 : FF 60		" `"		smi	#60
+1AA9 : 3B AE		"; "		bnf	L1AAE
+1AAB : FC A0		"  "		adi	#A0
+1AAD : 52		"R"		str	r2
+1AAE				L1AAE:
+1AAE : E3		" "		sex	r3
+1AAF : F8 08		"  "		ldi	#08
+1AB1 : AE		" "		plo	r14
+1AB2 : 66		"f"		out	6
+1AB3 : 00		" "		idl
+1AB4				L1AB4:
+1AB4 : 8E		" "		glo	r14
+1AB5 : C2 1A CB		"   "		lbz	L1ACB
+1AB8 : 2E		"."		dec	r14
+1AB9 : 02		" "		ldn	r2
+1ABA : F6		" "		shr
+1ABB : 52		"R"		str	r2
+1ABC : 33 C1		"3 "		bdf	L1AC1
+1ABE : 65		"e"		out	5
+1ABF : 00		" "		idl
+1AC0 : C8		" "		lskp							;INFO: skip to address L1AC3
+				;
+1AC1				L1AC1:
+1AC1 : 65		"e"		out	5
+1AC2 : 02		" "		ldn	r2
+1AC3				L1AC3:
+1AC3 : 66		"f"		out	6
+1AC4 : 01		" "		ldn	r1
+1AC5 : C4		" "		nop
+1AC6 : 66		"f"		out	6
+1AC7 : 00		" "		idl
+1AC8 : C0 1A B4		"   "		lbr	L1AB4
+				;
+1ACB				L1ACB:
+1ACB : 65		"e"		out	5
+1ACC : 40		"@"		lda	r0
+1ACD : C4		" "		nop
+1ACE : 65		"e"		out	5
+1ACF : 00		" "		idl
+1AD0 : D7		" "		sep	r7
+				;
+1AD1 : 67		"g"		out	7
+1AD2 : 10		" "		inc	r0
+1AD3 : 1A		" "		inc	r10
+1AD4 : DA		" "		sep	r10
+1AD5 : D4		" "		sep	r4
+				;
+1AD6 : 00		" "		idl
+1AD7				L1AD7:
+1AD7 : 54		"T"		str	r4
+1AD8 : 01		" "		ldn	r1
+1AD9 : 40		"@"		lda	r0
+1ADA : D7		" "		sep	r7
+				;
+1ADB : 67		"g"		out	7
+1ADC : 08		" "		ldn	r8
+1ADD : 1A		" "		inc	r10
+1ADE : E5		" "		sex	r5
+1ADF : F8 04		"  "		ldi	#04
+1AE1 : 58		"X"		str	r8
+1AE2 : D4		" "		sep	r4
+				;
+1AE3 : 02		" "		ldn	r2
+1AE4 : 03		" "		ldn	r3
+1AE5				L1AE5:
+1AE5 : D5		" "		sep	r5
+				;
+1AE6 : 0B		" "		ldn	r11
+1AE7 : CA 1B 22		"  ""		lbnz	L1B22
+1AEA : D4		" "		sep	r4
+				;
+1AEB : 03		" "		ldn	r3
+1AEC : CF		" "		lsdf							;INFO: skip to address L1AEF
+1AED : D7		" "		sep	r7
+				;
+1AEE : 82		" "		glo	r2
+1AEF				L1AEF:
+1AEF : 0D		" "		ldn	r13
+1AF0 : 73		"s"		stxd
+1AF1 : 73		"s"		stxd
+1AF2				L1AF2:
+1AF2 : D4		" "		sep	r4
+				;
+1AF3 : 1A		" "		inc	r10
+1AF4 : DF		" "		sep	r15
+				;
+1AF5 : 60		"`"		irx
+1AF6 : F0		" "		ldx
+1AF7 : FB 0F		"  "		xri	#0F
+1AF9 : C2 1B 09		"   "		lbz	L1B09
+1AFC : F0		" "		ldx
+1AFD : FC 01		"  "		adi	#01
+1AFF : 73		"s"		stxd
+1B00 : F8 0A		"  "		ldi	#0A
+1B02 : 58		"X"		str	r8
+1B03 : D4		" "		sep	r4
+				;
+1B04 : 02		" "		ldn	r2
+1B05 : 03		" "		ldn	r3
+1B06 : C0 1A F2		"   "		lbr	L1AF2
+				;
+1B09				L1B09:
+1B09 : 72		"r"		ldxa
+1B0A : F3		" "		xor
+1B0B : C2 1B 1E		"   "		lbz	L1B1E
+1B0E : 22		"""		dec	r2
+1B0F : F0		" "		ldx
+1B10 : FF 01		"  "		smi	#01
+1B12 : 73		"s"		stxd
+1B13 : D7		" "		sep	r7
+				;
+1B14 : 82		" "		glo	r2
+1B15 : 2A		"*"		dec	r10
+1B16 : 58		"X"		str	r8
+1B17 : D4		" "		sep	r4
+				;
+1B18 : 02		" "		ldn	r2
+1B19 : 03		" "		ldn	r3
+1B1A : 60		"`"		irx
+1B1B : C0 1B 09		"   "		lbr	L1B09
+1B1E				L1B1E:
+1B1E : D4		" "		sep	r4
+				;
+1B1F : 09		" "		ldn	r9
+1B20				L1B20:
+1B20 : 2B		"+"		dec	r11
+1B21 : D5		" "		sep	r5
+1B22				L1B22:
+1B22 : D7		" "		sep	r7
+				;
+1B23 : A0		" "		plo	r0
+1B24 : 0B		" "		ldn	r11
+1B25				L1B25:
+1B25 : D4		" "		sep	r4
+				;
+1B26 : 03		" "		ldn	r3
+1B27 : 79		"y"		mark
+1B28 : 8B		" "		glo	r11
+1B29 : 52		"R"		str	r2
+1B2A : D7		" "		sep	r7
+				;
+1B2B : 82		" "		glo	r2
+1B2C : 0C		" "		ldn	r12
+1B2D : F5		" "		sd
+1B2E : FD 80		"  "		sdi	#80
+1B30 : 3B 57		";W"		bnf	L1B57
+1B32				L1B32:
+1B32 : 0B		" "		ldn	r11
+1B33 : 32 4A		"2J"		bz	L1B4A
+1B35 : FB B0		"  "		xri	#B0
+1B37 : 32 4A		"2J"		bz	L1B4A
+1B39 : FA F0		"  "		ani	#F0
+1B3B : FB 30		" 0"		xri	#30
+1B3D : 32 43		"2C"		bz	L1B43
+1B3F : FB 10		"  "		xri	#10
+1B41 : 3A 25		":%"		bnz	L1B25
+1B43				L1B43:
+1B43 : D7		" "		sep	r7
+				;
+1B44 : 82		" "		glo	r2
+1B45 : 0D		" "		ldn	r13
+1B46 : FB 0F		"  "		xri	#0F
+1B48 : 3A 25		":%"		bnz	L1B25
+1B4A				L1B4A:
+1B4A : F8 0B		"  "		ldi	#0B
+1B4C : AA		" "		plo	r10
+1B4D : D7		" "		sep	r7
+1B4E : DE		" "		sep	r14
+				;
+1B4F : 1B		" "		inc	r11
+1B50 : 56		"V"		str	r6
+1B51 : D4		" "		sep	r4
+				;
+1B52 : 05		" "		ldn	r5
+1B53 : B8		" "		phi	r8
+1B54 : 30 4A		"0J"		br	L1B4A
+1B56 : D5		" "		sep	r5
+				;
+1B57				L1B57:
+1B57 : 0B		" "		ldn	r11
+1B58 : FA F0		"  "		ani	#F0
+1B5A : FB 80		"  "		xri	#80
+1B5C : 32 4A		"2J"		bz	L1B4A
+1B5E : FB 10		"  "		xri	#10
+1B60 : 32 4A		"2J"		bz	L1B4A
+1B62 : 30 32		"02"		br	L1B32
+				;
+1B64 : 48		"H"		lda	r8
+1B65 : 41		"A"		lda	r1
+1B66 : 52		"R"		str	r2
+1B67 : 44		"D"		lda	r4
+1B68 : 20		" "		dec	r0
+1B69 : 43		"C"		lda	r3
+1B6A : 52		"R"		str	r2
+1B6B : 20		" "		dec	r0
+1B6C : 20		" "		dec	r0
+1B6D : 20		" "		dec	r0
+1B6E : 53		"S"		str	r3
+1B6F : 4F		"O"		lda	r15
+1B70 : 46		"F"		lda	r6
+1B71 : 54		"T"		str	r4
+1B72 : 20		" "		dec	r0
+1B73 : 43		"C"		lda	r3
+1B74 : 52		"R"		str	r2
+1B75 : 20		" "		dec	r0
+1B76 : 20		" "		dec	r0
+1B77 : 20		" "		dec	r0
+1B78 : 43		"C"		lda	r3
+1B79 : 48		"H"		lda	r8
+1B7A : 41		"A"		lda	r1
+1B7B : 52		"R"		str	r2
+1B7C : 53		"S"		str	r3
+1B7D : 2F		"/"		dec	r15
+1B7E : 4C		"L"		lda	r12
+1B7F : 49		"I"		lda	r9
+1B80 : 4E		"N"		lda	r14
+1B81 : 45		"E"		lda	r5
+1B82 : 4C		"L"		lda	r12
+1B83 : 46		"F"		lda	r6
+1B84 : 20		" "		dec	r0
+1B85 : 58		"X"		str	r8
+1B86 : 20		" "		dec	r0
+1B87 : 45		"E"		lda	r5
+1B88 : 4E		"N"		lda	r14
+1B89 : 41		"A"		lda	r1
+1B8A : 42		"B"		lda	r2
+1B8B : 2E		"."		dec	r14
+1B8C : 4C		"L"		lda	r12
+1B8D : 46		"F"		lda	r6
+1B8E : 20		" "		dec	r0
+1B8F : 43		"C"		lda	r3
+1B90 : 4F		"O"		lda	r15
+1B91 : 44		"D"		lda	r4
+1B92 : 45		"E"		lda	r5
+1B93 : 20		" "		dec	r0
+1B94 : 20		" "		dec	r0
+1B95 : 20		" "		dec	r0
+1B96 : 42		"B"		lda	r2
+1B97 : 41		"A"		lda	r1
+1B98 : 55		"U"		str	r5
+1B99 : 44		"D"		lda	r4
+1B9A : 20		" "		dec	r0
+1B9B : 52		"R"		str	r2
+1B9C : 41		"A"		lda	r1
+1B9D : 54		"T"		str	r4
+1B9E : 45		"E"		lda	r5
+1B9F : 20		" "		dec	r0
+1BA0 : 55		"U"		str	r5
+1BA1 : 4C		"L"		lda	r12
+1BA2 : 20		" "		dec	r0
+1BA3 : 52		"R"		str	r2
+1BA4 : 45		"E"		lda	r5
+1BA5 : 50		"P"		str	r0
+1BA6 : 45		"E"		lda	r5
+1BA7 : 41		"A"		lda	r1
+1BA8 : 54		"T"		str	r4
+1BA9 : 20		" "		dec	r0
+1BAA : 54		"T"		str	r4
+1BAB : 58		"X"		str	r8
+1BAC : 20		" "		dec	r0
+1BAD : 46		"F"		lda	r6
+1BAE : 52		"R"		str	r2
+1BAF : 41		"A"		lda	r1
+1BB0 : 4D		"M"		lda	r13
+1BB1 : 45		"E"		lda	r5
+1BB2 : 20		" "		dec	r0
+1BB3 : 20		" "		dec	r0
+1BB4 : 43		"C"		lda	r3
+1BB5 : 4F		"O"		lda	r15
+1BB6 : 4E		"N"		lda	r14
+1BB7 : 54		"T"		str	r4
+1BB8 : 2E		"."		dec	r14
+1BB9 : 48		"H"		lda	r8
+1BBA : 20		" "		dec	r0
+1BBB : 45		"E"		lda	r5
+1BBC : 4E		"N"		lda	r14
+1BBD : 2E		"."		dec	r14
+1BBE : 4C		"L"		lda	r12
+1BBF : 49		"I"		lda	r9
+1BC0 : 4E		"N"		lda	r14
+1BC1 : 45		"E"		lda	r5
+1BC2 : 53		"S"		str	r3
+1BC3 : 2F		"/"		dec	r15
+1BC4 : 50		"P"		str	r0
+1BC5 : 41		"A"		lda	r1
+1BC6 : 47		"G"		lda	r7
+1BC7 : 45		"E"		lda	r5
+1BC8 : 52		"R"		str	r2
+1BC9 : 58		"X"		str	r8
+1BCA : 20		" "		dec	r0
+1BCB : 57		"W"		str	r7
+1BCC : 41		"A"		lda	r1
+1BCD : 49		"I"		lda	r9
+1BCE : 54		"T"		str	r4
+1BCF : 20		" "		dec	r0
+1BD0 : 54		"T"		str	r4
+1BD1 : 20		" "		dec	r0
+1BD2 : 42		"B"		lda	r2
+1BD3 : 2E		"."		dec	r14
+1BD4 : 53		"S"		str	r3
+1BD5 : 2E		"."		dec	r14
+1BD6 : 20		" "		dec	r0
+1BD7 : 43		"C"		lda	r3
+1BD8 : 4F		"O"		lda	r15
+1BD9 : 44		"D"		lda	r4
+1BDA : 45		"E"		lda	r5
+1BDB : 20		" "		dec	r0
+1BDC : 54		"T"		str	r4
+1BDD : 41		"A"		lda	r1
+1BDE : 50		"P"		str	r0
+1BDF : 45		"E"		lda	r5
+1BE0 : 20		" "		dec	r0
+1BE1 : 45		"E"		lda	r5
+1BE2 : 52		"R"		str	r2
+1BE3 : 52		"R"		str	r2
+1BE4 : 4F		"O"		lda	r15
+1BE5 : 52		"R"		str	r2
+1BE6 : 2A		"*"		dec	r10
+1BE7 : 31 20		"1 "		bq	L1B20
+1BE9 : 20		" "		dec	r0
+1BEA : 20		" "		dec	r0
+1BEB : 20		" "		dec	r0
+1BEC : 20		" "		dec	r0
+1BED : 20		" "		dec	r0
+1BEE : 20		" "		dec	r0
+1BEF : 20		" "		dec	r0
+1BF0 : 2A		"*"		dec	r10
+1BF1 : 32 20		"2 "		bz	L1B20
+1BF3 : 20		" "		dec	r0
+1BF4 : 20		" "		dec	r0
+1BF5 : 20		" "		dec	r0
+1BF6 : 20		" "		dec	r0
+1BF7 : 20		" "		dec	r0
+1BF8 : 20		" "		dec	r0
+1BF9 : 20		" "		dec	r0
+1BFA : 50		"P"		str	r0
+1BFB : 41		"A"		lda	r1
+1BFC : 52		"R"		str	r2
+1BFD : 49		"I"		lda	r9
+1BFE : 54		"T"		str	r4
+1BFF : 59		"Y"		str	r9
+1C00				L1C00:
+1C00 : 20		" "		dec	r0
+1C01 : 4F		"O"		lda	r15
+1C02 : 2F		"/"		dec	r15
+1C03 : 45		"E"		lda	r5
+1C04 : 55		"U"		str	r5
+1C05 : 2E		"."		dec	r14
+1C06 : 4C		"L"		lda	r12
+1C07 : 2E		"."		dec	r14
+1C08 : 20		" "		dec	r0
+1C09 : 58		"X"		str	r8
+1C0A : 20		" "		dec	r0
+1C0B : 53		"S"		str	r3
+1C0C : 43		"C"		lda	r3
+1C0D : 31 55		"1U"		bq	L1C55
+1C0F : 2E		"."		dec	r14
+1C10 : 4C		"L"		lda	r12
+1C11 : 2E		"."		dec	r14
+1C12 : 20		" "		dec	r0
+1C13 : 58		"X"		str	r8
+1C14 : 20		" "		dec	r0
+1C15 : 53		"S"		str	r3
+1C16 : 43		"C"		lda	r3
+1C17 : 32 55		"2U"		bz	L1C55
+1C19 : 2E		"."		dec	r14
+1C1A : 4C		"L"		lda	r12
+1C1B : 2E		"."		dec	r14
+1C1C : 20		" "		dec	r0
+1C1D : 58		"X"		str	r8
+1C1E : 20		" "		dec	r0
+1C1F : 53		"S"		str	r3
+1C20				L1C20:
+1C20 : 43		"C"		lda	r3
+1C21 : 33 55		"3U"		bdf	L1C55
+1C23 : 2E		"."		dec	r14
+1C24				L1C24:
+1C24 : 4C		"L"		lda	r12
+1C25 : 2E		"."		dec	r14
+1C26 : 20		" "		dec	r0
+1C27 : 58		"X"		str	r8
+1C28				L1C28:
+1C28 : 20		" "		dec	r0
+1C29 : 45		"E"		lda	r5
+1C2A : 43		"C"		lda	r3
+1C2B : 31 55		"1U"		bq	L1C55
+1C2D : 2E		"."		dec	r14
+1C2E				L1C2E:
+1C2E : 4C		"L"		lda	r12
+1C2F : 2E		"."		dec	r14
+1C30 : 20		" "		dec	r0
+1C31 : 58		"X"		str	r8
+1C32				L1C32:
+1C32 : 20		" "		dec	r0
+1C33 : 45		"E"		lda	r5
+1C34 : 43		"C"		lda	r3
+1C35				L1C35:
+1C35 : 32 55		"2U"		bz	L1C55
+1C37 : 2E		"."		dec	r14
+1C38				L1C38:
+1C38 : 4C		"L"		lda	r12
+1C39 : 2E		"."		dec	r14
+1C3A : 20		" "		dec	r0
+1C3B : 58		"X"		str	r8
+1C3C : 20		" "		dec	r0
+1C3D				L1C3D:
+1C3D : 45		"E"		lda	r5
+1C3E : 43		"C"		lda	r3
+1C3F : 33 47		"3G"		bdf	L1C47
+1C41 : 2E		"."		dec	r14
+1C42 : 50		"P"		str	r0
+1C43 : 2E		"."		dec	r14
+1C44 : 20		" "		dec	r0
+1C45 : 58		"X"		str	r8
+1C46				L1C46:
+1C46 : 31 20		"1 "		bq	L1C20
+1C48 : 43		"C"		lda	r3
+1C49 : 31 47		"1G"		bq	L1C47
+1C4B : 2E		"."		dec	r14
+1C4C : 50		"P"		str	r0
+1C4D : 2E		"."		dec	r14
+1C4E : 20		" "		dec	r0
+1C4F : 58		"X"		str	r8
+1C50 : 31 20		"1 "		bq	L1C20
+1C52 : 43		"C"		lda	r3
+1C53 : 32 47		"2G"		bz	L1C47
+1C55				L1C55:
+1C55 : 2E		"."		dec	r14
+1C56 : 50		"P"		str	r0
+1C57 : 2E		"."		dec	r14
+1C58 : 20		" "		dec	r0
+1C59 : 58		"X"		str	r8
+1C5A : 31 20		"1 "		bq	L1C20
+1C5C : 43		"C"		lda	r3
+1C5D : 33 46		"3F"		bdf	L1C46
+1C5F : 2E		"."		dec	r14
+1C60 : 46		"F"		lda	r6
+1C61 : 2E		"."		dec	r14
+1C62 : 20		" "		dec	r0
+1C63 : 43		"C"		lda	r3
+1C64 : 4F		"O"		lda	r15
+1C65 : 55		"U"		str	r5
+1C66 : 4E		"N"		lda	r14
+1C67 : 54		"T"		str	r4
+1C68 : 2A		"*"		dec	r10
+1C69 : 33 20		"3 "		bdf	L1C20
+1C6B : 20		" "		dec	r0
+1C6C : 20		" "		dec	r0
+1C6D : 20		" "		dec	r0
+1C6E : 20		" "		dec	r0
+1C6F : 20		" "		dec	r0
+1C70 : 20		" "		dec	r0
+1C71 : 20		" "		dec	r0
+1C72 : 55		"U"		str	r5
+1C73 : 50		"P"		str	r0
+1C74 : 20		" "		dec	r0
+1C75 : 4C		"L"		lda	r12
+1C76 : 4E		"N"		lda	r14
+1C77 : 20		" "		dec	r0
+1C78 : 43		"C"		lda	r3
+1C79 : 4F		"O"		lda	r15
+1C7A : 44		"D"		lda	r4
+1C7B : 45		"E"		lda	r5
+1C7C : 2A		"*"		dec	r10
+1C7D : 34 20		"4 "		b1	L1C20
+1C7F : 20		" "		dec	r0
+1C80 : 20		" "		dec	r0
+1C81 : 20		" "		dec	r0
+1C82 : 20		" "		dec	r0
+1C83 : 20		" "		dec	r0
+1C84 : 20		" "		dec	r0
+1C85 : 20		" "		dec	r0
+1C86 : 47		"G"		lda	r7
+1C87 : 2E		"."		dec	r14
+1C88 : 50		"P"		str	r0
+1C89 : 2E		"."		dec	r14
+1C8A : 20		" "		dec	r0
+1C8B : 58		"X"		str	r8
+1C8C : 32 20		"2 "		bz	L1C20
+1C8E : 43		"C"		lda	r3
+1C8F : 31 47		"1G"		bq	L1C47
+1C91 : 2E		"."		dec	r14
+1C92 : 50		"P"		str	r0
+1C93 : 2E		"."		dec	r14
+1C94 : 20		" "		dec	r0
+1C95 : 58		"X"		str	r8
+1C96 : 32 20		"2 "		bz	L1C20
+1C98 : 43		"C"		lda	r3
+1C99 : 32 47		"2G"		bz	L1C47
+1C9B : 2E		"."		dec	r14
+1C9C : 50		"P"		str	r0
+1C9D : 2E		"."		dec	r14
+1C9E : 20		" "		dec	r0
+1C9F : 58		"X"		str	r8
+1CA0 : 32 20		"2 "		bz	L1C20
+1CA2 : 43		"C"		lda	r3
+1CA3 : 33 00		"3 "		bdf	L1C00
+1CA5 : 20		" "		dec	r0
+1CA6 : 65		"e"		out	5
+1CA7 : 69		"i"		inp	1
+1CA8 : 6F		"o"		inp	7
+1CA9 : 63		"c"		out	3
+1CAA : 61		"a"		out	1
+1CAB : 64		"d"		out	4
+1CAC : 73		"s"		stxd
+1CAD : 6B		"k"		inp	3
+1CAE : 74		"t"		adc
+1CAF : 72		"r"		ldxa
+1CB0 : 6E		"n"		inp	6
+1CB1 : 79		"y"		mark
+1CB2 : 2E		"."		dec	r14
+1CB3 : 66		"f"		out	6
+1CB4 : 75		"u"		sdb
+				;
+1CB5 : 68		"h"		db	#68
+				;
+1CB6 : 76		"v"		shrc
+1CB7 : 6C		"l"		inp	4
+1CB8 : 71		"q"		dis
+				;
+1CB9 : 7A		"z"		req
+1CBA : 2D		"-"		dec	r13
+1CBB : 27		"'"		dec	r7
+1CBC : 67		"g"		out	7
+1CBD : 6A		"j"		inp	2
+1CBE : 2C		","		dec	r12
+1CBF : 77		"w"		smb
+1CC0 : 62		"b"		out	2
+1CC1 : 78		"x"		sav
+1CC2 : 6D		"m"		inp	5
+1CC3 : 70		"p"		ret
+				;
+1CC4 : 00		" "		idl
+1CC5 : 20		" "		dec	r0
+1CC6 : 31 32		"12"		bq	L1C32
+1CC8 : 30 28		"0("		br	L1C28
+				;
+1CCA : 2A		"*"		dec	r10
+1CCB : 33 24		"3$"		bdf	L1C24
+1CCD : 2F		"/"		dec	r15
+1CCE : 2B		"+"		dec	r11
+1CCF : 3B 22		";""		bnf	L1C22
+1CD1 : 3F 2E		"?."		bn4	L1C2E
+1CD3 : 34 36		"46"		b1	L1C36
+1CD5 : 2D		"-"		dec	r13
+1CD6 : 26		"&"		dec	r6
+1CD7 : 23		"#"		dec	r3
+1CD8 : 29		")"		dec	r9
+1CD9 : 25		"%"		dec	r5
+1CDA : 21		"!"		dec	r1
+1CDB : 40		"@"		lda	r0
+1CDC : 37 3D		"7="		b4	L1C3D
+1CDE : 2C		","		dec	r12
+1CDF : 3A 38		":8"		bnz	L1C38
+1CE1 : 58		"X"		str	r8
+1CE2 : 39 35		"95"		bnq	L1C35
+1CE4 : 00		" "		idl
+1CE5 : 20		" "		dec	r0
+1CE6 : 00		" "		idl
+1CE7 : 7F 00		"  "		smbi	#00
+1CE9 : 3C 5E		"<^"		bn1	L1C5E
+1CEB : 7B		"{"		seq
+1CEC : 00		" "		idl
+1CED : 00		" "		idl
+1CEE : 00		" "		idl
+1CEF : 5D		"]"		str	r13
+1CF0 : 60		"`"		irx
+1CF1 : 00		" "		idl
+1CF2 : 00		" "		idl
+1CF3 : 00		" "		idl
+1CF4 : 00		" "		idl
+1CF5 : 00		" "		idl
+1CF6 : 5C		"\"		str	r12
+1CF7 : 7C 3E		"|>"		adci	#3E
+1CF9 : 00		" "		idl
+1CFA : 00		" "		idl
+1CFB : 00		" "		idl
+1CFC : 7E		"~"		shlc
+1CFD : 00		" "		idl
+1CFE : 00		" "		idl
+1CFF : 5B		"["		str	r11
+1D00				L1D00:
+1D00 : 7D 00		"} "		sdbi	#00
+1D02 : 5F		"_"		str	r15
+1D03 : 00		" "		idl
+1D04 : 00		" "		idl
+1D05 : 94		" "		ghi	r4
+1D06 : 07		" "		ldn	r7
+1D07 : 1A		" "		inc	r10
+1D08				L1D08:
+1D08 : 09		" "		ldn	r9
+1D09 : A2		" "		plo	r2
+1D0A : 07		" "		ldn	r7
+1D0B : A5		" "		plo	r5
+1D0C : 05		" "		ldn	r5
+1D0D : B8		" "		phi	r8
+1D0E : 09		" "		ldn	r9
+1D0F : 9A		" "		ghi	r10
+1D10 : 00		" "		idl
+1D11 : 97		" "		ghi	r7
+1D12 : 03		" "		ldn	r3
+1D13 : 79		"y"		mark
+1D14 : 00		" "		idl
+1D15 : 9D		" "		ghi	r13
+1D16 : 09		" "		ldn	r9
+1D17 : 9E		" "		ghi	r14
+1D18 : 09		" "		ldn	r9
+1D19 : 2B		"+"		dec	r11
+1D1A : 09		" "		ldn	r9
+1D1B : 9C		" "		ghi	r12
+1D1C : 03		" "		ldn	r3
+1D1D : CF		" "		lsdf							;INFO: skip to address L1D20
+1D1E : 02		" "		ldn	r2
+1D1F : CF		" "		lsdf							;INFO: skip to address L1D22
+1D20				L1D20:
+1D20 : 05		" "		ldn	r5
+1D21 : 11		" "		inc	r1
+1D22				L1D22:
+1D22 : 00		" "		idl
+1D23 : 9A		" "		ghi	r10
+1D24 : 02		" "		ldn	r2
+1D25 : F0		" "		ldx
+1D26 : 02		" "		ldn	r2
+1D27 : F0		" "		ldx
+1D28 : 02		" "		ldn	r2
+1D29 : F0		" "		ldx
+1D2A : 02		" "		ldn	r2
+1D2B : F0		" "		ldx
+1D2C : 02		" "		ldn	r2
+1D2D : F0		" "		ldx
+1D2E : 02		" "		ldn	r2
+1D2F				L1D2F:
+1D2F : F0		" "		ldx
+1D30				L1D30:
+1D30 : 00		" "		idl
+1D31 : A7		" "		plo	r7
+1D32 : 02		" "		ldn	r2
+1D33 : F0		" "		ldx
+1D34 : 02		" "		ldn	r2
+1D35 : F0		" "		ldx
+1D36 : 02		" "		ldn	r2
+1D37 : F0		" "		ldx
+1D38 : 06		" "		ldn	r6
+1D39 : 89		" "		glo	r9
+1D3A : 02		" "		ldn	r2
+1D3B : F0		" "		ldx
+1D3C : 06		" "		ldn	r6
+1D3D : A9		" "		plo	r9
+1D3E : 0D		" "		ldn	r13
+1D3F : B6		" "		phi	r6
+1D40 : 0D		" "		ldn	r13
+1D41 : BC		" "		phi	r12
+1D42 : 02		" "		ldn	r2
+1D43 : F0		" "		ldx
+1D44 : 00		" "		idl
+1D45 : AA		" "		plo	r10
+1D46 : 00		" "		idl
+1D47 : F1		" "		or
+1D48 : 09		" "		ldn	r9
+1D49 : 99		" "		ghi	r9
+1D4A : 04		" "		ldn	r4
+1D4B : FC 08		"  "		adi	#08
+1D4D : 66		"f"		out	6
+1D4E : 0D		" "		ldn	r13
+1D4F : CE		" "		lsz							;INFO: skip to address L1D52
+1D50 : 09		" "		ldn	r9
+1D51 : 97		" "		ghi	r7
+1D52				L1D52:
+1D52 : 08		" "		ldn	r8
+1D53 : 61		"a"		out	1
+1D54 : 09		" "		ldn	r9
+1D55 : 91		" "		ghi	r1
+1D56 : 09		" "		ldn	r9
+1D57 : 9D		" "		ghi	r13
+1D58 : 06		" "		ldn	r6
+1D59 : 86		" "		glo	r6
+1D5A : 09		" "		ldn	r9
+1D5B : 9B		" "		ghi	r11
+1D5C : 06		" "		ldn	r6
+1D5D : A3		" "		plo	r3
+1D5E : 0D		" "		ldn	r13
+1D5F : D9		" "		sep	r9
+				;
+1D60 : 0D		" "		ldn	r13
+1D61 : C2 1A 00		"   "		lbz	L1A00
+1D64 : 09		" "		ldn	r9
+1D65 : 91		" "		ghi	r1
+1D66 : 09		" "		ldn	r9
+1D67 : 92		" "		ghi	r2
+1D68 : 09		" "		ldn	r9
+1D69 : 96		" "		ghi	r6
+1D6A : 00		" "		idl
+1D6B : CB 0E 19		"   "		lbnf	L0E19
+1D6E : 09		" "		ldn	r9
+1D6F : 98		" "		ghi	r8
+1D70 : 03		" "		ldn	r3
+1D71 : 75		"u"		sdb
+1D72 : 09		" "		ldn	r9
+1D73 : 94		" "		ghi	r4
+1D74 : 09		" "		ldn	r9
+1D75 : 93		" "		ghi	r3
+1D76 : 09		" "		ldn	r9
+1D77 : 95		" "		ghi	r5
+1D78 : 06		" "		ldn	r6
+1D79 : 79		"y"		mark
+1D7A : 09		" "		ldn	r9
+1D7B : A5		" "		plo	r5
+1D7C : 06		" "		ldn	r6
+1D7D : 90		" "		ghi	r0
+1D7E : 02		" "		ldn	r2
+1D7F : BE		" "		phi	r14
+1D80 : 0D		" "		ldn	r13
+1D81 : C8		" "		lskp							;INFO: skip to address L1D84
+				;
+1D82 : 00		" "		idl
+1D83 : AD		" "		plo	r13
+1D84				L1D84:
+1D84 : 02		" "		ldn	r2
+1D85 : F3		" "		xor
+1D86 : 18		" "		inc	r8
+1D87 : 00		" "		idl
+1D88 : 09		" "		ldn	r9
+1D89 : 91		" "		ghi	r1
+1D8A : 02		" "		ldn	r2
+1D8B : F3		" "		xor
+1D8C : 09		" "		ldn	r9
+1D8D : 91		" "		ghi	r1
+1D8E : 0D		" "		ldn	r13
+1D8F : F3		" "		xor
+1D90 : 02		" "		ldn	r2
+1D91 : F3		" "		xor
+1D92 : 0F		" "		ldn	r15
+1D93 : 57		"W"		str	r7
+1D94 : 00		" "		idl
+1D95 : B0		" "		phi	r0
+1D96 : 02		" "		ldn	r2
+1D97 : F3		" "		xor
+1D98 : 06		" "		ldn	r6
+1D99 : 6D		"m"		inp	5
+1D9A : 02		" "		ldn	r2
+1D9B : F3		" "		xor
+1D9C : 03		" "		ldn	r3
+1D9D : ED		" "		sex	r13
+1D9E : 02		" "		ldn	r2
+1D9F : F3		" "		xor
+1DA0 : 0F		" "		ldn	r15
+1DA1 : 6E		"n"		inp	6
+1DA2 : 0E		" "		ldn	r14
+1DA3 : 50		"P"		str	r0
+1DA4 : 09		" "		ldn	r9
+1DA5 : 91		" "		ghi	r1
+1DA6 : 09		" "		ldn	r9
+1DA7 : 91		" "		ghi	r1
+1DA8 : 09		" "		ldn	r9
+1DA9 : 91		" "		ghi	r1
+1DAA : 09		" "		ldn	r9
+1DAB : 91		" "		ghi	r1
+1DAC : 09		" "		ldn	r9
+1DAD : 91		" "		ghi	r1
+1DAE : 09		" "		ldn	r9
+1DAF : 91		" "		ghi	r1
+1DB0 : 09		" "		ldn	r9
+1DB1 : 91		" "		ghi	r1
+1DB2 : 09		" "		ldn	r9
+1DB3 : 91		" "		ghi	r1
+1DB4 : 09		" "		ldn	r9
+1DB5 : 91		" "		ghi	r1
+1DB6 : 09		" "		ldn	r9
+1DB7 : 91		" "		ghi	r1
+1DB8 : 09		" "		ldn	r9
+1DB9 : 91		" "		ghi	r1
+1DBA : 09		" "		ldn	r9
+1DBB : 91		" "		ghi	r1
+1DBC : 09		" "		ldn	r9
+1DBD : 91		" "		ghi	r1
+1DBE : 09		" "		ldn	r9
+1DBF : 91		" "		ghi	r1
+1DC0 : 09		" "		ldn	r9
+1DC1 : 91		" "		ghi	r1
+1DC2 : 09		" "		ldn	r9
+1DC3 : 91		" "		ghi	r1
+1DC4 : 0D		" "		ldn	r13
+1DC5 : 0D		" "		ldn	r13
+1DC6 : 3C 00		"< "		bn1	L1D00
+1DC8 : 0A		" "		ldn	r10
+1DC9 : 13		" "		inc	r3
+1DCA : 00		" "		idl
+1DCB : 00		" "		idl
+1DCC : 00		" "		idl
+1DCD : 3C 08		"< "		bn1	L1D08
+1DCF : 08		" "		ldn	r8
+1DD0 : 00		" "		idl
+1DD1 : 00		" "		idl
+1DD2 : 00		" "		idl
+1DD3 : 00		" "		idl
+1DD4 : 00		" "		idl
+1DD5 : 00		" "		idl
+1DD6 : 00		" "		idl
+1DD7 : 00		" "		idl
+1DD8 : 00		" "		idl
+1DD9 : 00		" "		idl
+1DDA : 00		" "		idl
+1DDB : 00		" "		idl
+1DDC : 00		" "		idl
+1DDD : 00		" "		idl
+1DDE : 00		" "		idl
+1DDF : 0B		" "		ldn	r11
+1DE0 : 00		" "		idl
+1DE1 : 00		" "		idl
+1DE2 : 00		" "		idl
+1DE3 : 00		" "		idl
+1DE4 : A3		" "		plo	r3
+1DE5 : A1		" "		plo	r1
+1DE6 : AE		" "		plo	r14
+1DE7 : DA		" "		sep	r10
+				;
+1DE8 : A2		" "		plo	r2
+1DE9 : 7E		"~"		shlc
+1DEA : 7F B7		"  "		smbi	#B7
+1DEC : BA		" "		phi	r10
+1DED : C5		" "		lsnq							;INFO: skip to address L1DF0
+1DEE : C6		" "		lsnz							;INFO: skip to address L1DF1
+1DEF : A8		" "		plo	r8
+1DF0				L1DF0:
+1DF0 : B2		" "		phi	r2
+1DF1				L1DF1:
+1DF1 : C4		" "		nop
+1DF2 : AA		" "		plo	r10
+1DF3 : D0		" "		sep	r0
+				;
+1DF4 : 20		" "		dec	r0
+1DF5 : 20		" "		dec	r0
+1DF6 : 20		" "		dec	r0
+1DF7 : 20		" "		dec	r0
+1DF8 : 20		" "		dec	r0
+1DF9 : 4D		"M"		lda	r13
+1DFA : 57		"W"		str	r7
+1DFB : 20		" "		dec	r0
+1DFC : 34 2F		"4/"		b1	L1D2F
+1DFE : 31 30		"10"		bq	L1D30
+1E00 : 20		" "		dec	r0
+1E01 : 20		" "		dec	r0
+1E02 : 20		" "		dec	r0
+1E03 : 20		" "		dec	r0
+1E04 : 20		" "		dec	r0
+1E05 : 00		" "		idl
+1E06 : FF FF		"  "		smi	#FF
+1E08 : FF FF		"  "		smi	#FF
+1E0A : FF FF		"  "		smi	#FF
+1E0C : FF FF		"  "		smi	#FF
+1E0E : FF FF		"  "		smi	#FF
+1E10 : FF FF		"  "		smi	#FF
+1E12 : FF FF		"  "		smi	#FF
+1E14 : FF FF		"  "		smi	#FF
+1E16 : FF FF		"  "		smi	#FF
+1E18 : FF FF		"  "		smi	#FF
+1E1A : FF FF		"  "		smi	#FF
+1E1C : FF FF		"  "		smi	#FF
+1E1E : FF FF		"  "		smi	#FF
+1E20 : FF FF		"  "		smi	#FF
+1E22 : FF FF		"  "		smi	#FF
+1E24 : FF FF		"  "		smi	#FF
+1E26 : FF FF		"  "		smi	#FF
+1E28 : FF FF		"  "		smi	#FF
+1E2A : FF FF		"  "		smi	#FF
+1E2C : FF FF		"  "		smi	#FF
+1E2E : FF FF		"  "		smi	#FF
+1E30 : FF FF		"  "		smi	#FF
+1E32 : FF FF		"  "		smi	#FF
+1E34 : FF FF		"  "		smi	#FF
+1E36 : FF FF		"  "		smi	#FF
+1E38 : FF FF		"  "		smi	#FF
+1E3A : FF FF		"  "		smi	#FF
+1E3C : FF FF		"  "		smi	#FF
+1E3E : FF FF		"  "		smi	#FF
+1E40 : FF FF		"  "		smi	#FF
+1E42 : FF FF		"  "		smi	#FF
+1E44 : FF FF		"  "		smi	#FF
+1E46 : FF FF		"  "		smi	#FF
+1E48 : FF FF		"  "		smi	#FF
+1E4A : FF FF		"  "		smi	#FF
+1E4C : FF FF		"  "		smi	#FF
+1E4E : FF FF		"  "		smi	#FF
+1E50 : FF FF		"  "		smi	#FF
+1E52 : FF FF		"  "		smi	#FF
+1E54 : FF FF		"  "		smi	#FF
+1E56 : FF FF		"  "		smi	#FF
+1E58 : FF FF		"  "		smi	#FF
+1E5A : FF FF		"  "		smi	#FF
+1E5C : FF FF		"  "		smi	#FF
+1E5E : FF FF		"  "		smi	#FF
+1E60 : FF FF		"  "		smi	#FF
+1E62 : FF FF		"  "		smi	#FF
+1E64 : FF FF		"  "		smi	#FF
+1E66 : FF FF		"  "		smi	#FF
+1E68 : FF FF		"  "		smi	#FF
+1E6A : FF FF		"  "		smi	#FF
+1E6C : FF FF		"  "		smi	#FF
+1E6E : FF FF		"  "		smi	#FF
+1E70 : FF FF		"  "		smi	#FF
+1E72 : FF FF		"  "		smi	#FF
+1E74 : FF FF		"  "		smi	#FF
+1E76 : FF FF		"  "		smi	#FF
+1E78 : FF FF		"  "		smi	#FF
+1E7A : FF FF		"  "		smi	#FF
+1E7C : FF FF		"  "		smi	#FF
+1E7E : FF FF		"  "		smi	#FF
+1E80 : FF FF		"  "		smi	#FF
+1E82 : FF FF		"  "		smi	#FF
+1E84 : FF FF		"  "		smi	#FF
+1E86 : FF FF		"  "		smi	#FF
+1E88 : FF FF		"  "		smi	#FF
+1E8A : FF FF		"  "		smi	#FF
+1E8C : FF FF		"  "		smi	#FF
+1E8E : FF FF		"  "		smi	#FF
+1E90 : FF FF		"  "		smi	#FF
+1E92 : FF FF		"  "		smi	#FF
+1E94 : FF FF		"  "		smi	#FF
+1E96 : FF FF		"  "		smi	#FF
+1E98 : FF FF		"  "		smi	#FF
+1E9A : FF FF		"  "		smi	#FF
+1E9C : FF FF		"  "		smi	#FF
+1E9E : FF FF		"  "		smi	#FF
+1EA0 : FF FF		"  "		smi	#FF
+1EA2 : FF FF		"  "		smi	#FF
+1EA4 : FF FF		"  "		smi	#FF
+1EA6 : FF FF		"  "		smi	#FF
+1EA8 : FF FF		"  "		smi	#FF
+1EAA : FF FF		"  "		smi	#FF
+1EAC : FF FF		"  "		smi	#FF
+1EAE : FF FF		"  "		smi	#FF
+1EB0 : FF FF		"  "		smi	#FF
+1EB2 : FF FF		"  "		smi	#FF
+1EB4 : FF FF		"  "		smi	#FF
+1EB6 : FF FF		"  "		smi	#FF
+1EB8 : FF FF		"  "		smi	#FF
+1EBA : FF FF		"  "		smi	#FF
+1EBC : FF FF		"  "		smi	#FF
+1EBE : FF FF		"  "		smi	#FF
+1EC0 : FF FF		"  "		smi	#FF
+1EC2 : FF FF		"  "		smi	#FF
+1EC4 : FF FF		"  "		smi	#FF
+1EC6 : FF FF		"  "		smi	#FF
+1EC8 : FF FF		"  "		smi	#FF
+1ECA : FF FF		"  "		smi	#FF
+1ECC : FF FF		"  "		smi	#FF
+1ECE : FF FF		"  "		smi	#FF
+1ED0 : FF FF		"  "		smi	#FF
+1ED2 : FF FF		"  "		smi	#FF
+1ED4 : FF FF		"  "		smi	#FF
+1ED6 : FF FF		"  "		smi	#FF
+1ED8 : FF FF		"  "		smi	#FF
+1EDA : FF FF		"  "		smi	#FF
+1EDC : FF FF		"  "		smi	#FF
+1EDE : FF FF		"  "		smi	#FF
+1EE0 : FF FF		"  "		smi	#FF
+1EE2 : FF FF		"  "		smi	#FF
+1EE4 : FF FF		"  "		smi	#FF
+1EE6 : FF FF		"  "		smi	#FF
+1EE8 : FF FF		"  "		smi	#FF
+1EEA : FF FF		"  "		smi	#FF
+1EEC : FF FF		"  "		smi	#FF
+1EEE : FF FF		"  "		smi	#FF
+1EF0 : FF FF		"  "		smi	#FF
+1EF2 : FF FF		"  "		smi	#FF
+1EF4 : FF FF		"  "		smi	#FF
+1EF6 : FF FF		"  "		smi	#FF
+1EF8 : FF FF		"  "		smi	#FF
+1EFA : FF FF		"  "		smi	#FF
+1EFC : FF FF		"  "		smi	#FF
+1EFE : FF FF		"  "		smi	#FF
+1F00 : FF FF		"  "		smi	#FF
+1F02 : FF FF		"  "		smi	#FF
+1F04 : FF FF		"  "		smi	#FF
+1F06 : FF FF		"  "		smi	#FF
+1F08 : FF FF		"  "		smi	#FF
+1F0A : FF FF		"  "		smi	#FF
+1F0C : FF FF		"  "		smi	#FF
+1F0E : FF FF		"  "		smi	#FF
+1F10 : FF FF		"  "		smi	#FF
+1F12 : FF FF		"  "		smi	#FF
+1F14 : FF FF		"  "		smi	#FF
+1F16 : FF FF		"  "		smi	#FF
+1F18 : FF FF		"  "		smi	#FF
+1F1A : FF FF		"  "		smi	#FF
+1F1C : FF FF		"  "		smi	#FF
+1F1E : FF FF		"  "		smi	#FF
+1F20 : FF FF		"  "		smi	#FF
+1F22 : FF FF		"  "		smi	#FF
+1F24 : FF FF		"  "		smi	#FF
+1F26 : FF FF		"  "		smi	#FF
+1F28 : FF FF		"  "		smi	#FF
+1F2A : FF FF		"  "		smi	#FF
+1F2C : FF FF		"  "		smi	#FF
+1F2E : FF FF		"  "		smi	#FF
+1F30 : FF FF		"  "		smi	#FF
+1F32 : FF FF		"  "		smi	#FF
+1F34 : FF FF		"  "		smi	#FF
+1F36 : FF FF		"  "		smi	#FF
+1F38 : FF FF		"  "		smi	#FF
+1F3A : FF FF		"  "		smi	#FF
+1F3C : FF FF		"  "		smi	#FF
+1F3E : FF FF		"  "		smi	#FF
+1F40 : FF FF		"  "		smi	#FF
+1F42 : FF FF		"  "		smi	#FF
+1F44 : FF FF		"  "		smi	#FF
+1F46 : FF FF		"  "		smi	#FF
+1F48 : FF FF		"  "		smi	#FF
+1F4A : FF FF		"  "		smi	#FF
+1F4C : FF FF		"  "		smi	#FF
+1F4E : FF FF		"  "		smi	#FF
+1F50 : FF FF		"  "		smi	#FF
+1F52 : FF FF		"  "		smi	#FF
+1F54 : FF FF		"  "		smi	#FF
+1F56 : FF FF		"  "		smi	#FF
+1F58 : FF FF		"  "		smi	#FF
+1F5A : FF FF		"  "		smi	#FF
+1F5C : FF FF		"  "		smi	#FF
+1F5E : FF FF		"  "		smi	#FF
+1F60 : FF FF		"  "		smi	#FF
+1F62 : FF FF		"  "		smi	#FF
+1F64 : FF FF		"  "		smi	#FF
+1F66 : FF FF		"  "		smi	#FF
+1F68 : FF FF		"  "		smi	#FF
+1F6A : FF FF		"  "		smi	#FF
+1F6C : FF FF		"  "		smi	#FF
+1F6E : FF FF		"  "		smi	#FF
+1F70 : FF FF		"  "		smi	#FF
+1F72 : FF FF		"  "		smi	#FF
+1F74 : FF FF		"  "		smi	#FF
+1F76 : FF FF		"  "		smi	#FF
+1F78 : FF FF		"  "		smi	#FF
+1F7A : FF FF		"  "		smi	#FF
+1F7C : FF FF		"  "		smi	#FF
+1F7E : FF FF		"  "		smi	#FF
+1F80 : FF FF		"  "		smi	#FF
+1F82 : FF FF		"  "		smi	#FF
+1F84 : FF FF		"  "		smi	#FF
+1F86 : FF FF		"  "		smi	#FF
+1F88 : FF FF		"  "		smi	#FF
+1F8A : FF FF		"  "		smi	#FF
+1F8C : FF FF		"  "		smi	#FF
+1F8E : FF FF		"  "		smi	#FF
+1F90 : FF FF		"  "		smi	#FF
+1F92 : FF FF		"  "		smi	#FF
+1F94 : FF FF		"  "		smi	#FF
+1F96 : FF FF		"  "		smi	#FF
+1F98 : FF FF		"  "		smi	#FF
+1F9A : FF FF		"  "		smi	#FF
+1F9C : FF FF		"  "		smi	#FF
+1F9E : FF FF		"  "		smi	#FF
+1FA0 : FF FF		"  "		smi	#FF
+1FA2 : FF FF		"  "		smi	#FF
+1FA4 : FF FF		"  "		smi	#FF
+1FA6 : FF FF		"  "		smi	#FF
+1FA8 : FF FF		"  "		smi	#FF
+1FAA : FF FF		"  "		smi	#FF
+1FAC : FF FF		"  "		smi	#FF
+1FAE : FF FF		"  "		smi	#FF
+1FB0 : FF FF		"  "		smi	#FF
+1FB2 : FF FF		"  "		smi	#FF
+1FB4 : FF FF		"  "		smi	#FF
+1FB6 : FF FF		"  "		smi	#FF
+1FB8 : FF FF		"  "		smi	#FF
+1FBA : FF FF		"  "		smi	#FF
+1FBC : FF FF		"  "		smi	#FF
+1FBE : FF FF		"  "		smi	#FF
+1FC0 : FF FF		"  "		smi	#FF
+1FC2 : FF FF		"  "		smi	#FF
+1FC4 : FF FF		"  "		smi	#FF
+1FC6 : FF FF		"  "		smi	#FF
+1FC8 : FF FF		"  "		smi	#FF
+1FCA : FF FF		"  "		smi	#FF
+1FCC : FF FF		"  "		smi	#FF
+1FCE : FF FF		"  "		smi	#FF
+1FD0 : FF FF		"  "		smi	#FF
+1FD2 : FF FF		"  "		smi	#FF
+1FD4 : FF FF		"  "		smi	#FF
+1FD6 : FF FF		"  "		smi	#FF
+1FD8 : FF FF		"  "		smi	#FF
+1FDA : FF FF		"  "		smi	#FF
+1FDC : FF FF		"  "		smi	#FF
+1FDE : FF FF		"  "		smi	#FF
+1FE0 : FF FF		"  "		smi	#FF
+1FE2 : FF FF		"  "		smi	#FF
+1FE4 : FF FF		"  "		smi	#FF
+1FE6 : FF FF		"  "		smi	#FF
+1FE8 : FF FF		"  "		smi	#FF
+1FEA : FF FF		"  "		smi	#FF
+1FEC : FF FF		"  "		smi	#FF
+1FEE : FF FF		"  "		smi	#FF
+1FF0 : FF FF		"  "		smi	#FF
+1FF2 : FF FF		"  "		smi	#FF
+1FF4 : FF FF		"  "		smi	#FF
+1FF6 : FF FF		"  "		smi	#FF
+1FF8 : FF FF		"  "		smi	#FF
+1FFA : FF FF		"  "		smi	#FF
+1FFC : FF FF		"  "		smi	#FF
+1FFE : 35 41		"5A"		b2	L1F41
+
+;--------------------------------------------------------------
+Symbol table
+============
+
+Value		Type	Name
+-----		----	----
+0029		Code	L0029
+0036		Code	L0036
+0047		Code	L0047
+0058		Code	L0058
+005A		Code	L005A
+0061		Code	L0061
+0062		Code	L0062
+0074		Code	L0074
+0099		Code	L0099
+009C		Code	L009C
+009F		Code	L009F
+00A2		Code	L00A2
+00AC		Code	L00AC
+00AF		Code	L00AF
+00B2		Code	L00B2
+00C3		Code	L00C3
+00CE		Code	L00CE
+00D7		Code	L00D7
+00D8		Code	L00D8
+00E1		Code	L00E1
+00E7		Code	L00E7
+00F1		Code	L00F1
+0100		Code	L0100
+010F		Code	L010F
+0113		Code	L0113
+0117		Code	L0117
+0124		Code	L0124
+0127		Code	L0127
+012A		Code	L012A
+012D		Code	L012D
+0132		Code	L0132
+013A		Code	L013A
+013D		Code	L013D
+0140		Code	L0140
+0143		Code	L0143
+0151		Code	L0151
+0154		Code	L0154
+0157		Code	L0157
+015A		Code	L015A
+0166		Code	L0166
+0169		Code	L0169
+016C		Code	L016C
+016F		Code	L016F
+0174		Code	L0174
+0176		Code	L0176
+017A		Code	L017A
+01B2		Code	L01B2
+01C5		Code	L01C5
+01D7		Code	L01D7
+01ED		Code	L01ED
+01F9		Code	L01F9
+0220		Code	L0220
+0226		Code	L0226
+0232		Code	L0232
+0234		Code	L0234
+023F		Code	L023F
+0244		Code	L0244
+0247		Code	L0247
+024E		Code	L024E
+0250		Code	L0250
+0254		Code	L0254
+0258		Code	L0258
+026C		Code	L026C
+027D		Code	L027D
+027F		Code	L027F
+0280		Code	L0280
+0282		Code	L0282
+0284		Code	L0284
+0287		Code	L0287
+02AC		Code	L02AC
+02B2		Code	L02B2
+02DE		Code	L02DE
+02EA		Code	L02EA
+02F5		Code	L02F5
+0306		Code	L0306
+0308		Code	L0308
+0319		Code	L0319
+0353		Code	L0353
+0356		Code	L0356
+0358		Code	L0358
+0360		Code	L0360
+0368		Code	L0368
+036C		Code	L036C
+0396		Code	L0396
+0398		Code	L0398
+0399		Code	L0399
+039B		Code	L039B
+039C		Code	L039C
+039D		Code	L039D
+03A3		Code	L03A3
+03B1		Code	L03B1
+03CB		Code	L03CB
+03CC		Code	L03CC
+03CF		Code	L03CF
+03D6		Code	L03D6
+03E7		Code	L03E7
+03EC		Code	L03EC
+03ED		Code	L03ED
+03FF		Code	L03FF
+0404		Code	L0404
+0410		Code	L0410
+0419		Code	L0419
+041E		Code	L041E
+0436		Code	L0436
+0439		Code	L0439
+043B		Code	L043B
+043D		Code	L043D
+0458		Code	L0458
+045B		Code	L045B
+045D		Code	L045D
+045F		Code	L045F
+0469		Code	L0469
+0471		Code	L0471
+04AF		Code	L04AF
+04C5		Code	L04C5
+04DC		Code	L04DC
+04F3		Code	L04F3
+04F8		Code	L04F8
+04FB		Code	L04FB
+04FC		Code	L04FC
+0504		Code	L0504
+0510		Code	L0510
+0520		Code	L0520
+0521		Code	L0521
+052D		Code	L052D
+0530		Code	L0530
+0540		Code	L0540
+0546		Code	L0546
+054C		Code	L054C
+0558		Code	L0558
+055A		Code	L055A
+055D		Code	L055D
+0566		Code	L0566
+056E		Code	L056E
+0576		Code	L0576
+0589		Code	L0589
+058A		Code	L058A
+0593		Code	L0593
+059C		Code	L059C
+05A0		Code	L05A0
+05B7		Code	L05B7
+05BC		Code	L05BC
+05C8		Code	L05C8
+05D7		Code	L05D7
+05E3		Code	L05E3
+05F7		Code	L05F7
+0600		Code	L0600
+0603		Code	L0603
+0604		Code	L0604
+0606		Code	L0606
+0608		Code	L0608
+0622		Code	L0622
+063D		Code	L063D
+064F		Code	L064F
+0659		Code	L0659
+0669		Code	L0669
+066C		Code	L066C
+066D		Code	L066D
+0679		Code	L0679
+0688		Code	L0688
+068B		Code	L068B
+0690		Code	L0690
+069F		Code	L069F
+06AB		Code	L06AB
+06AE		Code	L06AE
+06AF		Code	L06AF
+06CE		Code	L06CE
+06D2		Code	L06D2
+06D4		Code	L06D4
+06E3		Code	L06E3
+06F3		Code	L06F3
+0701		Code	L0701
+0705		Code	L0705
+0709		Code	L0709
+070B		Code	L070B
+0730		Code	L0730
+0737		Code	L0737
+073B		Code	L073B
+073E		Code	L073E
+0746		Code	L0746
+0753		Code	L0753
+0758		Code	L0758
+0762		Code	L0762
+0768		Code	L0768
+0771		Code	L0771
+0774		Code	L0774
+077F		Code	L077F
+078C		Code	L078C
+079C		Code	L079C
+07B0		Code	L07B0
+07B8		Code	L07B8
+07C1		Code	L07C1
+07CD		Code	L07CD
+07D5		Code	L07D5
+07DC		Code	L07DC
+07F2		Code	L07F2
+07F4		Code	L07F4
+07F8		Code	L07F8
+07F9		Code	L07F9
+07FF		Code	L07FF
+0802		Code	L0802
+0804		Code	L0804
+0818		Code	L0818
+081A		Code	L081A
+081B		Code	L081B
+081D		Code	L081D
+0825		Code	L0825
+0833		Code	L0833
+0835		Code	L0835
+0840		Code	L0840
+084A		Code	L084A
+084B		Code	L084B
+0869		Code	L0869
+0873		Code	L0873
+087B		Code	L087B
+0880		Code	L0880
+0882		Code	L0882
+088B		Code	L088B
+088F		Code	L088F
+0893		Code	L0893
+089F		Code	L089F
+08A3		Code	L08A3
+08B5		Code	L08B5
+08BD		Code	L08BD
+08C1		Code	L08C1
+08C6		Code	L08C6
+08C8		Code	L08C8
+08D5		Code	L08D5
+08DB		Code	L08DB
+08ED		Code	L08ED
+08F2		Code	L08F2
+0913		Code	L0913
+0919		Code	L0919
+0920		Code	L0920
+0927		Code	L0927
+092B		Code	L092B
+0947		Code	L0947
+0973		Code	L0973
+097D		Code	L097D
+0982		Code	L0982
+09A4		Code	L09A4
+09A7		Code	L09A7
+09B3		Code	L09B3
+09B7		Code	L09B7
+09C2		Code	L09C2
+09EE		Code	L09EE
+0A02		Code	L0A02
+0A14		Code	L0A14
+0A29		Code	L0A29
+0A3A		Code	L0A3A
+0A3B		Code	L0A3B
+0A4C		Code	L0A4C
+0A52		Code	L0A52
+0A58		Code	L0A58
+0A69		Code	L0A69
+0A6F		Code	L0A6F
+0A83		Code	L0A83
+0A88		Code	L0A88
+0A94		Code	L0A94
+0AA7		Code	L0AA7
+0AAA		Code	L0AAA
+0AAD		Code	L0AAD
+0ADA		Code	L0ADA
+0AEF		Code	L0AEF
+0AF5		Code	L0AF5
+0B1E		Code	L0B1E
+0B4A		Code	L0B4A
+0B53		Code	L0B53
+0B5D		Code	L0B5D
+0B67		Code	L0B67
+0B7C		Code	L0B7C
+0B7F		Code	L0B7F
+0B8B		Code	L0B8B
+0B8D		Code	L0B8D
+0B8E		Code	L0B8E
+0B8F		Code	L0B8F
+0B96		Code	L0B96
+0BA1		Code	L0BA1
+0BA6		Code	L0BA6
+0BCB		Code	L0BCB
+0BE6		Code	L0BE6
+0BE8		Code	L0BE8
+0BE9		Code	L0BE9
+0BEB		Code	L0BEB
+0BEC		Code	L0BEC
+0BEE		Code	L0BEE
+0BEF		Code	L0BEF
+0BF1		Code	L0BF1
+0BFB		Code	L0BFB
+0C02		Code	L0C02
+0C04		Code	L0C04
+0C1D		Code	L0C1D
+0C1F		Code	L0C1F
+0C20		Code	L0C20
+0C22		Code	L0C22
+0C23		Code	L0C23
+0C25		Code	L0C25
+0C28		Code	L0C28
+0C2A		Code	L0C2A
+0C3C		Code	L0C3C
+0C3E		Code	L0C3E
+0C43		Code	L0C43
+0C60		Code	L0C60
+0C7D		Code	L0C7D
+0C8C		Code	L0C8C
+0C90		Code	L0C90
+0C93		Code	L0C93
+0CCA		Code	L0CCA
+0CDD		Code	L0CDD
+0CF0		Code	L0CF0
+0CF7		Code	L0CF7
+0CF8		Code	L0CF8
+0CF9		Code	L0CF9
+0CFC		Code	L0CFC
+0CFF		Code	L0CFF
+0D02		Code	L0D02
+0D06		Code	L0D06
+0D14		Code	L0D14
+0D22		Code	L0D22
+0D24		Code	L0D24
+0D25		Code	L0D25
+0D27		Code	L0D27
+0D2A		Code	L0D2A
+0D30		Code	L0D30
+0D36		Code	L0D36
+0D41		Code	L0D41
+0D47		Code	L0D47
+0D54		Code	L0D54
+0D57		Code	L0D57
+0D86		Code	L0D86
+0D8E		Code	L0D8E
+0D97		Code	L0D97
+0DA3		Code	L0DA3
+0DA8		Code	L0DA8
+0DAD		Code	L0DAD
+0DB0		Code	L0DB0
+0DB4		Code	L0DB4
+0DE6		Code	L0DE6
+0DE7		Code	L0DE7
+0E01		Code	L0E01
+0E19		Code	L0E19
+0E2D		Code	L0E2D
+0E30		Code	L0E30
+0E56		Code	L0E56
+0E5C		Code	L0E5C
+0E5E		Code	L0E5E
+0E62		Code	L0E62
+0E77		Code	L0E77
+0E8A		Code	L0E8A
+0EA4		Code	L0EA4
+0EAB		Code	L0EAB
+0EB2		Code	L0EB2
+0EBD		Code	L0EBD
+0ED7		Code	L0ED7
+0EDA		Code	L0EDA
+0EDC		Code	L0EDC
+0EDD		Code	L0EDD
+0EDE		Code	L0EDE
+0EE5		Code	L0EE5
+0EE7		Code	L0EE7
+0EED		Code	L0EED
+0EEF		Code	L0EEF
+0EF7		Code	L0EF7
+0F0A		Code	L0F0A
+0F20		Code	L0F20
+0F29		Code	L0F29
+0F2C		Code	L0F2C
+0F30		Code	L0F30
+0F36		Code	L0F36
+0F39		Code	L0F39
+0F47		Code	L0F47
+0F7A		Code	L0F7A
+0F89		Code	L0F89
+0F8D		Code	L0F8D
+0F93		Code	L0F93
+0FA5		Code	L0FA5
+1018		Code	L1018
+1040		Code	L1040
+1042		Code	L1042
+1060		Code	L1060
+1062		Code	L1062
+10AE		Code	L10AE
+10B6		Code	L10B6
+10B8		Code	L10B8
+10C3		Code	L10C3
+10C5		Code	L10C5
+10C9		Code	L10C9
+10CB		Code	L10CB
+10EE		Code	L10EE
+10F2		Code	L10F2
+110C		Code	L110C
+1121		Code	L1121
+1129		Code	L1129
+1130		Code	L1130
+113A		Code	L113A
+1143		Code	L1143
+114A		Code	L114A
+114B		Code	L114B
+1154		Code	L1154
+1158		Code	L1158
+1165		Code	L1165
+1169		Code	L1169
+1179		Code	L1179
+117E		Code	L117E
+1186		Code	L1186
+118A		Code	L118A
+118B		Code	L118B
+118D		Code	L118D
+1193		Code	L1193
+1198		Code	L1198
+119C		Code	L119C
+11A1		Code	L11A1
+11A6		Code	L11A6
+11AD		Code	L11AD
+11AF		Code	L11AF
+11B3		Code	L11B3
+11BF		Code	L11BF
+11C7		Code	L11C7
+11CC		Code	L11CC
+11D3		Code	L11D3
+11F8		Code	L11F8
+1220		Code	L1220
+123A		Code	L123A
+1245		Code	L1245
+1258		Code	L1258
+1261		Code	L1261
+1278		Code	L1278
+1284		Code	L1284
+128C		Code	L128C
+12A0		Code	L12A0
+12A1		Code	L12A1
+12AC		Code	L12AC
+12AD		Code	L12AD
+12B6		Code	L12B6
+12C0		Code	L12C0
+12C9		Code	L12C9
+12D3		Code	L12D3
+12D8		Code	L12D8
+12E0		Code	L12E0
+12EA		Code	L12EA
+12F0		Code	L12F0
+12F8		Code	L12F8
+1310		Code	L1310
+1312		Code	L1312
+1316		Code	L1316
+132A		Code	L132A
+132B		Code	L132B
+1330		Code	L1330
+1334		Code	L1334
+181C		Code	L181C
+1820		Code	L1820
+182C		Code	L182C
+183C		Code	L183C
+183E		Code	L183E
+1845		Code	L1845
+185D		Code	L185D
+185F		Code	L185F
+1865		Code	L1865
+1869		Code	L1869
+1A00		Code	L1A00
+1A18		Code	L1A18
+1A1D		Code	L1A1D
+1A20		Code	L1A20
+1A29		Code	L1A29
+1A58		Code	L1A58
+1A61		Code	L1A61
+1A67		Code	L1A67
+1A75		Code	L1A75
+1A7D		Code	L1A7D
+1A8E		Code	L1A8E
+1A93		Code	L1A93
+1A99		Code	L1A99
+1AA3		Code	L1AA3
+1AA6		Code	L1AA6
+1AAE		Code	L1AAE
+1AB4		Code	L1AB4
+1AC1		Code	L1AC1
+1AC3		Code	L1AC3
+1ACB		Code	L1ACB
+1AD7		Code	L1AD7
+1AE5		Code	L1AE5
+1AEF		Code	L1AEF
+1AF2		Code	L1AF2
+1B09		Code	L1B09
+1B1E		Code	L1B1E
+1B20		Code	L1B20
+1B22		Code	L1B22
+1B25		Code	L1B25
+1B32		Code	L1B32
+1B43		Code	L1B43
+1B4A		Code	L1B4A
+1B57		Code	L1B57
+1C00		Code	L1C00
+1C20		Code	L1C20
+1C22		Code	L1C22
+1C24		Code	L1C24
+1C28		Code	L1C28
+1C2E		Code	L1C2E
+1C32		Code	L1C32
+1C35		Code	L1C35
+1C36		Code	L1C36
+1C38		Code	L1C38
+1C3D		Code	L1C3D
+1C46		Code	L1C46
+1C47		Code	L1C47
+1C55		Code	L1C55
+1C5E		Code	L1C5E
+1D00		Code	L1D00
+1D08		Code	L1D08
+1D20		Code	L1D20
+1D22		Code	L1D22
+1D2F		Code	L1D2F
+1D30		Code	L1D30
+1D52		Code	L1D52
+1D84		Code	L1D84
+1DF0		Code	L1DF0
+1DF1		Code	L1DF1
+1F41		Code	L1F41
+2001		Code	L2001
+B20A		Code	LB20A
+D403		Code	LD403
+D7F9		Code	LD7F9
+F820		Code	LF820
+F866		Code	LF866
+
+Number of symbols:			524
+
+;--------------------------------------------------------------
