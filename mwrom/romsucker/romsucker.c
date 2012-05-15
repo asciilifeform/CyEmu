@@ -135,7 +135,7 @@ unsigned char read_byte() {
   /* No read or write */
   nRD_disable;
   nWR_disable;
-  /* Select "B" register of 8255 */
+  /* Select "A" register of 8255 */
   A0_low;
   A1_low;
   /* Write control register contents */
