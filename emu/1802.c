@@ -52,43 +52,44 @@ uint8_t memXregOut() {
 
 /* Register Ops */
 
+/* INC r   Increment Register                      1r */
 void inc(uint8_t k) {
   printf("\tINC %x\n", k);
   r.R[k]++;
 }
 
-
+/* DEC r   Decrement Register                      2r */
 void dec(uint8_t k) {
   printf("\tDEC %x\n", k);
   r.R[k]--;
 }
 
-
+/* IRX     Increment R(X)                          60 */
 void irx() {
   printf("\tIRX\n");
   r.R[r.X]++;
 }
 
-
+/* GLO r   Get Low byte of Register                8r */
 void glo(uint8_t k) {
   printf("\tGLO %x\n", k);
   r.D = r.R[k] & 0xFF;
 }
 
-
+/* GHI r   Get High byte of Register               9r */
 void ghi(uint8_t k) {
   printf("\tGHI %x\n", k);
   r.D = (r.R[k] & 0xFF00) >> 8;
 }
 
-
+/* PLO r   Put D in Low byte of register           Ar */
 void plo(uint8_t k) {
   printf("\tPLO %x\n", k);
   r.R[k] &= 0xFF00;
   r.R[k] |= r.D;
 }
 
-
+/* PHI r   Put D in High byte of register          Br */
 void phi(uint8_t k) {
   printf("\tPHI %x\n", k);
   r.R[k] = (r.D * 256) | (r.R[k] & 0x00FF);
@@ -97,45 +98,46 @@ void phi(uint8_t k) {
 
 /* Memory References */
 
+/* LDN r   Load D via N (for r = 1 to F)           0r */
 void ldn(uint8_t k) {
   printf("\tLDN %x\n", k);
   r.D = mem[r.R[k]];
 }
 
-
+/* LDA r   Load D and Advance                      4r */
 void lda(uint8_t k) {
   printf("\tLDA %x\n", k);
   r.D = mem[r.R[k]];
   r.R[k]++;
 }
 
-
+/* LDX     Load D via R(X)                         F0 */
 void ldx() {
   printf("\tLDX\n");
   r.D = memXregOut();
 }
 
-
+/* LDXA    Load D via R(X) and Advance             72 */
 void ldxa() {
   printf("\tLDXA\n");
   r.D = memXregOut();
   r.R[r.X]++;
 }
 
-
+/* LDI b   Load D Immediate                        F8 bb */
 void ldi() {
   printf("\tLDI\n");
   r.D = memPcOut();
   incPC();
 }
 
-
+/* STR r   Store D into memory                     5r */
 void str(uint8_t k) {
   printf("\tSTR %x\n", k);
   mem[r.R[k]] = r.D;
 }
 
-
+/* STXD    Store D via R(X) and Decrement          73 */
 void stxd() {
   printf("\tSTXD\n");
   memXregIn(r.D);
@@ -145,45 +147,46 @@ void stxd() {
 
 /* Logic Ops */
 
+/* OR      Logical OR                              F1 */
 void _or() {
   printf("\tOR\n");
   r.D |= memXregOut();
 }
 
-
+/* ORI b   OR Immediate                            F9 bb */
 void ori() {
   printf("\tORI\n");
   r.D |= memXregOut();
   incPC();
 }
 
-
+/* XOR     Exclusive OR                            F3 */
 void _xor() {
   printf("\tXOR\n");
   r.D ^= memXregOut();
 }
 
-
+/* XRI b   Exclusive OR, Immediate                 FB bb */
 void xri() {
   printf("\tXRI\n");
   r.D ^= memXregOut();
   incPC();
 }
 
-
+/* AND     Logical AND                             F2 */
 void _and() {
   printf("\tAND\n");
   r.D &= memXregOut();
 }
 
-
+/* ANI b   AND Immediate                           FA bb */
 void ani() {
   printf("\tANI\n");
   r.D &= memXregOut();
   incPC();
 }
 
-
+/* SHR     Shift D Right                           F6 */
 void shr() {
   printf("\tSHR\n");
   if (r.D & 1) {
@@ -195,7 +198,7 @@ void shr() {
   r.D &= 0x7F;
 }
 
-
+/* SHRC    Shift D Right with Carry                76 */
 void rshr() {
   printf("\tRSHR\n");
   int f = r.DF;
@@ -209,7 +212,7 @@ void rshr() {
   if (f) r.D |= 0x80;
 }
 
-
+/* SHL     Shift D Left                            FE */
 void shl() {
   printf("\tSHL\n");
   if (r.D & 0x80) {
@@ -221,7 +224,7 @@ void shl() {
   r.D &= 0xFE;
 }
 
-
+/* SHLC    Shift D Left with Carry                 7E */
 void rshl() {
   printf("\tRSHL\n");
   int f = r.DF;
@@ -238,6 +241,7 @@ void rshl() {
 
 /* Arithmetic Ops */
 
+/* ADD     Add                                     F4 */
 void add() {
   printf("\tADD\n");
   uint16_t tD = r.D;
@@ -250,7 +254,7 @@ void add() {
   r.D = tD & 0xFF;
 }
 
-
+/* ADI b   Add Immediate                           FC bb */
 void adi() {
   printf("\tADI\n");
   uint16_t tD = r.D;
@@ -264,7 +268,7 @@ void adi() {
   incPC();
 }
 
-
+/* ADC     Add with Carry                          74 */
 void adc() {
   printf("\tADC\n");
   uint16_t tD = r.D;
@@ -278,7 +282,7 @@ void adc() {
   r.D = tD & 0xFF;
 }
 
-
+/* ADCI b  Add with Carry Immediate                7C bb */
 void adci() {
   printf("\tADCI\n");
   uint16_t tD = r.D;
@@ -293,7 +297,7 @@ void adci() {
   incPC();
 }
 
-
+/* SD      Subtract D from memory                  F5 */
 void sd() {
   printf("\tSD\n");
   uint16_t tD;
@@ -306,7 +310,7 @@ void sd() {
   r.D = tD & 0xFF;
 }
 
-
+/* SDI b   Subtract D from memory Immediate byte   FD bb */
 void sdi() {
   printf("\tSDI\n");
   uint16_t tD;
@@ -320,7 +324,7 @@ void sdi() {
   incPC();
 }
 
-
+/* SDB     Subtract D from memory with Borrow      75 */
 void sdb() {
   printf("\tSDB\n");
   uint16_t tD;
@@ -335,7 +339,7 @@ void sdb() {
   r.D = tD & 0xFF;
 }
 
-
+/* SDBI b  Subtract D with Borrow, Immediate       7D bb */
 void sdbi() {
   printf("\tSDBI\n");
   uint16_t tD;
@@ -350,7 +354,7 @@ void sdbi() {
   incPC();
 }
 
-
+/* SM      Subtract Memory from D                  F7 */
 void sm() {
   printf("\tSM\n");
   uint16_t tD;
@@ -363,7 +367,7 @@ void sm() {
   r.D = tD & 0xFF;
 }
 
-
+/* SMI b   Subtract Memory from D, Immediate       FF bb */
 void smi() {
   printf("\tSMI\n");
   uint16_t tD;
@@ -377,7 +381,7 @@ void smi() {
   incPC();
 }
 
-
+/* SMB     Subtract Memory from D with Borrow      77 */
 void smb() {
   printf("\tSMB\n");
   uint16_t tD;
@@ -391,7 +395,7 @@ void smb() {
   r.D = tD & 0xFF;
 }
 
-
+/* SMBI b  Subtract Memory with Borrow, Immediate  7F bb */
 void smbi() {
   printf("\tSMBI\n");
   uint16_t tD;
@@ -409,6 +413,7 @@ void smbi() {
 
 /* Branching */
 
+/* BR a    Branch unconditionally                  30 aa */
 void br() {
   printf("\tBR\n");
   addr = (PC() & 0xFF00);
@@ -416,7 +421,7 @@ void br() {
   setPC(addr);
 }
 
-
+/* BZ a    Branch on Zero                          32 aa */
 void bz() {
   printf("\tBZ\n");
   if (r.D == 0) {
@@ -426,7 +431,7 @@ void bz() {
   }
 }
 
-
+/* BNZ a   Branch on Not Zero                      3A aa */
 void bnz() {
   printf("\tBNZ\n");
   if (r.D != 0) {
@@ -436,7 +441,7 @@ void bnz() {
   }
 }
 
-
+/* BDF a   Branch if DF is 1                       33 aa */
 void bdf() {
   printf("\tBDF\n");
   if (r.DF) {
@@ -446,7 +451,7 @@ void bdf() {
   }
 }
 
-
+/* BNF a   Branch if DF is 0                       3B aa */
 void bnf() {
   printf("\tBNF\n");
   if (!(r.DF)) {
@@ -456,7 +461,7 @@ void bnf() {
   }
 }
 
-
+/* BQ a    Branch if Q is on                       31 aa */
 void bq() {
   printf("\tBQ\n");
   if (r.Q) {
@@ -466,7 +471,7 @@ void bq() {
   }
 }
 
-
+/* BNQ a   Branch if Q is off                      39 aa */
 void bnq() {
   printf("\tBNQ\n");
   if (!(r.Q)) {
@@ -476,7 +481,7 @@ void bnq() {
   }
 }
 
-
+/* B1 a    Branch on External Flag 1               34 aa */
 void b1() {
   printf("\tB1\n");
   if (io.EF1) {
@@ -486,7 +491,7 @@ void b1() {
   }
 }
 
-
+/* BN1 a   Branch on Not External Flag 1           3C aa */
 void bn1() {
   printf("\tBN1\n");
   if (!(io.EF1)) {
@@ -496,7 +501,7 @@ void bn1() {
   }
 }
 
-
+/* B2 a    Branch on External Flag 2               35 aa */
 void b2() {
   printf("\tB2\n");
   if (io.EF2) {
@@ -506,7 +511,7 @@ void b2() {
   }
 }
 
-
+/* BN2 a   Branch on Not External Flag 2           3D aa */
 void bn2() {
   printf("\tBN2\n");
   if (!(io.EF2)) {
@@ -516,7 +521,7 @@ void bn2() {
   }
 }
 
-
+/* B3 a    Branch on External Flag 3               36 aa */
 void b3() {
   printf("\tB3\n");
   if (io.EF3) {
@@ -526,7 +531,7 @@ void b3() {
   }
 }
 
-
+/* BN3 a   Branch on Not External Flag 3           3E aa */
 void bn3() {
   printf("\tBN3\n");
   if (!(io.EF3)) {
@@ -536,7 +541,7 @@ void bn3() {
   }
 }
 
-
+/* B4 a    Branch on External Flag 4               37 aa */
 void b4() {
   printf("\tB4\n");
   if (io.EF4) {
@@ -546,7 +551,7 @@ void b4() {
   }
 }
 
-
+/* BN4 a   Branch on Not External Flag 4           3F aa */
 void bn4() {
   printf("\tBN4\n");
   if (!(io.EF4)) {
@@ -556,7 +561,7 @@ void bn4() {
   }
 }
 
-
+/* LBR aa  Long Branch unconditionally             C0 aaaa */
 void lbr() {
   printf("\tLBR\n");
   addr = 256 * memPcOut();
@@ -565,7 +570,7 @@ void lbr() {
   setPC(addr);
 }
 
-
+/* LBZ aa  Long Branch if Zero                     C2 aaaa */
 void lbz() {
   printf("\tLBZ\n");
   if (r.D == 0) {
@@ -576,7 +581,7 @@ void lbz() {
   }
 }
 
-
+/* LBNZ aa Long Branch if Not Zero                 CA aaaa */
 void lbnz() {
   printf("\tLBNZ\n");
   if (r.D != 0) {
@@ -587,7 +592,7 @@ void lbnz() {
   }
 }
 
-
+/* LBDF aa Long Branch if DF is 1                  C3 aaaa */
 void lbdf() {
   printf("\tLBDF\n");
   if (r.DF) {
@@ -598,7 +603,7 @@ void lbdf() {
   }
 }
 
-
+/* LBNF aa Long Branch if DF is 0                  CB aaaa */
 void lbnf() {
   printf("\tLBNF\n");
   if (!(r.DF)) {
@@ -609,7 +614,7 @@ void lbnf() {
   }
 }
 
-
+/* LBQ aa  Long Branch if Q is on                  C1 aaaa */
 void lbq() {
   printf("\tLBQ\n");
   if (r.Q) {
@@ -620,7 +625,7 @@ void lbq() {
   }
 }
 
-
+/* LBNQ aa Long Branch if Q is off                 C9 aaaa */
 void lbnq() {
   printf("\tLBNQ\n");
   if (!(r.Q)) {
@@ -634,6 +639,7 @@ void lbnq() {
 
 /* Skip Instructions */
 
+/* LSZ     Long Skip if Zero                       CE */
 void lsz() {
   printf("\tLSZ\n");
   if (r.D == 0) {
@@ -642,7 +648,7 @@ void lsz() {
   }
 }
 
-
+/* LSNZ    Long Skip if Not Zero                   C6 */
 void lsnz() {
   printf("\tLSNZ\n");
   if (r.D != 0) {
@@ -651,7 +657,7 @@ void lsnz() {
   }
 }
 
-
+/* LSDF    Long Skip if DF is 1                    CF */
 void lsdf() {
   printf("\tLSDF\n");
   if (r.DF) {
@@ -660,7 +666,7 @@ void lsdf() {
   }
 }
 
-
+/* LSNF    Long Skip if DF is 0                    C7 */
 void lsnf() {
   printf("\tLSNF\n");
   if (!(r.DF)) {
@@ -669,7 +675,7 @@ void lsnf() {
   }
 }
 
-
+/* LSQ     Long Skip if Q is on                    CD */
 void lsq() {
   printf("\tLSQ\n");
   if (r.Q) {
@@ -678,7 +684,7 @@ void lsq() {
   }
 }
 
-
+/* LSNQ    Long Skip if Q is off                   C5 */
 void lsnq() {
   printf("\tLSNQ\n");
   if (!(r.Q)) {
@@ -687,7 +693,7 @@ void lsnq() {
   }
 }
 
-
+/* LSIE    Long Skip if Interrupts Enabled         CC */
 void lsie() {
   printf("\tLSIE\n");
   if (r.IE) {
@@ -699,13 +705,14 @@ void lsie() {
 
 /* Control Instructions */
 
+/* SEP r   Set P                                   Dr */
 void sep(uint8_t k) {
   printf("\tSEP %x\n", k);
   r.N = k;
   r.P = r.N;
 }
 
-
+/* SEX r   Set X                                   Er */
 void sex(uint8_t k) {
   printf("\tSEX %x\n", k);
   r.N = k;
@@ -715,6 +722,7 @@ void sex(uint8_t k) {
 
 /* Input/Output Byte Transfer */
 
+/* OUT p   Output from memory (for p = 1 to 7)     6p */
 void out(uint8_t k) {
   bus = memXregOut();
   /* TODO: Do Stuff! */
@@ -723,7 +731,7 @@ void out(uint8_t k) {
   r.R[r.X]++;
 }
 
-
+/* INP p   Input to memory and D (for p = 9 to F)  6p */
 void inp(uint8_t k) {
   memXregIn(bus);
   bus = r.D;
@@ -733,6 +741,7 @@ void inp(uint8_t k) {
 }
 
 
+/* IDL     Idle                                    00  */
 void i00() { printf("\tIDL\n"); incPC(); }
 
 void i01() { incPC(); ldn(1); }
@@ -793,7 +802,7 @@ void i34() { incPC(); b1(); }
 void i35() { incPC(); b2(); }
 void i36() { incPC(); b3(); }
 void i37() { incPC(); b4(); }
-void i38() { incPC(); incPC(); }
+void i38() { incPC(); incPC(); } /* SKP     Skip one byte   38 */
 void i39() { incPC(); bnq(); }
 void i3a() { incPC(); bnz(); }
 void i3b() { incPC(); bnf(); }
@@ -853,18 +862,18 @@ void i6d() { incPC(); inp(13); }
 void i6e() { incPC(); inp(14); }
 void i6f() { incPC(); inp(15); }
 
-void i70() { incPC(); }
-void i71() { printf("\tDIS\n"); incPC(); }
+void i70() { incPC(); } /* RET     Return   70  */
+void i71() { printf("\tDIS\n"); incPC(); } /* DIS     Return and Disable Interrupts 71  */
 void i72() { incPC(); ldxa(); }
 void i73() { incPC(); stxd(); }
 void i74() { incPC(); adc(); }
 void i75() { incPC(); sdb(); }
 void i76() { incPC(); rshr(); }
 void i77() { incPC(); smb(); }
-void i78() { incPC(); }
-void i79() { incPC(); }
-void i7a() { incPC(); r.Q = 0; }
-void i7b() { printf("\tSEQ\n"); incPC(); r.Q = 1; }
+void i78() { incPC(); } /*  SAV     Save T    78 */
+void i79() { incPC(); } /* MARK    Save X and P in T  79 */
+void i7a() { incPC(); r.Q = 0; } /* REQ     Reset Q  7A */
+void i7b() { printf("\tSEQ\n"); incPC(); r.Q = 1; } /* SEQ     Set Q   7B */
 void i7c() { incPC(); adci(); }
 void i7d() { incPC(); sdbi(); }
 void i7e() { incPC(); rshl(); }
@@ -942,11 +951,11 @@ void ic0() { incPC(); lbr(); }
 void ic1() { incPC(); lbq(); }
 void ic2() { incPC(); lbz(); }
 void ic3() { incPC(); lbdf(); }
-void ic4() { incPC(); } // NOP
+void ic4() { incPC(); } /* NOP     No Operation   C4 */
 void ic5() { incPC(); lsnq(); }
 void ic6() { incPC(); lsnz(); }
 void ic7() { incPC(); lsnf(); }
-void ic8() { printf("\tLSKP\n"); incPC(); incPC(); incPC(); }
+void ic8() { printf("\tLSKP\n"); incPC(); incPC(); incPC(); } /* LSKP    Long Skip C8 */
 void ic9() { incPC(); lbnq(); }
 void ica() { incPC(); lbnz(); }
 void icb() { incPC(); lbnf(); }
@@ -1064,8 +1073,7 @@ void cpu_reset() {
 
 
 void ram_init() {
-  /* Address space is ROM + RAM sized. */
-  mem = (uint8_t *)malloc(ROM_BYTES + RAM_BYTES);
+  mem = (uint8_t *)malloc(MEM_BYTES);
   if (!mem) {
     fprintf(stderr, "Couldn't allocate memory!\n");
     exit(EXIT_FAILURE);

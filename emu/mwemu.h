@@ -7,8 +7,7 @@
 #include <unistd.h>
 #include <ctype.h>
 
-#define ROM_BYTES               8192
-#define RAM_BYTES               16384
+#define MEM_BYTES               65536
 
 /* SDL TV */
 // #define VIDEO_WIDTH		1024
