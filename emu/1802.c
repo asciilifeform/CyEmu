@@ -126,8 +126,8 @@ void ldxa() {
 
 /* LDI b   Load D Immediate                        F8 bb */
 void ldi() {
-  printf("\tLDI\n");
   r.D = memPcOut();
+  printf("\tLDI %x\n", r.D);
   incPC();
 }
 
@@ -741,6 +741,48 @@ void inp(uint8_t k) {
 }
 
 
+/* Other */
+
+/* RET     Return                                  70 */
+void ret() {
+  printf("\tRET\n");
+  uint8_t tD = memXregOut();
+  r.R[r.X]++;
+  r.P = tD & 0x0F;
+  r.X = tD >> 4;
+  r.IE = 1;
+}
+
+/* DIS     Return and Disable Interrupts           71 */
+void dis() {
+  printf("\tDIS\n");
+  uint8_t tD = memXregOut();
+  r.R[r.X]++;
+  r.P = tD & 0x0F;
+  r.X = tD >> 4;
+  r.IE = 0;
+}
+
+/* SAV     Save T                                  78 */
+void sav() {
+  printf("\tSAV\n");
+  exit(1);
+}
+
+/* MARK    Save X and P in T                       79 */
+void mark() {
+  printf("\tMARK\n");
+  exit(1);
+}
+
+
+/* Op not implemented */
+void badop(char *s) {
+  printf("Opcode not implemented: '%s'.\n", s);
+}
+
+
+
 /* IDL     Idle                                    00  */
 void i00() { printf("\tIDL\n"); incPC(); }
 
@@ -853,7 +895,7 @@ void i64() { incPC(); out(4); }
 void i65() { incPC(); out(5); }
 void i66() { incPC(); out(6); }
 void i67() { incPC(); out(7); }
-void i68() { incPC(); }
+void i68() { incPC(); badop("0x68"); }
 void i69() { incPC(); inp(9); }
 void i6a() { incPC(); inp(10); }
 void i6b() { incPC(); inp(11); }
@@ -862,16 +904,16 @@ void i6d() { incPC(); inp(13); }
 void i6e() { incPC(); inp(14); }
 void i6f() { incPC(); inp(15); }
 
-void i70() { incPC(); } /* RET     Return   70  */
-void i71() { printf("\tDIS\n"); incPC(); } /* DIS     Return and Disable Interrupts 71  */
+void i70() { incPC(); ret(); }
+void i71() { incPC(); dis(); }
 void i72() { incPC(); ldxa(); }
 void i73() { incPC(); stxd(); }
 void i74() { incPC(); adc(); }
 void i75() { incPC(); sdb(); }
 void i76() { incPC(); rshr(); }
 void i77() { incPC(); smb(); }
-void i78() { incPC(); } /*  SAV     Save T    78 */
-void i79() { incPC(); } /* MARK    Save X and P in T  79 */
+void i78() { incPC(); sav(); }
+void i79() { incPC(); mark(); }
 void i7a() { incPC(); r.Q = 0; } /* REQ     Reset Q  7A */
 void i7b() { printf("\tSEQ\n"); incPC(); r.Q = 1; } /* SEQ     Set Q   7B */
 void i7c() { incPC(); adci(); }
@@ -1055,7 +1097,12 @@ fun Tabula[] =
 void cpu_cycle() {
   uint8_t code;
   code = memPcOut();
-  printf("CYCLE: PC=%x CODE=%x\n", PC(), code);
+  printf("-----------------------------------------------------------------------------------------------------\n");
+  printf("CYCLE: PC=%x CODE=%x D=%x DF=%d B=%x P=%d X=%d I=%x N=%x T=%x IE=%d Q=%d \n",
+	 PC(), code, r.D, r.DF, r.B, r.P, r.X, r.I, r.N, r.T, r.IE, r.Q);
+  printf("R0=%x R1=%x R2=%x R3=%x R4=%x R5=%x R6=%x R7=%x\nR8=%x R9=%x R10=%x R11=%x R12=%x R13=%x R14=%x R15=%x\n",
+	 r.R[0], r.R[1], r.R[2], r.R[3], r.R[4], r.R[5], r.R[6], r.R[7],
+	 r.R[8], r.R[9], r.R[10], r.R[11], r.R[12], r.R[13], r.R[14], r.R[15]);
   Tabula[code]();
 }
 
