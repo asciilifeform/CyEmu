@@ -1100,7 +1100,7 @@ void cpu_cycle() {
   printf("-----------------------------------------------------------------------------------------------------\n");
   printf("CYCLE: PC=%x CODE=%x D=%x DF=%d B=%x P=%d X=%d I=%x N=%x T=%x IE=%d Q=%d \n",
 	 PC(), code, r.D, r.DF, r.B, r.P, r.X, r.I, r.N, r.T, r.IE, r.Q);
-  printf("R0=%x R1=%x R2=%x R3=%x R4=%x R5=%x R6=%x R7=%x\nR8=%x R9=%x R10=%x R11=%x R12=%x R13=%x R14=%x R15=%x\n",
+  printf("R0=%x R1=%x R2=%x R3=%x R4=%x R5=%x R6=%x R7=%x\nR8=%x R9=%x RA=%x RB=%x RC=%x RD=%x RE=%x RF=%x\n",
 	 r.R[0], r.R[1], r.R[2], r.R[3], r.R[4], r.R[5], r.R[6], r.R[7],
 	 r.R[8], r.R[9], r.R[10], r.R[11], r.R[12], r.R[13], r.R[14], r.R[15]);
   Tabula[code]();
