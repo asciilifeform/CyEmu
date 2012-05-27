@@ -1095,15 +1095,35 @@ fun Tabula[] =
 
 
 void cpu_cycle() {
+  int i;
   uint8_t code;
   code = memPcOut();
+  printf("Single Step:\n\n");
+  printf("%.4x:  %.2x  ", PC(), code);
+  Tabula[code]();
+  printf("\n");
+  printf("Halt Address = %.4xh (%d)\n", PC(), PC());
+  printf("D = %.2xh (%d)\n", r.D, r.D);
+  printf("DF/Carry = %d\n", r.DF);
+  printf("RP = R%x (%d) = %.4xh (%d)\n", r.P, r.P, r.R[r.P], r.R[r.P]);
+  printf("RX = R%x (%d) = %.4xh (%d)\n", r.X, r.X, r.R[r.X], r.R[r.X]);
+  printf("Q Flag = %d\n", r.Q);
+
+  for (i = 0; i < 8; i++) {
+    printf("R%x = %.4xh (%5d)          R%x = %.4xh (%d)\n",
+           i, r.R[i], r.R[i], (i + 8), r.R[i + 8], r.R[i + 8]);
+  }
+
+  printf("\n");
+  
+/*
   printf("-----------------------------------------------------------------------------------------------------\n");
-  printf("CYCLE: PC=%x CODE=%x D=%x DF=%d B=%x P=%d X=%d I=%x N=%x T=%x IE=%d Q=%d \n",
+  printf("CYCLE: PC=%.4x CODE=%x D=%x DF=%d B=%x P=%d X=%d I=%x N=%x T=%x IE=%d Q=%d \n",
 	 PC(), code, r.D, r.DF, r.B, r.P, r.X, r.I, r.N, r.T, r.IE, r.Q);
   printf("R0=%x R1=%x R2=%x R3=%x R4=%x R5=%x R6=%x R7=%x\nR8=%x R9=%x RA=%x RB=%x RC=%x RD=%x RE=%x RF=%x\n",
 	 r.R[0], r.R[1], r.R[2], r.R[3], r.R[4], r.R[5], r.R[6], r.R[7],
 	 r.R[8], r.R[9], r.R[10], r.R[11], r.R[12], r.R[13], r.R[14], r.R[15]);
-  Tabula[code]();
+  */
 }
 
 
