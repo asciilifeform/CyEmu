@@ -8,7 +8,7 @@ int main(int argc, char **argv) {
   cpu_reset();
   load_rom("microwriter.rom");
   
-  for (i = 0; i < 1000; i++) {
+  for (i = 0; i < 10000; i++) {
     cpu_cycle();
   }
 

@@ -20,40 +20,40 @@ typedef struct _cpu_regs {
 
   /* Data Flag (ALU Carry) */
   unsigned int DF : 1;
-  // uint8_t DF;
+  //uint8_t DF;
 
   /* Auxiliary Holding Register */
   uint8_t B;
 
   /* 1..16 Scratchpad Registers */
-  uint16_t R[15];
+  uint16_t R[16];
 
   /* Designates which register is Program Counter */
   unsigned int P : 4;
-  // uint8_t P;
+  //uint8_t P;
 
   /* Designates which register is Data Pointer */
   unsigned int X : 4;
-  // uint8_t X;
+  //uint8_t X;
 
   /* Holds Low-Order Instruction Digit */
   unsigned int N : 4;
-  // uint8_t N;
+  //uint8_t N;
 
   /* Holds High-Order Instruction Digit */
-  /* unsigned int I : 4; */
-  uint8_t I;
+  unsigned int I : 4;
+  //uint8_t I;
 
   /* Holds old X, P after Interrupt (X is high nibble) */
   uint8_t T;
 
   /* Interrupt Enable */
   unsigned int IE : 1;
-  // uint8_t IE;
+  //uint8_t IE;
 
   /* Output Flip-Flop */
   unsigned int Q : 1;
-  // uint8_t Q;
+  //uint8_t Q;
 } cpu_regs;
 
 

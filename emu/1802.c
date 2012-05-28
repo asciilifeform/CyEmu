@@ -3,7 +3,7 @@
 
 uint8_t *mem; /* RAM */
 
-uint16_t addr; /* Address Bus */
+//uint16_t addr; /* Address Bus */
 uint8_t bus; /* Data Bus */
 cpu_regs r; /* CPU Registers */
 cpu_io io; /* CPU I/O */
@@ -27,26 +27,22 @@ void incPC() {
 
 
 void memPcIn(uint8_t data) {
-  addr = PC();
-  mem[addr] = data;
+  mem[PC()] = data;
 }
 
 
 uint8_t memPcOut() {
-  addr = PC();
-  return mem[addr];
+  return mem[PC()];
 }
 
 
 void memXregIn(uint8_t data) {
-  addr = r.R[r.X];
-  mem[addr] = data;
+  mem[(r.R[r.X])] = data;
 }
 
 
 uint8_t memXregOut() {
-  addr = r.R[r.X];
-  return mem[addr];
+  return mem[(r.R[r.X])];
 }
 
 
@@ -416,9 +412,16 @@ void smbi() {
 /* BR a    Branch unconditionally                  30 aa */
 void br() {
   printf("\tBR\n");
-  addr = (PC() & 0xFF00);
-  addr |= memPcOut();
-  setPC(addr);
+  //addr = (PC() & 0xFF00);
+  //addr = (PC() & 0xFF00) | memPcOut();
+  
+  //printf("PC() & 0xFF00 = %.4x\n", addr);
+  //printf("memPcOut() = %.4x\n", memPcOut());
+  //addr |= memPcOut();
+  
+  //printf("addr |= memPcOut() = %.4x\n", addr);
+  
+  setPC(((PC() & 0xFF00) | memPcOut()));
 }
 
 /* BZ a    Branch on Zero                          32 aa */
@@ -563,10 +566,14 @@ void bn4() {
 
 /* LBR aa  Long Branch unconditionally             C0 aaaa */
 void lbr() {
+  uint16_t addr;
   printf("\tLBR\n");
   addr = 256 * memPcOut();
   incPC();
-  addr |= memPcOut();
+
+  addr = addr | memPcOut();
+  //printf("addr |= memPcOut() = %.4x\n", addr);
+  
   setPC(addr);
 }
 
