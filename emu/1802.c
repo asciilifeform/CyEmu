@@ -1105,9 +1105,10 @@ void cpu_cycle() {
   int i;
   uint8_t code;
   code = memPcOut();
-  printf("Single Step:\n\n");
+  //printf("Single Step:\n\n");
   printf("%.4x:  %.2x  ", PC(), code);
   Tabula[code]();
+//#ifdef moo
   printf("\n");
   printf("Halt Address = %.4xh (%d)\n", PC(), PC());
   printf("D = %.2xh (%d)\n", r.D, r.D);
@@ -1122,7 +1123,7 @@ void cpu_cycle() {
   }
 
   printf("\n");
-  
+//#endif  
 /*
   printf("-----------------------------------------------------------------------------------------------------\n");
   printf("CYCLE: PC=%.4x CODE=%x D=%x DF=%d B=%x P=%d X=%d I=%x N=%x T=%x IE=%d Q=%d \n",
