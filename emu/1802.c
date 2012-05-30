@@ -27,22 +27,22 @@ void incPC() {
 
 
 void memPcIn(uint8_t data) {
-  mem[PC()] = data;
+  mem[(PC() & MEM_MASK)] = data;
 }
 
 
 uint8_t memPcOut() {
-  return mem[PC()];
+  return mem[(PC() & MEM_MASK)];
 }
 
 
 void memXregIn(uint8_t data) {
-  mem[(r.R[r.X])] = data;
+  mem[(r.R[r.X]) & MEM_MASK] = data;
 }
 
 
 uint8_t memXregOut() {
-  return mem[(r.R[r.X])];
+  return mem[(r.R[r.X]) & MEM_MASK];
 }
 
 
@@ -97,13 +97,15 @@ void phi(uint8_t k) {
 /* LDN r   Load D via N (for r = 1 to F)           0r */
 void ldn(uint8_t k) {
   printf("\tLDN %x\n", k);
-  r.D = mem[r.R[k]];
+  r.D = mem[(r.R[k]) & MEM_MASK];
+  //printf("R[k] = %.4x\n", r.R[k]);
+  //printf("D = %.2x\n", r.D);
 }
 
 /* LDA r   Load D and Advance                      4r */
 void lda(uint8_t k) {
   printf("\tLDA %x\n", k);
-  r.D = mem[r.R[k]];
+  r.D = mem[(r.R[k]) & MEM_MASK];
   r.R[k]++;
 }
 
@@ -130,7 +132,7 @@ void ldi() {
 /* STR r   Store D into memory                     5r */
 void str(uint8_t k) {
   printf("\tSTR %x\n", k);
-  mem[r.R[k]] = r.D;
+  mem[(r.R[k]) & MEM_MASK] = r.D;
 }
 
 /* STXD    Store D via R(X) and Decrement          73 */
@@ -1148,11 +1150,13 @@ void cpu_reset() {
 
 
 void ram_init() {
+  int i;
   mem = (uint8_t *)malloc(MEM_BYTES);
   if (!mem) {
     fprintf(stderr, "Couldn't allocate memory!\n");
     exit(EXIT_FAILURE);
   }
+  for (i = 0; i < MEM_BYTES; i++) mem[i] = 0;
 }
 
 

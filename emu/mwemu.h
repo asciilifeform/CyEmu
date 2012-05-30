@@ -7,7 +7,8 @@
 #include <unistd.h>
 #include <ctype.h>
 
-#define MEM_BYTES               65536
+#define MEM_BYTES                65536
+#define MEM_MASK                0x2FFF
 
 /* SDL TV */
 // #define VIDEO_WIDTH		1024
